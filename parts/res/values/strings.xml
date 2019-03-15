@@ -71,6 +71,8 @@
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
     <string name="dirac_preset_bass_booster">Bass Booster</string>
+    <!-- Dirac Sound Enhancer tile -->
+    <string name="dirac_qs_tile_title">Mi Sound Enhancer</string>
 
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Refresh Rate</string>
