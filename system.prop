@@ -43,6 +43,7 @@ vendor.iop.enable_uxe=0
 
 # Media
 media.settings.xml=/vendor/etc/media_profiles_vendor.xml
+media.stagefright.thumbnail.prefer_hw_codecs=true
 
 # Netflix
 ro.netflix.bsp_rev=Q855-16947-1
