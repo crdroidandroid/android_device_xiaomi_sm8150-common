@@ -81,6 +81,10 @@
             android:permission="ThermalService">
         </service>
 
+        <service android:name=".popupcamera.PopupCameraService"
+                 android:permission="PopupCameraService">
+        </service>
+
         <activity
             android:name=".refreshrate.RefreshActivity"
             android:label="@string/refresh_title"
