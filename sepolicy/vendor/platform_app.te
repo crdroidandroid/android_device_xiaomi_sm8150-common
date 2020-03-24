@@ -4,3 +4,7 @@ allow platform_app cgroup:file r_file_perms;
 r_dir_file(platform_app, sysfs_msm_subsys)
 
 get_prop(platform_app, vendor_audio_prop)
+
+# Dolby
+allow platform_app hal_dms_hwservice:hwservice_manager find;
+allow platform_app hal_dms_default:binder { call transfer };
