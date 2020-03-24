@@ -12,6 +12,9 @@ persist.vendor.dfps.level                       u:object_r:vendor_display_prop:s
 persist.vendor.video.dfps.level                 u:object_r:vendor_display_prop:s0
 persist.vendor.power.dfps.level                 u:object_r:vendor_display_prop:s0
 
+# Dolby
+persist.vendor.dolby.loglevel                   u:object_r:vendor_dolby_loglevel_prop:s0
+
 # Fingerprint
 persist.vendor.fpc.                             u:object_r:vendor_fp_prop:s0
 persist.vendor.sys.fp.                          u:object_r:vendor_fp_prop:s0
