@@ -173,6 +173,9 @@ dalvik.vm.heapsize=512m
 dalvik.vm.heapstartsize=8m
 dalvik.vm.heaptargetutilization=0.75
 
+# Dex2oat
+dalvik.vm.dex2oat64.enabled=true
+
 # Display
 ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
