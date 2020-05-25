@@ -67,6 +67,11 @@ TARGET_ENABLE_MEDIADRM_64 := true
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 
+# Fingerprint
+ifeq ($(TARGET_HAS_FOD),true)
+TARGET_SURFACEFLINGER_FOD_LIB := //$(COMMON_PATH):libfod_extension.xiaomi_msmnile
+endif
+
 # FM
 BOARD_HAVE_QCOM_FM := true
 
