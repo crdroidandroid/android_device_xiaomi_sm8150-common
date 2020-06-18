@@ -25,7 +25,7 @@ odm                                                     /odm                   e
 # The update_engine code looks for this entry in order to determine the boot device address
 # and fails if it does not find it.
 /dev/block/bootdevice/by-name/misc                      /misc                  emmc    defaults                                             defaults
-/devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*    /storage/usbotg    vfat    nosuid,nodev    wait,voldmanaged=usbotg:auto
+/devices/platform/soc/*.ssusb/*.dwc3/xhci-hcd.*.auto*   auto                   auto    defaults                                             voldmanaged=usbotg:auto
 /dev/block/bootdevice/by-name/cache                     /cache                   ext4    nosuid,noatime,nodev,barrier=1                               wait
 
 /dev/block/zram0                                        none               swap    defaults                                             zramsize=2147483648,max_comp_streams=8
