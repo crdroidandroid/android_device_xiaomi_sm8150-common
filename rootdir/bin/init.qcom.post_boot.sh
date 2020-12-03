@@ -594,29 +594,6 @@ function configure_zram_parameters() {
     fi
 }
 
-function configure_read_ahead_kb_values() {
-    MemTotalStr=`cat /proc/meminfo | grep MemTotal`
-    MemTotal=${MemTotalStr:16:8}
-
-    dmpts=$(ls /sys/block/*/queue/read_ahead_kb | grep -e dm -e mmc)
-
-    # Set 128 for <= 3GB &
-    # set 512 for >= 4GB targets.
-    if [ $MemTotal -le 3145728 ]; then
-        echo 128 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 128 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        for dm in $dmpts; do
-            echo 128 > $dm
-        done
-    else
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/mmcblk0rpmb/bdi/read_ahead_kb
-        for dm in $dmpts; do
-            echo 512 > $dm
-        done
-    fi
-}
-
 function disable_core_ctl() {
     if [ -f /sys/devices/system/cpu/cpu0/core_ctl/enable ]; then
         echo 0 > /sys/devices/system/cpu/cpu0/core_ctl/enable
@@ -673,7 +650,6 @@ low_ram=`getprop ro.config.low_ram`
 if [ "$ProductName" == "msmnile" ] || [ "$ProductName" == "kona" ] || [ "$ProductName" == "sdmshrike_au" ]; then
       # Enable ZRAM
       configure_zram_parameters
-      configure_read_ahead_kb_values
       echo 0 > /proc/sys/vm/page-cluster
       echo 100 > /proc/sys/vm/swappiness
 else
@@ -798,8 +774,6 @@ else
     echo 10 > /proc/sys/vm/watermark_scale_factor
 
     configure_zram_parameters
-
-    configure_read_ahead_kb_values
 
     enable_swap
 fi
@@ -5660,7 +5634,6 @@ case "$target" in
     ;;
     "msm8974")
         start mpdecision
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
     ;;
     "msm8909" | "msm8916" | "msm8937" | "msm8952" | "msm8953" | "msm8994" | "msm8992" | "msm8996" | "msm8998" | "sdm660" | "apq8098_latv" | "sdm845" | "sdm710" | "msmnile" | "msmsteppe" | "sm6150" | "kona" | "lito" | "trinket" | "atoll" | "bengal" | "sdmshrike")
         setprop vendor.post_boot.parsed 1
@@ -5668,15 +5641,6 @@ case "$target" in
     "apq8084")
         rm /data/system/perfd/default_values
         start mpdecision
-        echo 512 > /sys/block/mmcblk0/bdi/read_ahead_kb
-        echo 512 > /sys/block/sda/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdb/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdc/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdd/bdi/read_ahead_kb
-        echo 512 > /sys/block/sde/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdf/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdg/bdi/read_ahead_kb
-        echo 512 > /sys/block/sdh/bdi/read_ahead_kb
     ;;
     "msm7627a")
         if [ -f /sys/devices/soc0/soc_id ]; then
