@@ -1,0 +1,32 @@
+libqti-perfd-client.so
+libadsprpc.so
+libcdsprpc.so
+libsdsprpc.so
+libfastcvopt.so
+liblistensoundmodel2.so
+libOpenCL.so
+libnpu.so
+libmpbase.so 64
+libmialgoengine.so 64
+libVDClearShot.so
+libHalSuperSensorServer.so
+libSuperSensor.so
+libSuperSensorCPU.so
+libarcsoft_beautyshot.so 64
+libarcsoft_portrait_lighting.so 64
+libarcsoft_portrait_lighting_c.so 64
+libarcsoft_high_dynamic_range_v5.so 64
+libarcsoft_high_dynamic_range.so 64
+libarcsoft_low_light_hdr.so 64
+libarcsoft_distortion_correction.so 64
+libarcsoft_bodyslim.so 64
+libalCFR.so 64
+libSNPE.so 64
+libsnpe_dsp_domains_v2.so 64
+libcvp.so
+libcvp_stub.so
+libcvp_common.so
+libhta_hexagon_runtime.so
+unnhal-acc-hta.so
+libalhLDC.so
+libalAILDC.so
