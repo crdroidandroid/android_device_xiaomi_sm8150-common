@@ -224,5 +224,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# USB
+PRODUCT_PACKAGES += \
+    android.hardware.usb@1.0-service
+
 # Inherit the proprietary files
 $(call inherit-product, vendor/xiaomi/sm8150-common/sm8150-common-vendor.mk)
