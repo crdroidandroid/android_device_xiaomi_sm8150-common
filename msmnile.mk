@@ -141,6 +141,10 @@ PRODUCT_PACKAGES += \
     libipanat \
     liboffloadhal
 
+# Lights
+PRODUCT_PACKAGES += \
+    lights.msmnile
+
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
