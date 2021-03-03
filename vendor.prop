@@ -125,6 +125,10 @@ vendor.qcom.bluetooth.soc=cherokee
 # Camera
 vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
 
+# Chipset
+ro.soc.manufacturer=Qualcomm
+ro.soc.model=SM8150
+
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
 ro.crypto.dm_default_key.options_format.version=2
