@@ -40,6 +40,9 @@ persist.vendor.color.matrix=2
 # CNE
 persist.vendor.cne.feature=1
 
+# FUSE
+persist.sys.fuse.passthrough.enable=true
+
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
