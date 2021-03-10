@@ -204,18 +204,22 @@
     <!-- Vibrator pattern for feedback about a long screen/key press -->
     <integer-array name="config_longPressVibePattern">
         <item>0</item>
-        <item>10</item>
+        <item>49</item>
+        <item>89</item>
+        <item>92</item>
     </integer-array>
 
     <!-- Vibrator pattern for feedback about touching a virtual key -->
     <integer-array name="config_virtualKeyVibePattern">
         <item>0</item>
-        <item>10</item>
+        <item>65</item>
+        <item>85</item>
+        <item>95</item>
     </integer-array>
 
     <!-- Vibrator pattern for a very short but reliable vibration for soft keyboard tap -->
     <integer-array name="config_keyboardTapVibePattern">
-        <item>10</item>
+        <item>100</item>
     </integer-array>
 
     <!-- Default list of files pinned by the Pinner Service -->
