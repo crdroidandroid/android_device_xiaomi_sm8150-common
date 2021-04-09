@@ -514,7 +514,7 @@ on property:sys.boot_completed=1
 
     # Enable ZRAM on boot_complete
     rm /data/unencrypted/zram_swap
-    swapon_all
+    swapon_all /vendor/etc/fstab.zram
 
 on property:persist.vendor.radio.atfwd.start=false
     stop vendor.atfwd
