@@ -378,6 +378,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    fstab.zram \
     init.nfc.rc \
     init.qcom.power.rc \
     init.qcom.rc \
