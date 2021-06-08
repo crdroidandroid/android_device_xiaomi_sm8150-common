@@ -67,8 +67,8 @@ TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
 BOARD_HAVE_QCOM_FM := true
 
 # HIDL
-DEVICE_MATRIX_FILE := $(COMMON_PATH)/compatibility_matrix.xml
-DEVICE_MANIFEST_FILE := $(COMMON_PATH)/manifest.xml
+DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
 
 # Kernel
 BOARD_BOOT_HEADER_VERSION := 2
