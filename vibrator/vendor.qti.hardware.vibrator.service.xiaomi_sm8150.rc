@@ -1,0 +1,4 @@
+service vendor.qti.vibrator.xiaomi_sm8150 /vendor/bin/hw/vendor.qti.hardware.vibrator.service.xiaomi_sm8150
+    class hal
+    user system
+    group system input
