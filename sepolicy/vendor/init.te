@@ -12,3 +12,7 @@ allow init adsprpcd_file:file mounton;
 
 allow init per_boot_file:file ioctl;
 allowxperm init per_boot_file:file ioctl { F2FS_IOC_SET_PIN_FILE };
+
+# Allow init to read and write to sysfs_vibrator
+allow init sysfs_vibrator:dir search;
+allow init sysfs_vibrator:file rw_file_perms;

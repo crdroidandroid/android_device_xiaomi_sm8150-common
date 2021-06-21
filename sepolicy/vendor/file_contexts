@@ -96,6 +96,8 @@
 /vendor/lib(64)?/libHalSuperSensorServerCWrapper\.so                                                    u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libSuperSensor_skel\.so                                                                u:object_r:same_process_hal_file:s0
 
+# Haptic
+/sys/module/qti_haptics/parameters/vmax_mv_override                                                     u:object_r:sysfs_vibrator:s0
 
 # Hexagon DSP-side executable needed for Halide operation
 # This is labeled as public_adsprpcd_file as it needs to be read by apps
