@@ -9,3 +9,7 @@ allow init proc_last_kmsg:file {
 };
 
 allow init adsprpcd_file:file mounton;
+
+# Allow init to read and write to sysfs_vibrator
+allow init sysfs_vibrator:dir search;
+allow init sysfs_vibrator:file rw_file_perms;

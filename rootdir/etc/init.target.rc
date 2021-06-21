@@ -59,6 +59,10 @@ on init
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
 
+    # Allow system to adjust haptic level directly
+    chown system system /sys/module/qti_haptics/parameters/vmax_mv_override
+    chmod 0664 /sys/module/qti_haptics/parameters/vmax_mv_override
+
 on early-fs
     start vold
 
