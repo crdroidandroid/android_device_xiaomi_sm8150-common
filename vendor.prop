@@ -224,6 +224,7 @@ debug.sf.high_fps_early_gl_phase_offset_ns=6500000
 debug.sf.high_fps_early_phase_offset_ns=6100000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.enable_hwc_vds=1
+debug.sf.frame_rate_multiple_threshold=120
 debug.sf.hw=0
 debug.sf.latch_unsignaled=0
 persist.demo.hdmirotationlock=false
