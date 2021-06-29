@@ -1,3 +1,4 @@
 allow cameraserver property_socket:sock_file write;
 allow cameraserver init:unix_stream_socket connectto;
+allow cameraserver nfc_service:service_manager { find };
 set_prop(cameraserver, exported_system_prop);
