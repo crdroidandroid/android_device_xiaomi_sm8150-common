@@ -164,6 +164,9 @@ ro.crypto.volume.metadata.method=dm-default-key
 dalvik.vm.dex2oat64.enabled=true
 
 # Display
+persist.sys.sf.color_mode=9
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=2
 ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
 ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
@@ -180,7 +183,7 @@ vendor.display.disable_idle_time_video=1
 vendor.display.disable_inline_rotator=1
 vendor.display.disable_scaler=0
 vendor.display.disable_ui_3d_tonemap=1
-vendor.display.enable_default_color_mode=1
+vendor.display.enable_default_color_mode=0
 vendor.display.enable_force_split=1
 vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
