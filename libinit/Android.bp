@@ -1,0 +1,22 @@
+//
+// Copyright (C) 2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_defaults {
+    name: "libinit_msmnile_defaults",
+    include_dirs: [
+        "system/core/base/include",
+        "system/core/init"
+    ],
+    shared_libs: ["libbase"],
+    recovery_available: true,
+}
+
+cc_library_static {
+    name: "libinit_msmnile",
+    defaults: ["libinit_msmnile_defaults"],
+    srcs: ["libinit_msmnile.cpp"],
+    export_include_dirs: ["include"],
+}
