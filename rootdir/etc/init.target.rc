@@ -196,7 +196,7 @@ on property:vendor.usb.controller=*
     setprop sys.usb.controller ${vendor.usb.controller}
 
 #Load WLAN driver
-    insmod /vendor/lib/modules/qca_cld3_wlan.ko
+    insmod /vendor/lib/modules/wlan.ko
 
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
