@@ -116,7 +116,8 @@ PRODUCT_PACKAGES += \
     libsndmonitor \
     libspkrprot \
     libvisualizer \
-    libvolumelistener
+    libvolumelistener \
+    sound_trigger.primary.msmnile
 
 # Audio configs
 PRODUCT_COPY_FILES += \
