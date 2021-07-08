@@ -239,7 +239,7 @@ PRODUCT_COPY_FILES += \
 
 # Lights
 PRODUCT_PACKAGES += \
-    lights.msmnile
+    android.hardware.lights-service.xiaomi_msmnile
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
