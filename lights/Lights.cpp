@@ -27,34 +27,14 @@ namespace android {
 namespace hardware {
 namespace light {
 
-#define JOIN_PATH(a, b)                     a "/" b
+#define LED_PATH(led)                       "/sys/class/leds/" led "/"
 
-#define LED_FILE_BASE                       "/sys/class/leds"
-
-#define RED_LED_FILE_BASE                   JOIN_PATH(LED_FILE_BASE, "red")
-#define GREEN_LED_FILE_BASE                 JOIN_PATH(LED_FILE_BASE, "green")
-#define BLUE_LED_FILE_BASE                  JOIN_PATH(LED_FILE_BASE, "blue")
-#define WHITE_LED_FILE_BASE                 JOIN_PATH(LED_FILE_BASE, "white")
-
-static const std::string kRedBreathFile = JOIN_PATH(RED_LED_FILE_BASE, "breath");
-static const std::string kGreenBreathFile = JOIN_PATH(GREEN_LED_FILE_BASE, "breath");
-static const std::string kBlueBreathFile = JOIN_PATH(BLUE_LED_FILE_BASE, "breath");
-static const std::string kWhiteBreathFile = JOIN_PATH(WHITE_LED_FILE_BASE, "breath");
-
-static const std::string kRedLEDFile = JOIN_PATH(RED_LED_FILE_BASE, "brightness");
-static const std::string kGreenLEDFile = JOIN_PATH(GREEN_LED_FILE_BASE, "brightness");
-static const std::string kBlueLEDFile = JOIN_PATH(BLUE_LED_FILE_BASE, "brightness");
-static const std::string kWhiteLEDFile = JOIN_PATH(WHITE_LED_FILE_BASE, "brightness");
-
-static const std::string kRedDelayOffFile = JOIN_PATH(RED_LED_FILE_BASE, "delay_off");
-static const std::string kGreenDelayOffFile = JOIN_PATH(GREEN_LED_FILE_BASE, "delay_off");
-static const std::string kBlueDelayOffFile = JOIN_PATH(BLUE_LED_FILE_BASE, "delay_off");
-static const std::string kWhiteDelayOffFile = JOIN_PATH(WHITE_LED_FILE_BASE, "delay_off");
-
-static const std::string kRedDelayOnFile = JOIN_PATH(RED_LED_FILE_BASE, "delay_on");
-static const std::string kGreenDelayOnFile = JOIN_PATH(GREEN_LED_FILE_BASE, "delay_on");
-static const std::string kBlueDelayOnFile = JOIN_PATH(BLUE_LED_FILE_BASE, "delay_on");
-static const std::string kWhiteDelayOnFile = JOIN_PATH(WHITE_LED_FILE_BASE, "delay_on");
+static const std::string led_paths[] {
+    [RED] = LED_PATH("red"),
+    [GREEN] = LED_PATH("green"),
+    [BLUE] = LED_PATH("blue"),
+    [WHITE] = LED_PATH("white"),
+};
 
 static const std::string kLCDFile = "/sys/class/backlight/panel0-backlight/brightness";
 
@@ -68,7 +48,7 @@ const static std::vector<HwLight> kAvailableLights = {
 };
 
 Lights::Lights() {
-    mWhiteLed = !access(kWhiteLEDFile.c_str(), W_OK);
+    mWhiteLed = !access((led_paths[WHITE] + "brightness").c_str(), W_OK);
 }
 
 // AIDL methods
@@ -128,33 +108,33 @@ ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
     switch (state.flashMode) {
         case FlashMode::HARDWARE:
             if (mWhiteLed) {
-                rc = WriteToFile(kWhiteBreathFile, blink);
+                rc = setLedBreath(WHITE, blink);
             } else {
                 if (!!red)
-                    rc = WriteToFile(kRedBreathFile, blink);
+                    rc = setLedBreath(RED, blink);
                 if (!!green)
-                    rc &= WriteToFile(kGreenBreathFile, blink);
+                    rc &= setLedBreath(GREEN, blink);
                 if (!!blue)
-                    rc &= WriteToFile(kBlueBreathFile, blink);
+                    rc &= setLedBreath(BLUE, blink);
             }
             if (rc)
                 break;
         case FlashMode::TIMED:
             if (mWhiteLed) {
-                rc = WriteToFile(kWhiteDelayOffFile, state.flashOffMs);
-                rc &= WriteToFile(kWhiteDelayOnFile, state.flashOnMs);
+                rc = setLedDelayOff(WHITE, state.flashOffMs);
+                rc &= setLedDelayOn(WHITE, state.flashOnMs);
             } else {
                 if (!!red) {
-                    rc = WriteToFile(kRedDelayOffFile, state.flashOffMs);
-                    rc &= WriteToFile(kRedDelayOnFile, state.flashOnMs);
+                    rc = setLedDelayOff(RED, state.flashOffMs);
+                    rc &= setLedDelayOn(RED, state.flashOnMs);
                 }
                 if (!!green) {
-                    rc &= WriteToFile(kGreenDelayOffFile, state.flashOffMs);
-                    rc &= WriteToFile(kGreenDelayOnFile, state.flashOnMs);
+                    rc &= setLedDelayOff(GREEN, state.flashOffMs);
+                    rc &= setLedDelayOn(GREEN, state.flashOnMs);
                 }
                 if (!!blue) {
-                    rc &= WriteToFile(kBlueDelayOffFile, state.flashOffMs);
-                    rc &= WriteToFile(kBlueDelayOnFile, state.flashOnMs);
+                    rc &= setLedDelayOff(BLUE, state.flashOffMs);
+                    rc &= setLedDelayOn(BLUE, state.flashOnMs);
                 }
             }
             if (rc)
@@ -162,11 +142,11 @@ ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
         case FlashMode::NONE:
         default:
             if (mWhiteLed) {
-                rc = WriteToFile(kWhiteLEDFile, RgbaToBrightness(state.color));
+                rc = setLedBrightness(WHITE, RgbaToBrightness(state.color));
             } else {
-                rc = WriteToFile(kRedLEDFile, red);
-                rc &= WriteToFile(kGreenLEDFile, green);
-                rc &= WriteToFile(kBlueLEDFile, blue);
+                rc = setLedBrightness(RED, red);
+                rc &= setLedBrightness(GREEN, green);
+                rc &= setLedBrightness(BLUE, blue);
             }
             break;
     }
@@ -179,6 +159,22 @@ ndk::ScopedAStatus Lights::handleSpeakerBatteryLocked() {
         return setSpeakerLightLocked(mBattery);
     else
         return setSpeakerLightLocked(mNotification);
+}
+
+bool Lights::setLedBreath(led_type led, uint32_t value) {
+    return WriteToFile(led_paths[led] + "breath", value);
+}
+
+bool Lights::setLedBrightness(led_type led, uint32_t value) {
+    return WriteToFile(led_paths[led] + "brightness", value);
+}
+
+bool Lights::setLedDelayOff(led_type led, uint32_t value) {
+    return WriteToFile(led_paths[led] + "delay_off", value);
+}
+
+bool Lights::setLedDelayOn(led_type led, uint32_t value) {
+    return WriteToFile(led_paths[led] + "delay_on", value);
 }
 
 // Utils
