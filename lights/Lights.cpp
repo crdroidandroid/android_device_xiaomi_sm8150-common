@@ -81,7 +81,7 @@ ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
 }
 
 // device methods
-ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
+void Lights::setSpeakerLightLocked(const HwLightState& state) {
     uint32_t red, green, blue;
     uint32_t blink;
     unsigned int colorRGB;
@@ -133,10 +133,10 @@ ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
             break;
     }
 
-    return ndk::ScopedAStatus::ok();
+    return;
 }
 
-ndk::ScopedAStatus Lights::handleSpeakerBatteryLocked() {
+void Lights::handleSpeakerBatteryLocked() {
     if (IsLit(mBattery.color))
         return setSpeakerLightLocked(mBattery);
     else
