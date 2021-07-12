@@ -120,6 +120,7 @@ ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
             }
             if (rc)
                 break;
+            FALLTHROUGH_INTENDED;
         case FlashMode::NONE:
         default:
             if (mWhiteLed) {
