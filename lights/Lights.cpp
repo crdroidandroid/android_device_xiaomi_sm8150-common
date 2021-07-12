@@ -79,13 +79,15 @@ Lights::Lights() {
 ndk::ScopedAStatus Lights::setLightState(int id, const HwLightState& state) {
     switch (id) {
         case (int)LightType::BACKLIGHT:
-            setLightBacklight(state);
+            WriteToFile(kLCDFile, RgbaToBrightness(state.color));
             break;
         case (int)LightType::BATTERY:
-            setLightBattery(state);
+            mBattery = state;
+            handleSpeakerBatteryLocked();
             break;
         case (int)LightType::NOTIFICATIONS:
-            setLightNotification(state);
+            mNotification = state;
+            handleSpeakerBatteryLocked();
             break;
         default:
             return ndk::ScopedAStatus::fromExceptionCode(EX_UNSUPPORTED_OPERATION);
@@ -103,23 +105,6 @@ ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
 }
 
 // device methods
-ndk::ScopedAStatus Lights::setLightBacklight(const HwLightState& state) {
-    WriteToFile(kLCDFile, RgbaToBrightness(state.color));
-    return ndk::ScopedAStatus::ok();
-}
-
-ndk::ScopedAStatus Lights::setLightBattery(const HwLightState& state) {
-    mBattery = state;
-    handleSpeakerBatteryLocked();
-    return ndk::ScopedAStatus::ok();
-}
-
-ndk::ScopedAStatus Lights::setLightNotification(const HwLightState& state) {
-    mNotification = state;
-    handleSpeakerBatteryLocked();
-    return ndk::ScopedAStatus::ok();
-}
-
 ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
     uint32_t red, green, blue;
     uint32_t blink;
