@@ -43,8 +43,6 @@ private:
 
     bool setLedBreath(led_type led, uint32_t value);
     bool setLedBrightness(led_type led, uint32_t value);
-    bool setLedDelayOff(led_type led, uint32_t value);
-    bool setLedDelayOn(led_type led, uint32_t value);
 
     bool IsLit(uint32_t color);
     uint32_t RgbaToBrightness(uint32_t color);

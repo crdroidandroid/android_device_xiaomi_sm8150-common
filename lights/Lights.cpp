@@ -107,6 +107,7 @@ ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
 
     switch (state.flashMode) {
         case FlashMode::HARDWARE:
+        case FlashMode::TIMED:
             if (mWhiteLed) {
                 rc = setLedBreath(WHITE, blink);
             } else {
@@ -116,26 +117,6 @@ ndk::ScopedAStatus Lights::setSpeakerLightLocked(const HwLightState& state) {
                     rc &= setLedBreath(GREEN, blink);
                 if (!!blue)
                     rc &= setLedBreath(BLUE, blink);
-            }
-            if (rc)
-                break;
-        case FlashMode::TIMED:
-            if (mWhiteLed) {
-                rc = setLedDelayOff(WHITE, state.flashOffMs);
-                rc &= setLedDelayOn(WHITE, state.flashOnMs);
-            } else {
-                if (!!red) {
-                    rc = setLedDelayOff(RED, state.flashOffMs);
-                    rc &= setLedDelayOn(RED, state.flashOnMs);
-                }
-                if (!!green) {
-                    rc &= setLedDelayOff(GREEN, state.flashOffMs);
-                    rc &= setLedDelayOn(GREEN, state.flashOnMs);
-                }
-                if (!!blue) {
-                    rc &= setLedDelayOff(BLUE, state.flashOffMs);
-                    rc &= setLedDelayOn(BLUE, state.flashOnMs);
-                }
             }
             if (rc)
                 break;
@@ -167,14 +148,6 @@ bool Lights::setLedBreath(led_type led, uint32_t value) {
 
 bool Lights::setLedBrightness(led_type led, uint32_t value) {
     return WriteToFile(led_paths[led] + "brightness", value);
-}
-
-bool Lights::setLedDelayOff(led_type led, uint32_t value) {
-    return WriteToFile(led_paths[led] + "delay_off", value);
-}
-
-bool Lights::setLedDelayOn(led_type led, uint32_t value) {
-    return WriteToFile(led_paths[led] + "delay_on", value);
 }
 
 // Utils
