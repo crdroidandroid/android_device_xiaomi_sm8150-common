@@ -20,10 +20,6 @@
 #include <android-base/logging.h>
 #include <fcntl.h>
 
-#ifndef DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS
-#define DEFAULT_LOW_PERSISTENCE_MODE_BRIGHTNESS 0x80
-#endif
-
 using ::android::base::WriteStringToFile;
 
 namespace aidl {
