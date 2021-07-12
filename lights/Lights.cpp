@@ -82,19 +82,15 @@ ndk::ScopedAStatus Lights::getLights(std::vector<HwLight>* lights) {
 
 // device methods
 void Lights::setSpeakerLightLocked(const HwLightState& state) {
-    uint32_t red, green, blue;
+    uint32_t alpha, red, green, blue;
     uint32_t blink;
-    unsigned int colorRGB;
-    uint32_t alpha;
     bool rc = true;
 
-    colorRGB = state.color;
-
     // Extract brightness from AARRGGBB
-    alpha = (colorRGB >> 24) & 0xFF;
-    red = (colorRGB >> 16) & 0xFF;
-    green = (colorRGB >> 8) & 0xFF;
-    blue = colorRGB & 0xFF;
+    alpha = (state.color >> 24) & 0xFF;
+    red = (state.color >> 16) & 0xFF;
+    green = (state.color >> 8) & 0xFF;
+    blue = state.color & 0xFF;
 
     // Scale RGB brightness if Alpha brightness is not 0xFF
     if (alpha != 0xFF) {
