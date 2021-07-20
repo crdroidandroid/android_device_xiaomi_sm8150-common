@@ -56,4 +56,14 @@
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Perfil termíco</string>
+    <string name="thermal_summary">Ajuste um perfil termíco de acordo com sua necessidade</string>
+    <string name="thermal_default">Padrão</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_browser">Internet</string>
+    <string name="thermal_camera">Câmera</string>
+    <string name="thermal_dialer">Chamadas</string>
+    <string name="thermal_gaming">Jogos</string>
+    <string name="thermal_streaming">Streaming</string>
 </resources>
