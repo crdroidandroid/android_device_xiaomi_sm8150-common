@@ -150,9 +150,6 @@ on boot
 #Load WLAN driver
     insmod /vendor/lib/modules/wlan.ko
 
-    # Touchpanel
-    chown system system /sys/touchpanel/double_tap
-
     chown system system /sys/class/thermal/thermal_message/sconfig
 
 
