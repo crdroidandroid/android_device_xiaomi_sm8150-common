@@ -123,7 +123,7 @@ vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
-vendor.camera.aux.packagelist=org.codeaurora.snapcam
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,org.lineageos.snapcam
 
 # Crypto
 ro.crypto.volume.filenames_mode=aes-256-cts
