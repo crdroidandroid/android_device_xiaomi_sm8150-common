@@ -118,8 +118,8 @@ ALL_PARTITIONS += $(ADDITIONAL_PARTITIONS)
 endif # TARGET_USE_DYNAMIC_PARTITIONS
 
 $(foreach p, $(call to-upper, $(ALL_PARTITIONS)), \
-	$(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
-	$(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
+    $(eval BOARD_$(p)IMAGE_FILE_SYSTEM_TYPE := ext4) \
+    $(eval TARGET_COPY_OUT_$(p) := $(call to-lower, $(p))))
 
 # Partitions - legacy
 ifneq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
