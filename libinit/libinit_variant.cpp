@@ -30,13 +30,15 @@ void search_variant(const std::vector<variant_info_t> variants) {
 void set_variant_props(const variant_info_t variant) {
     set_ro_build_prop("brand", variant.brand, true);
     set_ro_build_prop("device", variant.device, true);
+    set_ro_build_prop("name", variant.device, true);
     set_ro_build_prop("marketname", variant.marketname, true);
     set_ro_build_prop("model", variant.model, true);
+    set_ro_build_prop("product", variant.model, false);
+    set_ro_build_prop("fingerprint", variant.build_fingerprint, false);
+    set_ro_build_prop("description", fingerprint_to_description(variant.build_fingerprint), false);
 
-    set_ro_build_prop("fingerprint", variant.build_fingerprint);
-    property_override("ro.bootimage.build.fingerprint", variant.build_fingerprint);
-
-    property_override("ro.build.description", fingerprint_to_description(variant.build_fingerprint));
+    property_override("ro.com.google.clientidbase", "android-xiaomi");
+    property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rev1");
 
     if (variant.nfc)
         property_override(SKU_PROP, "nfc");
