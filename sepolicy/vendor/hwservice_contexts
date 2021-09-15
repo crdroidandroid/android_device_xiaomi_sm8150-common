@@ -3,6 +3,9 @@ com.fingerprints.extension::IFingerprintSensorTest                              
 vendor.goodix.hardware.interfaces.biometrics.fingerprint::IGoodixFingerprintDaemon       u:object_r:hal_fingerprint_hwservice:s0
 vendor.goodix.hardware.interfaces.biometrics.fingerprint::IGoodixFingerprintDaemonExt    u:object_r:hal_fingerprint_hwservice:s0
 vendor.goodix.hardware.biometrics.fingerprint::IGoodixFingerprintDaemon                  u:object_r:hal_fingerprint_hwservice:s0
+vendor.nxp.hardware.nfc::INqNfc                                                          u:object_r:hal_nfc_hwservice:s0
+vendor.nxp.nxpese::INxpEse                                                               u:object_r:hal_nfc_hwservice:s0
+vendor.nxp.nxpnfc::INxpNfc                                                               u:object_r:hal_nfc_hwservice:s0
 vendor.xiaomi.hardware.fingerprintextension::IXiaomiFingerprint                          u:object_r:hal_fingerprint_hwservice:s0
 vendor.xiaomi.hardware.fx.tunnel::IMiFxTunnel                                            u:object_r:hal_fingerprint_hwservice:s0
 vendor.xiaomi.hardware.campostproc::IMiPostProcService                                   u:object_r:hal_camerapostproc_xiaomi_hwservice:s0
