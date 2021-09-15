@@ -1,3 +1,12 @@
 # Data file accesses.
 allow hal_nfc_default vendor_nfc_vendor_data_file:dir create_dir_perms;
 allow hal_nfc_default vendor_nfc_vendor_data_file:file create_file_perms;
+
+# Allow to add hal_nfc_hwservice
+add_hwservice(hal_nfc_default, hal_nfc_hwservice)
+
+# Allow to call secure element HAL
+binder_call(hal_nfc_default, hal_nfc_hwservice)
+
+# Allow to find hal_nfc_hwservice
+allow hal_nfc_default hal_nfc_hwservice:hwservice_manager find;
