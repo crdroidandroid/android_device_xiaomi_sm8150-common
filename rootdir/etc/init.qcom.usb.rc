@@ -122,8 +122,6 @@ on boot
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.usb.sh
     write /config/usb_gadget/g1/strings/0x409/product ${vendor.usb.product_string}
     write /config/usb_gadget/g2/strings/0x409/product ${vendor.usb.product_string}
-    setprop sys.usb.config ${persist.vendor.usb.config}
-    setprop sys.usb.configfs 1
 
 on boot && property:vendor.usb.use_ffs_mtp=1
    mkdir /config/usb_gadget/g1/functions/ffs.mtp
@@ -132,9 +130,6 @@ on boot && property:vendor.usb.use_ffs_mtp=1
    mount functionfs mtp /dev/usb-ffs/mtp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
    mkdir /dev/usb-ffs/ptp 0770 mtp mtp
    mount functionfs ptp /dev/usb-ffs/ptp rmode=0770,fmode=0660,uid=1024,gid=1024,no_disconnect=1
-
-on property:persist.vendor.usb.config=*
-    setprop persist.sys.usb.config ${persist.vendor.usb.config}
 
 on property:sys.usb.config=*
     setprop vendor.usb.mimode ${persist.sys.usb.config}
