@@ -13,32 +13,9 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
-cc_binary {
-    name: "vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_msmnile",
-    vintf_fragments: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_msmnile.xml"],
-    init_rc: ["vendor.lineage.biometrics.fingerprint.inscreen@1.0-service.xiaomi_msmnile.rc"],
-    defaults: ["hidl_defaults"],
-    relative_install_path: "hw",
-    srcs: [
-        "service.cpp",
-        "FingerprintInscreen.cpp",
-    ],
-    vendor: true,
-    shared_libs: [
-        "libbase",
-        "libhardware",
-        "libhidlbase",
-        "liblog",
-        "libutils",
-        "//hardware/xiaomi:vendor.goodix.hardware.biometrics.fingerprint@2.1",
-        "vendor.lineage.biometrics.fingerprint.inscreen@1.0",
-        "//hardware/xiaomi:vendor.xiaomi.hardware.fingerprintextension@1.0",
-    ],
-}
-
 cc_library_static {
-    name: "libfod_extension.xiaomi_msmnile",
-    srcs: ["FodExtension.cpp"],
+    name: "libudfps_extension.xiaomi_msmnile",
+    srcs: ["UdfpsExtension.cpp"],
     include_dirs: [
         "frameworks/native/services/surfaceflinger/CompositionEngine/include"
     ],
