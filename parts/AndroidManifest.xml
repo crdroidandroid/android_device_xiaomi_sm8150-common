@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
      Copyright (C) 2015-2016 The CyanogenMod Project
-                   2017-2022 The LineageOS Project
+                   2017-2024 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -32,7 +32,9 @@
         android:persistent="true"
         android:theme="@style/Theme.SubSettingsBase">
 
-        <receiver android:name=".BootCompletedReceiver">
+        <receiver
+            android:name=".BootCompletedReceiver"
+            android:exported="false">
             <intent-filter>
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -41,11 +43,12 @@
 
         <service
             android:name=".popupcamera.PopupCameraService"
-            android:permission="PopupCameraService">
-        </service>
+            android:exported="true"
+            android:permission="PopupCameraService" />
 
         <activity
             android:name=".popupcamera.PopupCameraSettingsActivity"
+            android:exported="false"
             android:label="@string/popup_title"
             android:enabled="false">
             <intent-filter>
@@ -67,4 +70,5 @@
         </activity>
 
     </application>
+
 </manifest>
