@@ -364,6 +364,8 @@ vendor/lib64/libaoa.so
 vendor/lib64/libbatching.so
 vendor/lib64/libcacertclient.so
 vendor/lib64/libdataitems.so
+vendor/lib64/libgarden.so
+vendor/lib64/libgarden_haltests_e2e.so
 vendor/lib64/libgdtap.so
 vendor/lib64/libgeofencing.so
 vendor/lib64/libgnss.so
