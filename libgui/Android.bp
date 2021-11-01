@@ -1,0 +1,10 @@
+cc_library_shared {
+    name: "libgui-shim",
+    shared_libs: [
+        "libgui",
+        "libutils",
+    ],
+    srcs: [
+        "Surface.cpp"
+    ],
+}
