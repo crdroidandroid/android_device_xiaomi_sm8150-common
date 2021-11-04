@@ -1,0 +1,2 @@
+# Allow MIUI camera app to read no. of cpus
+allow platform_app cgroup:file r_file_perms;

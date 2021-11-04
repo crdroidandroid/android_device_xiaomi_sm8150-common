@@ -1,1 +1,3 @@
 allow vendor_hal_perf_default sysfs_msm_subsys:dir search;
+
+r_dir_file(vendor_hal_perf_default, hal_camera_default);
