@@ -1,6 +1,7 @@
 # Audio
 audio.soundtrigger.debug.urser_id               u:object_r:vendor_audio_prop:s0
 audio_hal.in_period_size                        u:object_r:vendor_audio_prop:s0
+tas.smartpa.debug.                              u:object_r:vendor_audio_prop:s0
 
 # Camera
 camera.                                         u:object_r:vendor_camera_prop:s0
