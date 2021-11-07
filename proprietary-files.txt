@@ -44,7 +44,10 @@ system_ext/lib/com.qualcomm.qti.ant@1.0.so
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 
 # Audio libraries
+system_ext/etc/permissions/audiosphere.xml
+system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
+vendor/lib/soundfx/libmisoundfx.so
 vendor/lib/soundfx/libqcbassboost.so
 vendor/lib/soundfx/libqcreverb.so
 vendor/lib/soundfx/libqcvirt.so
