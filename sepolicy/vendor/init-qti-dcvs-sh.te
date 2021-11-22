@@ -1,0 +1,2 @@
+allow vendor_init-qti-dcvs-sh sysfs_msm_subsys:dir r_dir_perms;
+allow vendor_init-qti-dcvs-sh sysfs_msm_subsys:file w_file_perms;
