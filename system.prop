@@ -3,8 +3,22 @@ audio.offload.min.duration.secs=30
 persist.vendor.audio.hac.enable=false
 persist.vendor.audio_hal.dsp_bit_width_enforce_mode=24
 
+# Bluetooth
+persist.bluetooth.bqr.event_mask=14
+persist.bluetooth.bqr.min_interval_ms=500
+persist.vendor.bt.a2dp.aac_whitelist=false
+persist.vendor.bt.a2dp.mac_whitelist=false
+persist.vendor.bt.aac_frm_ctl.enabled=true
+persist.vendor.btsatck.absvolfeature=true
+persist.vendor.btstack.connect.peer_earbud=true
+persist.vendor.btstack.enable.twsplus=true
+persist.vendor.btstack.enable.twsplussho=true
+ro.bluetooth.library_name=libbluetooth_qti.so
+
 # Camera
 camera.disable_zsl_mode=true
+persist.vendor.camera.privapp.list=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
+vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera,org.lineageos.snap
 
 # Charger
 ro.charger.disable_init_blank=true
