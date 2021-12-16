@@ -3385,10 +3385,8 @@ case "$target" in
             echo -6 >  /sys/devices/system/cpu/cpu7/sched_load_boost
             echo 85 > /sys/devices/system/cpu/cpu6/cpufreq/schedutil/hispeed_load
 
-            echo "0:1324800" > /sys/module/cpu_boost/parameters/input_boost_freq
+            echo "0:1382400" > /sys/module/cpu_boost/parameters/input_boost_freq
             echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
-            echo "0:1324800 1:0 2:0 3:0 4:0 5:0 6:2169600 7:0" > /sys/module/cpu_boost/parameters/powerkey_input_boost_freq
-            echo 400 > /sys/module/cpu_boost/parameters/powerkey_input_boost_ms
 
             # Set Memory parameters
             configure_memory_parameters
