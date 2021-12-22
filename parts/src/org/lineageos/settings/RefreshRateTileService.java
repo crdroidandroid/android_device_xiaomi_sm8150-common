@@ -33,7 +33,7 @@ public class RefreshRateTileService extends TileService {
     private Context context;
     private Tile tile;
 
-    private final List<Integer> availableRates = new ArrayList<>();
+    private final List<Float> availableRates = new ArrayList<>();
     private int activeRateMin;
     private int activeRateMax;
 
@@ -44,7 +44,7 @@ public class RefreshRateTileService extends TileService {
         Display.Mode mode = context.getDisplay().getMode();
         Display.Mode[] modes = context.getDisplay().getSupportedModes();
         for (Display.Mode m : modes) {
-            int rate = (int) Math.round(m.getRefreshRate());
+            float rate = Float.valueOf(String.format(Locale.US, "%.02f", m.getRefreshRate()));
             if (m.getPhysicalWidth() == mode.getPhysicalWidth() &&
                 m.getPhysicalHeight() == mode.getPhysicalHeight()) {
                 availableRates.add(rate);
@@ -55,8 +55,8 @@ public class RefreshRateTileService extends TileService {
 
     private int getSettingOf(String key) {
         float rate = Settings.System.getFloat(context.getContentResolver(), key, 60);
-        int active = availableRates.indexOf((int) Math.round(rate));
-        return Math.max(active, 0);
+        return availableRates.indexOf(
+                Float.valueOf(String.format(Locale.US, "%.02f", rate)));
     }
 
     private void syncFromSettings() {
@@ -76,12 +76,18 @@ public class RefreshRateTileService extends TileService {
         Settings.System.putFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, rate);
     }
 
+    private String getFormatRate(float rate) {
+        return String.format("%.02f Hz", rate)
+                            .replaceAll("[\\.,]00", "");
+    }
+
     private void updateTileView() {
         String displayText;
-        int min = availableRates.get(activeRateMin);
-        int max = availableRates.get(activeRateMax);
+        float min = availableRates.get(activeRateMin);
+        float max = availableRates.get(activeRateMax);
 
-        displayText = String.format(Locale.US, min == max ? "%d Hz" : "%d - %d Hz", min, max);
+        displayText = String.format(Locale.US, min == max ? "%s" : "%s - %s",
+            getFormatRate(min), getFormatRate(max));
         tile.setContentDescription(displayText);
         tile.setSubtitle(displayText);
         tile.setState(min == max ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
