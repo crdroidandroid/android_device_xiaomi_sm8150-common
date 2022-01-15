@@ -1,6 +1,6 @@
-type power_prop, property_type;
+type vendor_power_prop, property_type;
 
-type thermal_normal_prop, property_type;
+type vendor_thermal_normal_prop, property_type;
 
 type vendor_device_prop, property_type;
 
