@@ -2,6 +2,7 @@
 ro.boot.hwc              u:object_r:exported_default_prop:s0
 ro.build.flavor          u:object_r:exported_default_prop:s0
 ro.carrier.name          u:object_r:exported_default_prop:s0
+ro.hardware.chipname     u:object_r:exported_default_prop:s0
 ro.product.marketname    u:object_r:build_prop:s0
 ro.product.mod_device    u:object_r:build_prop:s0
 
@@ -26,3 +27,10 @@ vendor.sys.camerainfo   u:object_r:exported_system_prop:s0
 
 # Recovery
 ro.build.expect.        u:object_r:exported_default_prop:s0
+
+# Settings
+settingsdebug.instant.packages          u:object_r:exported_system_prop:s0
+persist.input.velocitytracker.          u:object_r:exported_system_prop:s0
+renderthread.skia.                      u:object_r:exported_system_prop:s0
+ro.input.resampling                     u:object_r:exported_system_prop:s0
+viewroot.profile_rendering              u:object_r:exported_system_prop:s0
