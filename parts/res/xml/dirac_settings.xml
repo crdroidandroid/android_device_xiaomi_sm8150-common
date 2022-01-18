@@ -29,7 +29,8 @@
         android:entryValues="@array/dirac_headset_pref_values"
         android:defaultValue="0"
         android:title="@string/dirac_headset_title"
-        android:summary="%s" />
+        android:summary="%s"
+        android:icon="@drawable/ic_headphone" />
 
     <ListPreference
         android:key="dirac_preset_pref"
@@ -37,7 +38,8 @@
         android:entryValues="@array/dirac_preset_pref_values"
         android:defaultValue="0,0,0,0,0,0,0"
         android:title="@string/dirac_preset_title"
-        android:summary="%s" />
+        android:summary="%s"
+        android:icon="@drawable/ic_preset" />
 
     <ListPreference
         android:key="scenario_selection"
@@ -45,12 +47,14 @@
         android:entryValues="@array/scenario_selector_values"
         android:defaultValue="4"
         android:title="@string/music_headset_scenario_select"
-        android:summary="%s" />
+        android:summary="%s"
+        android:icon="@drawable/ic_scenes" />
 
     <SwitchPreference
         android:key="dirac_hifi_pref"
         android:defaultValue="false"
         android:title="@string/dirac_hifi_title"
-        android:summary="@string/dirac_hifi_summary"/>
+        android:summary="@string/dirac_hifi_summary"
+        android:icon="@drawable/ic_hifi" />
 
 </PreferenceScreen>
