@@ -25,6 +25,7 @@ import android.util.Log;
 import org.lineageos.settings.dirac.DiracUtils;
 import org.lineageos.settings.haptic.HapticUtils;
 import org.lineageos.settings.thermal.ThermalUtils;
+import org.lineageos.settings.refreshrate.RefreshUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
 
@@ -37,5 +38,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         DiracUtils.initialize(context);
         HapticUtils.restoreLevel(context);
         ThermalUtils.initialize(context);
+        RefreshUtils.startService(context);
     }
 }
