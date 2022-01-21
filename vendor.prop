@@ -227,6 +227,7 @@ persist.backup.ntpServer=0.pool.ntp.org
 # Graphics
 debug.egl.hw=0
 debug.mdpcomp.logs=0
+debug.renderengine.backend=skiaglthreaded
 debug.sf.disable_backpressure=1
 debug.sf.early.sf.duration=16600000
 debug.sf.early.app.duration=16600000
