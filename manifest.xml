@@ -128,7 +128,7 @@
     <hal format="hidl">
         <name>vendor.qti.data.factory</name>
         <transport>hwbinder</transport>
-        <fqname>@2.1::IFactory/default</fqname>
+        <fqname>@2.3::IFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.esepowermanager</name>
@@ -287,7 +287,7 @@
     <hal format="hidl">
         <name>vendor.qti.ims.factory</name>
         <transport>hwbinder</transport>
-        <fqname>@1.0::IImsFactory/default</fqname>
+        <fqname>@1.1::IImsFactory/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.imsrtpservice</name>
