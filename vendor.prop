@@ -227,6 +227,7 @@ vendor.gatekeeper.disable_spu=true
 persist.backup.ntpServer=0.pool.ntp.org
 
 # Graphics
+debug.cpurend.vsync=false
 debug.egl.hw=0
 debug.hwui.renderer=skiagl
 debug.mdpcomp.logs=0
