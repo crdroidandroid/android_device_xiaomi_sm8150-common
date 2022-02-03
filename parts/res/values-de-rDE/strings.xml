@@ -17,10 +17,14 @@
 -->
 <resources>
     <!-- Dirac settings -->
-    <string name="dirac_title">Mi Klangverbesserung</string>
+    <string name="dirac_enable">Verwende Mi Sound Enhancer</string>
+    <string name="dirac_title">Mi Sound Enhancer</string>
     <string name="dirac_summary">Audioqualität optimieren</string>
     <string name="dirac_headset_title">Kopfhörertyp auswählen</string>
     <string name="dirac_preset_title">Vorgabe auswählen</string>
+    <string name="dirac_hifi_enable_title"> Aktiviere Hi-fi</string>
+    <string name="dirac_hifi_title">Hi-Fi</string>
+    <string name="dirac_hifi_summary">Reduzierung von Rauschen und Verzerrungen und Verbesserung der Audioqualität</string>
     <!-- Dirac settings: Headset types -->
     <string name="dirac_headset_default">Standard</string>
     <string name="dirac_headset_earbuds">Mi Ohrhörer</string>
@@ -56,4 +60,14 @@
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metal</string>
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Thermal-Profile</string>
+    <string name="thermal_summary">Anpassung der thermischen Profile je Anwendung für optimale Leistung</string>
+    <string name="thermal_default">Default</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_browser">Browser</string>
+    <string name="thermal_camera">Camera</string>
+    <string name="thermal_dialer">Telefon</string>
+    <string name="thermal_gaming">Spiele</string>
+    <string name="thermal_streaming">Streaming</string>
 </resources>
