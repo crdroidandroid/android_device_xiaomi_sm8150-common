@@ -17,10 +17,14 @@
 -->
 <resources>
     <!-- Dirac settings -->
+    <string name="dirac_enable">Utilitza el potenciador de so Mi</string>
     <string name="dirac_title">Potenciador de so Mi</string>
     <string name="dirac_summary">Optimitza la qualitat d\'àudio</string>
     <string name="dirac_headset_title">Seleccioneu el tipus d\'auriculars</string>
     <string name="dirac_preset_title">Trieu una configuració per defecte</string>
+    <string name="dirac_hifi_enable_title">Habilitar Hi-fi</string>
+    <string name="dirac_hifi_title">Hi-Fi</string>
+    <string name="dirac_hifi_summary">Augmenta la qualitat de l\'àudio disminuint el soroll i la distorsió</string>
     <!-- Dirac settings: Headset types -->
     <string name="dirac_headset_default">Per defecte</string>
     <string name="dirac_headset_earbuds">Mi</string>
@@ -56,4 +60,14 @@
     <string name="dirac_preset_country">Country</string>
     <string name="dirac_preset_dance">Dance</string>
     <string name="dirac_preset_metal">Metall</string>
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Perfils Térmics</string>
+    <string name="thermal_summary">Ajusta els perfils tèrmics per aplicació per a un rendiment òptim</string>
+    <string name="thermal_default">Per defecte</string>
+    <string name="thermal_benchmark">Benchmark</string>
+    <string name="thermal_browser">Navegador</string>
+    <string name="thermal_camera">Càmera</string>
+    <string name="thermal_dialer">Telèfon</string>
+    <string name="thermal_gaming">Gaming</string>
+    <string name="thermal_streaming">Streaming</string>
 </resources>
