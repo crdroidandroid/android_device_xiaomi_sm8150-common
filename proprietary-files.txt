@@ -441,9 +441,9 @@ system_ext/lib64/vendor.qti.ims.factory@1.0.so|7d468f0636ce9671d23492b06d0ab1636
 system_ext/lib64/vendor.qti.ims.factory@1.1.so|a3f670e0dce45a8371300f2919c806a2dc5e2b80
 system_ext/lib64/vendor.qti.ims.rcsconfig@1.0.so|da8c5e108fdb9a546d37a78147872207e9ead8be
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|0c11ff5a7a671073ee40e17d46aa8b7acbf1dc0a
+-system_ext/priv-app/ims/ims.apk|664d341b2cbd4c52c5113b0e7a9af1582e75e997
 
 # IMS
--system_ext/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -827,8 +827,8 @@ vendor/etc/init/vendor.qti.hardware.soter@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.soter@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.soter@1.0.so
 
-# Telephony (qti-telephony-common)- from LA.UM.9.1.r1-10900-SMxxx0.0
-system_ext/framework/qti-telephony-common.jar|a22ed88e0cd81ea8c4788c26494c8b5fd666ec7c
+# Telephony (qti-telephony-common)
+system_ext/framework/qti-telephony-common.jar|e2fc79e0c07cad7a3564a3151d46d6f379637358
 
 # Thermal
 vendor/bin/mi_thermald
