@@ -1,9 +1,9 @@
 cc_binary {
-    name: "android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msmnile",
+    name: "android.hardware.biometrics.fingerprint@2.3-service.xiaomi_msmnile",
     defaults: ["hidl_defaults"],
     relative_install_path: "hw",
-    init_rc: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msmnile.rc"],
-    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.1-service.xiaomi_msmnile.xml"],
+    init_rc: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_msmnile.rc"],
+    vintf_fragments: ["android.hardware.biometrics.fingerprint@2.3-service.xiaomi_msmnile.xml"],
     srcs: [
         "BiometricsFingerprint.cpp",
         "service.cpp",
@@ -15,6 +15,8 @@ cc_binary {
         "libhardware",
         "libutils",
         "android.hardware.biometrics.fingerprint@2.1",
+        "android.hardware.biometrics.fingerprint@2.2",
+        "android.hardware.biometrics.fingerprint@2.3",
         "//hardware/xiaomi:vendor.xiaomi.hardware.fingerprintextension@1.0",
     ],
     vendor: true,
