@@ -108,5 +108,14 @@
             </intent-filter>
         </service>
 
+        <activity
+            android:name=".TileEntryActivity"
+            android:label="@string/device_settings_app_name"
+            android:theme="@style/Theme.Main">
+            <intent-filter>
+                <action android:name="android.service.quicksettings.action.QS_TILE_PREFERENCES" />
+            </intent-filter>
+        </activity>
+
     </application>
 </manifest>
