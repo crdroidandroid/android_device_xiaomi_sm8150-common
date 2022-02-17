@@ -17,10 +17,14 @@
 -->
 <resources>
     <!-- Dirac settings -->
+    <string name="dirac_enable">Активувати dirac</string>
     <string name="dirac_title">Покращення звуку \"Мі Sound\"</string>
     <string name="dirac_summary">Поліпшити якість звуку</string>
     <string name="dirac_headset_title">Тип навушників</string>
     <string name="dirac_preset_title">Виберіть налаштування</string>
+    <string name="dirac_hifi_enable_title">Активувати Hi-fi</string>
+    <string name="dirac_hifi_title">Hi-Fi</string>
+    <string name="dirac_hifi_summary">Зменшити шум і спотворення, та поліпшити якість звуку</string>
     <!-- Dirac settings: Headset types -->
     <string name="dirac_headset_default">За замовчуванням</string>
     <string name="dirac_headset_earbuds">Навушники Xiaomi</string>
@@ -56,4 +60,16 @@
     <string name="dirac_preset_country">Кантрі</string>
     <string name="dirac_preset_dance">Танцювальна</string>
     <string name="dirac_preset_metal">Метал</string>
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Профілі оптимізації</string>
+    <string name="thermal_summary">Встановити профілі оптимізації для оптимальної продуктивності застосунків</string>
+    <string name="thermal_default">За замовчуванням</string>
+    <string name="thermal_benchmark">Бенчмарк</string>
+    <string name="thermal_browser">Браузер</string>
+    <string name="thermal_camera">Камера</string>
+    <string name="thermal_dialer">Дзвінки</string>
+    <string name="thermal_gaming">Ігри</string>
+    <string name="thermal_youtube">Youtube</string>
+    <!-- Refresh Rate Settings -->
+    <string name="refresh_rate_tile_title">частота оновлення</string>
 </resources>
