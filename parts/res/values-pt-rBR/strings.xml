@@ -70,4 +70,6 @@
     <string name="thermal_dialer">Chamadas</string>
     <string name="thermal_gaming">Jogos</string>
     <string name="thermal_streaming">Streaming</string>
+    <!-- Refresh Rate Settings -->
+    <string name="refresh_rate_tile_title">Taxa de atualização</string>
 </resources>
