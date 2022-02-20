@@ -70,4 +70,6 @@
     <string name="thermal_dialer">Telefon</string>
     <string name="thermal_gaming">Spiele</string>
     <string name="thermal_streaming">Streaming</string>
+    <!-- Refresh Rate Settings -->
+    <string name="refresh_rate_tile_title">Aktualisierungsrate</string>
 </resources>
