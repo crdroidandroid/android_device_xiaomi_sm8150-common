@@ -192,8 +192,6 @@ persist.sys.fuse.passthrough.enable=true
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.egl.hw=0
-debug.mdpcomp.logs=0
 debug.sf.auto_latch_unsignaled=0
 debug.sf.disable_backpressure=1
 debug.sf.disable_client_composition_cache=1
@@ -205,7 +203,6 @@ debug.sf.high_fps_early_gl_phase_offset_ns=-4000000
 debug.sf.high_fps_early_phase_offset_ns=-4000000
 debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
-debug.sf.hw=0
 debug.sf.predict_hwc_composition_strategy=0
 debug.sf.treat_170m_as_sRGB=1
 ro.hardware.egl=adreno
