@@ -443,6 +443,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_BOOT_JARS += \
     telephony-ext
 
+# Touch
+PRODUCT_PACKAGES += \
+    vendor.lineage.touch@1.0-service.xiaomi_sm8150
+
 # Trust
 PRODUCT_PACKAGES += \
     vendor.lineage.trust@1.0-service
