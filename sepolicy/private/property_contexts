@@ -17,16 +17,17 @@ ro.ril.oem.imei                u:object_r:deviceid_prop:s0
 ro.ril.oem.meid                u:object_r:deviceid_prop:s0
 
 # MIUI
-ro.camera.req.          u:object_r:exported_system_prop:s0
-ro.camera.res.          u:object_r:exported_system_prop:s0
-ro.cust.test            u:object_r:exported_system_prop:s0
-ro.miui.                u:object_r:exported_system_prop:s0
-tas.smartpa.            u:object_r:exported_system_prop:s0
-vendor.panel.display    u:object_r:exported_system_prop:s0
-vendor.sys.camerainfo   u:object_r:exported_system_prop:s0
+persist.sensor.sardisable               u:object_r:exported_system_prop:s0
+ro.camera.req.                          u:object_r:exported_system_prop:s0
+ro.camera.res.                          u:object_r:exported_system_prop:s0
+ro.cust.test                            u:object_r:exported_system_prop:s0
+ro.miui.                                u:object_r:exported_system_prop:s0
+tas.smartpa.                            u:object_r:exported_system_prop:s0
+vendor.panel.display                    u:object_r:exported_system_prop:s0
+vendor.sys.camerainfo                   u:object_r:exported_system_prop:s0
 
 # Recovery
-ro.build.expect.        u:object_r:exported_default_prop:s0
+ro.build.expect.                        u:object_r:exported_default_prop:s0
 
 # Settings
 settingsdebug.instant.packages          u:object_r:exported_system_prop:s0
