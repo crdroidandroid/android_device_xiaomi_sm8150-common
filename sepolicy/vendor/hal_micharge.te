@@ -1,0 +1,5 @@
+# HwBinder IPC from client to server
+binder_call(hal_micharge_client, hal_micharge_server)
+
+add_hwservice(hal_micharge_server, hal_micharge_hwservice)
+allow hal_micharge_client hal_micharge_hwservice:hwservice_manager find;
