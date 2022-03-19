@@ -97,4 +97,18 @@
         <item>"2,0,0,-2,-4,0,0"</item>
         <item>"10,8,-3,0,-3,5,5"</item>
     </string-array>
+
+    <string-array name="scenario_selector_titles" translatable="false">
+        <item>@string/music_headset_scenario_intelligent</item>
+        <item>@string/music_headset_scenario_music</item>
+        <item>@string/music_headset_scenario_video</item>
+        <item>@string/music_headset_scenario_vocal</item>
+    </string-array>
+
+    <string-array name="scenario_selector_values" translatable="false">
+        <item>4</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array> 
 </resources>
