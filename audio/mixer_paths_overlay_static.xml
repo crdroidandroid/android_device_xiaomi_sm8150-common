@@ -840,7 +840,7 @@
         <path name="amic2" />
         <ctl name="External AMIC2 Mux" value="default" />
         <ctl name="ADC2 Volume" value="6" />
-        <ctl name="DEC1 Volume" value="84" />
+        <ctl name="DEC1 Volume" value="100" />
     </path>
 
     <path name="voice-headset-mic">
@@ -899,7 +899,7 @@
         <ctl name="RX INT2_2 MUX" value="RX3" />
         <ctl name="COMP1 Switch" value="0" />
         <ctl name="COMP2 Switch" value="0" />
-        <ctl name="RX1 Digital Volume" value="84" />
+        <ctl name="RX1 Digital Volume" value="100" />
         <ctl name="RX2 Digital Volume" value="84" />
     </path>
 
