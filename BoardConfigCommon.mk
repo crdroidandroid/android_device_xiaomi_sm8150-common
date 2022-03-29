@@ -112,7 +112,10 @@ BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_KERNEL_SEPARATED_DTBO := true
 BOARD_MKBOOTIMG_ARGS += --header_version $(BOARD_BOOT_HEADER_VERSION)
 TARGET_KERNEL_SOURCE := kernel/xiaomi/sm8150
-TARGET_KERNEL_CONFIG := vendor/sm8150-perf_defconfig vendor/xiaomi/sm8150-common.config
+TARGET_KERNEL_CONFIG := \
+    vendor/sm8150-perf_defconfig \
+    vendor/debugfs.config \
+    vendor/xiaomi/sm8150-common.config
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
