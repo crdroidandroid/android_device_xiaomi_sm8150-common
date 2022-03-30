@@ -2389,6 +2389,44 @@
         <path name="hfp-sco headphones" />
     </path>
 
+    <path name="speaker-tr">
+    </path>
+
+    <path name="speaker-tl">
+    </path>
+
+    <path name="speaker-br">
+    </path>
+
+    <path name="speaker-bl">
+    </path>
+
+    <path name="four-channel-speaker">
+        <ctl name="QUAT_TDM_TX_0 Channels" value="Four" />
+        <ctl name="QUAT_TDM_RX_0 Channels" value="Four" />
+        <ctl name="QUAT_TDM_RX_0 Format" value="S24_LE" />
+        <ctl name="TR ASPTX Ref" value="Ref" />
+        <ctl name="TL ASPTX Ref" value="Ref" />
+        <ctl name="BR ASPTX Ref" value="Ref" />
+        <ctl name="BL ASPTX Ref" value="Ref" />
+        <ctl name="TR PCM Source" value="DSP" />
+        <ctl name="TL PCM Source" value="DSP" />
+        <ctl name="BR PCM Source" value="DSP" />
+        <ctl name="BL PCM Source" value="DSP" />
+        <ctl name="TR ASPRX1 Slot Position" value="4" />
+        <ctl name="TR ASPRX2 Slot Position" value="0" />
+        <ctl name="BR ASPRX1 Slot Position" value="5" />
+        <ctl name="BR ASPRX2 Slot Position" value="1" />
+        <ctl name="TL ASPRX1 Slot Position" value="6" />
+        <ctl name="TL ASPRX2 Slot Position" value="2" />
+        <ctl name="BL ASPRX1 Slot Position" value="7" />
+        <ctl name="BL ASPRX2 Slot Position" value="3" />
+        <ctl name="TR Channel Swap" value="Off" />
+        <ctl name="TL Channel Swap" value="Off" />
+        <ctl name="BR Channel Swap" value="Off" />
+        <ctl name="BL Channel Swap" value="Off" />
+    </path>
+
    <path name="hfp-sco-wb">
         <path name="hfp-sco" />
    </path>
