@@ -48,9 +48,9 @@ namespace android {
 namespace hardware {
 namespace vibrator {
 
-#define STRONG_MAGNITUDE        0x7fff
-#define MEDIUM_MAGNITUDE        0x5fff
-#define LIGHT_MAGNITUDE         0x3fff
+#define STRONG_MAGNITUDE        0x9fff
+#define MEDIUM_MAGNITUDE        0x7fff
+#define LIGHT_MAGNITUDE         0x5fff
 #define INVALID_VALUE           -1
 #define CUSTOM_DATA_LEN         3
 #define NAME_BUF_SIZE           32
@@ -290,7 +290,7 @@ int InputFFDevice::setAmplitude(uint8_t amplitude) {
         return 0;
 
     tmp = amplitude * (STRONG_MAGNITUDE - LIGHT_MAGNITUDE) / 255;
-    tmp += LIGHT_MAGNITUDE;
+    tmp += MEDIUM_MAGNITUDE;
     ie.type = EV_FF;
     ie.code = FF_GAIN;
     ie.value = tmp;
