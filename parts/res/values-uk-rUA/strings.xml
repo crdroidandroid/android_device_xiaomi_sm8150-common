@@ -69,7 +69,6 @@
     <string name="thermal_camera">Камера</string>
     <string name="thermal_dialer">Дзвінки</string>
     <string name="thermal_gaming">Ігри</string>
-    <string name="thermal_youtube">Youtube</string>
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">частота оновлення</string>
 </resources>

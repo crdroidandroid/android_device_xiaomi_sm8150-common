@@ -72,4 +72,19 @@
     <string name="thermal_streaming">Streaming</string>
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Taxa de actualización</string>
+    <string name="refresh_title">Taxa de actualización por aplicación</string>
+    <string name="refresh_summary">Defina a frecuencia de actualización máxima para unha aplicación específica</string>
+    <string name="refresh_default">Por defecto</string>
+    <string name="refresh_low">Baixa (30Hz)</string>
+    <string name="refresh_moderate">Moderada (50Hz)</string>
+    <string name="refresh_standard">Standard (60Hz)</string>
+    <string name="refresh_high">Alta (90Hz)</string>
+    <string name="refresh_extreme">Extrema (120Hz)</string>
+     <!-- Haptic Level Settings -->
+     <string name="haptic_title">Controlador de vibração</string>
+     <string name="haptic_warning">A configuração de nível háptico muito alto pode causar danos permanentes ao hardware, use por sua conta e risco</string>
+     <string name="haptic_summary">Personalize a intensidade da vibração</string>
+     <string name="haptic_level_title">Nível</string>
+     <string name="haptic_level_summary">A quantidade de intensidade de vibração</string>
+     <string name="haptic_level_summary_incompatible">Recurso não suportado</string>
 </resources>

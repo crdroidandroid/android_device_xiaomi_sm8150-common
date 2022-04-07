@@ -72,4 +72,19 @@
     <string name="thermal_streaming">Streaming</string>
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Aktualisierungsrate</string>
+    <string name="refresh_title">App Aktualisierungsrate</string>
+    <string name="refresh_summary">Maximale Aktualisierungsrate je App anpassen</string>
+    <string name="refresh_default">Default</string>
+    <string name="refresh_low">Niedrig (30Hz)</string>
+    <string name="refresh_moderate">Moderat (50Hz)</string>
+    <string name="refresh_standard">Standard (60Hz)</string>
+    <string name="refresh_high">Hoch (90Hz)</string>
+    <string name="refresh_extreme">Extrem (120Hz)</string>
+     <!-- Haptic Level Settings -->
+     <string name="haptic_title">Haptisches Feedback</string>
+     <string name="haptic_warning">Eine zu hohe Einstellung der Vibrationsintensität kann zu dauerhaften Hardwareschäden führen. Die Verwendung erfolgt auf eigene Gefahr!</string>
+     <string name="haptic_summary">Vibrationsintensität anpassen</string>
+     <string name="haptic_level_title">Pegel</string>
+     <string name="haptic_level_summary">Stärke der Vibrationsintensität</string>
+     <string name="haptic_level_summary_incompatible">Funktion wird nicht unterstützt</string>
 </resources>
