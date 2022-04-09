@@ -83,7 +83,7 @@
     <string name="refresh_moderate">Moderate (50Hz)</string>
     <string name="refresh_standard">Standard (60Hz)</string>
     <string name="refresh_high">High (90Hz)</string>
-    <string name="refresh_extreme">Extreme (120Hz)</string>
+    <string name="refresh_extreme">Smooth (120Hz)</string>
 
      <!-- Haptic Level Settings -->
      <string name="haptic_title">Haptic feedback</string>
