@@ -256,6 +256,10 @@ ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.gralloc.disable_ubwc=0
 
+# IMS
+persist.vendor.ims.disableADBLogs=1
+persist.vendor.ims.disableIMSLogs=1
+
 # Media
 debug.stagefright.ccodec=1
 debug.stagefright.omx_default_rank=0
