@@ -262,9 +262,6 @@ vendor.power.pasr.enabled=false
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 
-# Qualcomm System Daemon
-persist.vendor.qcomsysd.enabled=1
-
 # Radio
 persist.data.df.iwlan_mux=9
 persist.radio.dynamic_sar=false
