@@ -16,6 +16,17 @@
      limitations under the License.
 -->
 <resources>
+    <!-- Thermal Profiles -->
+    <string name="thermal_title">Профілі оптимізації</string>
+    <string name="thermal_summary">Встановити профілі оптимізації для оптимальної продуктивності застосунків</string>
+    <string name="thermal_default">За замовчуванням</string>
+    <string name="thermal_benchmark">Бенчмарк</string>
+    <string name="thermal_browser">Браузер</string>
+    <string name="thermal_camera">Камера</string>
+    <string name="thermal_dialer">Дзвінки</string>
+    <string name="thermal_gaming">Ігри</string>
+    <string name="thermal_streaming">Стрімінговий сервіс</string>
+   
     <!-- Dirac settings -->
     <string name="dirac_enable">Активувати dirac</string>
     <string name="dirac_title">Покращення звуку \"Мі Sound\"</string>
@@ -60,15 +71,24 @@
     <string name="dirac_preset_country">Кантрі</string>
     <string name="dirac_preset_dance">Танцювальна</string>
     <string name="dirac_preset_metal">Метал</string>
-    <!-- Thermal Profiles -->
-    <string name="thermal_title">Профілі оптимізації</string>
-    <string name="thermal_summary">Встановити профілі оптимізації для оптимальної продуктивності застосунків</string>
-    <string name="thermal_default">За замовчуванням</string>
-    <string name="thermal_benchmark">Бенчмарк</string>
-    <string name="thermal_browser">Браузер</string>
-    <string name="thermal_camera">Камера</string>
-    <string name="thermal_dialer">Дзвінки</string>
-    <string name="thermal_gaming">Ігри</string>
+    <string name="dirac_preset_bass_booster">Посилення басу</string>
+    <!-- Dirac Sound Enhancer tile -->
+    <string name="dirac_qs_tile_title">Покращення звуку \"Мі Sound\"</string>
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">частота оновлення</string>
+    <string name="refresh_title">Частота оновлення для застосунків</string>
+    <string name="refresh_summary">Налаштування максимальної частоти оновлення для кожного застосунку</string>
+    <string name="refresh_default">За замовчуванням</string>
+    <string name="refresh_low">Низька (30Гц)</string>
+    <string name="refresh_moderate">Середня (50 Гц)</string>
+    <string name="refresh_standard">Стандартна (60Гц)</string>
+    <string name="refresh_high">Висока (90Гц)</string>
+    <string name="refresh_extreme">Плавна (120Гц)</string>
+    <!-- Haptic Level Settings -->
+    <string name="haptic_title">Тактильний відгук</string>
+    <string name="haptic_warning">Встановлення надто високого рівня тактильного відгуку може призвести до незворотним пошкодженням обладнання, використовуйте на свій страх і ризик</string>
+    <string name="haptic_summary">Налаштування інтенсивності вібрації</string>
+    <string name="haptic_level_title">Рівень</string>
+    <string name="haptic_level_summary">Сила інтенсивності вібрації</string>
+    <string name="haptic_level_summary_incompatible">Функція не підтримується</string>
 </resources>

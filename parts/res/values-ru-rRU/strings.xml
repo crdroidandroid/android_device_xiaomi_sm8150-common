@@ -71,6 +71,24 @@
     <string name="dirac_preset_country">Кантри</string>
     <string name="dirac_preset_dance">Танцевальная</string>
     <string name="dirac_preset_metal">Металл</string>
+    <string name="dirac_preset_bass_booster">Усиление баса</string>
+    <!-- Dirac Sound Enhancer tile -->
+    <string name="dirac_qs_tile_title">Улучшение звука Mi</string>
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Частота обновления</string>
+    <string name="refresh_title">Частота обновления для приложений</string>
+    <string name="refresh_summary">Настройка максимальной частоты обновления для каждого приложения</string>
+    <string name="refresh_default">По умолчанию</string>
+    <string name="refresh_low">Низкая (30Гц)</string>
+    <string name="refresh_moderate">Средняя (50 Гц)</string>
+    <string name="refresh_standard">Стандартная (60Гц)</string>
+    <string name="refresh_high">Высокая (90Гц)</string>
+    <string name="refresh_extreme">Плавная (120Гц)</string>
+    <!-- Haptic Level Settings -->
+    <string name="haptic_title">Тактильный отклик</string>
+    <string name="haptic_warning">Установка слишком высокого уровня тактильного отклика может привести к необратимому повреждению оборудования, используйте на свой страх и риск</string>
+    <string name="haptic_summary">Настройка интенсивности вибрации</string>
+    <string name="haptic_level_title">Уровень</string>
+    <string name="haptic_level_summary">Сила интенсивности вибрации</string>
+    <string name="haptic_level_summary_incompatible">Функция не поддерживается</string>
 </resources>
