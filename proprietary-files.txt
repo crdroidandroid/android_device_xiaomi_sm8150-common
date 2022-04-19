@@ -51,6 +51,7 @@ vendor/lib/rfsa/adsp/tas25xx_TI_0.bin
 # ANT+
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
+vendor/lib64/hw/com.dsi.ant@1.0-impl.so|87dc1a131534659173e71e108e7a3ffe6325845f
 
 # Audio
 vendor/lib/libadiertac.so
