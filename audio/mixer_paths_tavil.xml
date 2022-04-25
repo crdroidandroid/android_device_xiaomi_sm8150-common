@@ -2619,10 +2619,6 @@
         <path name="audio-playback-voip bt-sco" />
     </path>
 
-    <path name="audio-playback-voip bt-a2dp">
-        <ctl name="SLIMBUS_7_RX Audio Mixer MultiMedia10" value="1" />
-    </path>
-
     <path name="audio-playback-voip afe-proxy">
         <ctl name="AFE_PCM_RX Audio Mixer MultiMedia10" value="1" />
     </path>
@@ -4122,10 +4118,6 @@
         <path name="incall_music_uplink" />
     </path>
 
-    <path name="incall_music_uplink afe-proxy">
-        <path name="incall_music_uplink" />
-    </path>
-
     <path name="incall_music_uplink call-proxy">
         <path name="incall_music_uplink" />
     </path>
@@ -4199,10 +4191,6 @@
     </path>
 
     <path name="incall_music_uplink2 bt-a2dp">
-        <path name="incall_music_uplink2" />
-    </path>
-
-    <path name="incall_music_uplink2 afe-proxy">
         <path name="incall_music_uplink2" />
     </path>
 
