@@ -2825,10 +2825,6 @@
         <path name="incall_music_uplink2" />
     </path>
 
-    <path name="incall_music_uplink2 afe-proxy">
-        <path name="incall_music_uplink2" />
-    </path>
-
     <path name="call-proxy">
     </path>
 
