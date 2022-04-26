@@ -40,3 +40,28 @@ void set_ro_build_prop(const std::string &prop, const std::string &value, bool p
         property_override(prop_name, value, true);
     }
 }
+
+#define FIND_AND_REMOVE(s, delimiter, variable_name) \
+    std::string variable_name = s.substr(0, s.find(delimiter)); \
+    s.erase(0, s.find(delimiter) + delimiter.length());
+
+const std::string fingerprint_to_description(const std::string &fingerprint) {
+    const std::string delimiter = "/";
+    const std::string delimiter2 = ":";
+
+    std::string build_fingerprint_copy = fingerprint;
+
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter, brand)
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter, product)
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter2, device)
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter, platform_version)
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter, build_id)
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter2, build_number)
+    FIND_AND_REMOVE(build_fingerprint_copy, delimiter, build_variant)
+    std::string build_version_tags = build_fingerprint_copy;
+
+    const std::string description = product + "-" + build_variant + " " + platform_version +
+            " " + build_id + " " + build_number + " " + build_version_tags;
+
+    return description;
+}
