@@ -511,6 +511,16 @@ vendor/lib/libqcodec2.so
 vendor/lib64/libmmosal.so
 vendor/lib64/libqcodec2.so
 
+# Media configs
+odm/etc/media_profiles_V1_0.xml
+vendor/etc/media_codecs.xml
+vendor/etc/media_codecs_c2.xml
+vendor/etc/media_codecs_performance.xml
+vendor/etc/media_codecs_vendor.xml
+vendor/etc/media_codecs_vendor_audio.xml
+vendor/etc/media_profiles.xml
+vendor/etc/media_profiles_vendor.xml
+
 # Mlipay
 vendor/bin/mlipayd@1.1
 vendor/etc/init/vendor.xiaomi.hardware.mlipay@1.1-service.rc
