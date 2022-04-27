@@ -60,8 +60,6 @@ sh_binary {
 }
 
 // fstab
-// TODO on S:
-// https://android-review.googlesource.com/c/platform/build/soong/+/1532503
 soong_config_module_type {
     name: "xiaomi_msmnile_rootdir_prebuilt_etc",
     module_type: "prebuilt_etc",
@@ -77,7 +75,6 @@ soong_config_string_variable {
 
 xiaomi_msmnile_rootdir_prebuilt_etc {
     name: "fstab.qcom",
-    src: "etc/fstab_dynamic.qcom",
     soong_config_variables: {
         PARTITION_SCHEME: {
             dynamic: {
@@ -85,6 +82,9 @@ xiaomi_msmnile_rootdir_prebuilt_etc {
             },
             legacy: {
                 src: "etc/fstab_legacy.qcom",
+            },
+            conditions_default: {
+                src: "etc/fstab_dynamic.qcom",
             },
         },
     },
