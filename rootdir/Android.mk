@@ -1,7 +1,6 @@
 LOCAL_PATH := $(call my-dir)
 
-# TODO on S
-# - Move to Soong with prebuilt_root
+# prebuilt_root doesn't cover recovery ramdisk, that sucks
 
 include $(CLEAR_VARS)
 LOCAL_MODULE       := init.recovery.qcom.rc
