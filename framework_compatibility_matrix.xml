@@ -124,18 +124,6 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.goodix.hardware.cap.biometrics.fingerprint</name>
-        <version>2.0-1</version>
-        <interface>
-            <name>IGoodixFingerprintDaemon</name>
-            <instance>default</instance>
-        </interface>
-        <interface>
-            <name>IGoodixFingerprintDaemonExt</name>
-            <instance>default</instance>
-        </interface>
-    </hal>
-    <hal format="hidl" optional="true">
         <name>vendor.nxp.nxpnfc</name>
         <version>1.0</version>
         <interface>
@@ -492,6 +480,14 @@
         <version>1.0</version>
         <interface>
             <name>IXiaomiFingerprint</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.fx.tunnel</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMiFxTunnel</name>
             <instance>default</instance>
         </interface>
     </hal>
