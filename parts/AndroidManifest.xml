@@ -112,8 +112,9 @@
         </service>
 
         <service
-            android:name=".RefreshRateTileService"
-            android:icon="@drawable/ic_qs_refresh_rate"
+            android:name=".refreshrate.RefreshTileService"
+            android:exported="true"
+            android:icon="@drawable/ic_refresh_rate"
             android:label="@string/refresh_rate_tile_title"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
             <intent-filter>
