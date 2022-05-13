@@ -148,6 +148,7 @@ vendor.voice.path.for.pcm.voip=false
 
 # Bluetooth
 persist.bluetooth.a2dp_offload.disabled=false
+persist.vendor.bluetooth.ble_drop_power=true
 persist.vendor.bluetooth.drop_power=true
 persist.vendor.qcom.bluetooth.a2dp_offload_cap=sbc-aptx-aptxtws-aptxhd-aac-ldac-aptxadaptive
 persist.vendor.qcom.bluetooth.aac_frm_ctl.enabled=true
