@@ -591,7 +591,14 @@ vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
+vendor/bin/nqnfcinfo
+vendor/etc/libnfc-mtp-SN100.conf
+vendor/etc/libnfc-mtp-SN100_38_4MHZ.conf
+vendor/etc/libnfc-nxp-pnscr.conf
 vendor/etc/libnfc-nxp.conf
+vendor/etc/libnfc-nxp_RF.conf
+vendor/etc/libnfc-qrd-SN100.conf
+vendor/etc/libnfc-qrd-SN100_38_4MHZ.conf
 vendor/lib/libpn553_fw.so
 
 # OMX
