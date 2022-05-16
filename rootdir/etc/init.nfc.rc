@@ -11,5 +11,13 @@ service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
     group nfc
     disabled
 
+service qti_esepowermanager_service_1_1 /vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
+    override
+    class hal
+    user system
+    group nfc system
+    disabled
+
 on boot && property:ro.boot.product.hardware.sku=nfc
+    enable qti_esepowermanager_service_1_1
     enable vendor.nfc_hal_service
