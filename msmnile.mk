@@ -320,13 +320,20 @@ PRODUCT_PACKAGES += \
     android.hardware.neuralnetworks@1.3.vendor
 
 # NFC
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/nxp/opensource/pn5xx
+
 PRODUCT_PACKAGES += \
-    android.hardware.nfc@1.2-service \
+    android.hardware.secure_element@1.2.vendor \
     com.android.nfc_extras \
+    com.nxp.nfc.nq \
     libchrome.vendor \
-    NfcNci \
+    libnqnfc_nci_jni \
+    NQNfcNci \
+    nfc_nci.nqx.default.hw \
     SecureElement \
-    Tag
+    Tag \
+    vendor.nxp.hardware.nfc@2.0-service
 
 PRODUCT_COPY_FILES += \
      $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
@@ -377,7 +384,6 @@ PRODUCT_PACKAGES += \
     android.hardware.radio@1.6.vendor \
     android.hardware.radio.config@1.3.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
-    android.hardware.secure_element@1.2.vendor \
     libprotobuf-cpp-full \
     librmnetctl \
     libxml2
