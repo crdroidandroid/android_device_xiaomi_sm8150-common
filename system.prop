@@ -62,9 +62,6 @@ telephony.lteOnCdmaDevice=1
 persist.vendor.data.iwlan.enable=true
 persist.vendor.data.mode=concurrent
 
-# SSR
-persist.vendor.ssr.restart_level=ALL_ENABLE
-
 # Wireless display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
