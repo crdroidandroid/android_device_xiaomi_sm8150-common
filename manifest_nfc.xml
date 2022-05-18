@@ -10,13 +10,13 @@
         <fqname>@1.1::IEsePowerManager/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.nxp.nxpese</name>
+        <name>vendor.nxp.hardware.nfc</name>
         <transport>hwbinder</transport>
-        <fqname>@1.0::INxpEse/default</fqname>
+        <fqname>@2.0::INqNfc/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.nxp.nxpnfc</name>
+        <name>vendor.nxp.nxpnfclegacy</name>
         <transport>hwbinder</transport>
-        <fqname>@1.0::INxpNfc/default</fqname>
+        <fqname>@1.0::INxpNfcLegacy/default</fqname>
     </hal>
 </manifest>

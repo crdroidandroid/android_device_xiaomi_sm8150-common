@@ -132,10 +132,18 @@
         </interface>
     </hal>
     <hal format="hidl" optional="true">
-        <name>vendor.nxp.nxpnfc</name>
+        <name>vendor.nxp.hardware.nfc</name>
+        <version>2.0</version>
+        <interface>
+            <name>INqNfc</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.nxp.nxpnfclegacy</name>
         <version>1.0</version>
         <interface>
-            <name>INxpNfc</name>
+            <name>INxpNfcLegacy</name>
             <instance>default</instance>
         </interface>
     </hal>
