@@ -73,14 +73,13 @@ public class DiracSettingsFragment extends PreferenceFragment implements
         mHifi = (SwitchPreference) findPreference(PREF_HIFI);
         mHifi.setOnPreferenceChangeListener(this);
 
-        boolean hifiEnable = mDiracUtils != null ? mDiracUtils.getHifiMode() : false;
-        mHeadsetType.setEnabled(!hifiEnable && enhancerEnabled);
-        mPreset.setEnabled(!hifiEnable && enhancerEnabled);
-        mHifi.setEnabled(mDiracUtils != null && enhancerEnabled);
-
         mScenes = (ListPreference) findPreference(PREF_SCENE);
         mScenes.setOnPreferenceChangeListener(this);
-        mScenes.setEnabled(mDiracUtils != null && enhancerEnabled);
+
+        mHeadsetType.setEnabled(enhancerEnabled);
+        mPreset.setEnabled(enhancerEnabled);
+        mHifi.setEnabled(enhancerEnabled);
+        mScenes.setEnabled(enhancerEnabled);
     }
 
     @Override
@@ -92,10 +91,6 @@ public class DiracSettingsFragment extends PreferenceFragment implements
                 return true;
             case PREF_HIFI:
                 mDiracUtils.setHifiMode((Boolean) newValue ? 1 : 0);
-                if (mDiracUtils.isDiracEnabled()) {
-                    mHeadsetType.setEnabled(!(Boolean) newValue);
-                    mPreset.setEnabled(!(Boolean) newValue);
-                }
                 return true;
             case PREF_PRESET:
                 mDiracUtils.setLevel((String) newValue);
@@ -118,10 +113,5 @@ public class DiracSettingsFragment extends PreferenceFragment implements
         mHeadsetType.setEnabled(isChecked);
         mPreset.setEnabled(isChecked);
         mScenes.setEnabled(isChecked);
-
-        if (!isChecked){
-            mHifi.setChecked(false);
-            mDiracUtils.setHifiMode(0);
-        }
     }
 }
