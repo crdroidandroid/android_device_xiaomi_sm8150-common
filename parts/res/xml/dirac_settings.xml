@@ -47,16 +47,10 @@
         android:title="@string/music_headset_scenario_select"
         android:summary="%s" />
 
-    <PreferenceCategory
-        android:key="dirac_hifi"
-        android:title="@string/dirac_hifi_title">
-
-        <SwitchPreference
-            android:key="dirac_hifi_pref"
-            android:defaultValue="false"
-            android:title="@string/dirac_hifi_enable_title"
-            android:summary="@string/dirac_hifi_summary"/>
-
-    </PreferenceCategory>
+    <SwitchPreference
+        android:key="dirac_hifi_pref"
+        android:defaultValue="false"
+        android:title="@string/dirac_hifi_title"
+        android:summary="@string/dirac_hifi_summary"/>
 
 </PreferenceScreen>
