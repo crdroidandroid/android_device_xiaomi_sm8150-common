@@ -59,6 +59,7 @@
     <string name="dirac_headset_in_ear2">Mi In-Ear 2</string>
     <string name="dirac_headset_earphone_basic">Mi Earphones Basic</string>
     <string name="dirac_headset_earphone">Mi Earphones</string>
+    
     <!-- Dirac settings: Equalizer presets -->
     <string name="dirac_preset_default">За замовчуванням</string>
     <string name="dirac_preset_rock">Рок</string>
@@ -72,8 +73,16 @@
     <string name="dirac_preset_dance">Танцювальна</string>
     <string name="dirac_preset_metal">Метал</string>
     <string name="dirac_preset_bass_booster">Посилення басу</string>
+    <string name="dirac_preset_live">Жива музика</string>
+    <string name="dirac_preset_balanced">Збалансованмй</string>
+    <string name="dirac_preset_bass_reduction">Менше басів</string>
+    <string name="dirac_preset_treble_reduction">Менше високих частот</string>
+    <string name="dirac_preset_soft_bass">М'який бас</string>
+    <string name="dirac_preset_soft_treble">М'які високі частоти</string>
+
     <!-- Dirac Sound Enhancer tile -->
     <string name="dirac_qs_tile_title">Покращення звуку \"Мі Sound\"</string>
+
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">частота оновлення</string>
     <string name="refresh_title">Частота оновлення для застосунків</string>
@@ -84,6 +93,7 @@
     <string name="refresh_standard">Стандартна (60Гц)</string>
     <string name="refresh_high">Висока (90Гц)</string>
     <string name="refresh_extreme">Плавна (120Гц)</string>
+
     <!-- Haptic Level Settings -->
     <string name="haptic_title">Тактильний відгук</string>
     <string name="haptic_warning">Встановлення надто високого рівня тактильного відгуку може призвести до незворотним пошкодженням обладнання, використовуйте на свій страх і ризик</string>
@@ -91,4 +101,11 @@
     <string name="haptic_level_title">Рівень</string>
     <string name="haptic_level_summary">Сила інтенсивності вібрації</string>
     <string name="haptic_level_summary_incompatible">Функція не підтримується</string>
+
+    <!-- Scene Selection -->
+    <string name="music_headset_scenario_select">Виберіть сцену</string>
+    <string name="music_headset_scenario_intelligent">Розумна</string>
+    <string name="music_headset_scenario_music">Музика</string>
+    <string name="music_headset_scenario_video">Відео</string>
+    <string name="music_headset_scenario_vocal">Голос</string>
 </resources>
