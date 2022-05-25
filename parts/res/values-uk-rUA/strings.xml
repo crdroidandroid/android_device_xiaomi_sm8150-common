@@ -77,8 +77,8 @@
     <string name="dirac_preset_balanced">Збалансованмй</string>
     <string name="dirac_preset_bass_reduction">Менше басів</string>
     <string name="dirac_preset_treble_reduction">Менше високих частот</string>
-    <string name="dirac_preset_soft_bass">М'який бас</string>
-    <string name="dirac_preset_soft_treble">М'які високі частоти</string>
+    <string name="dirac_preset_soft_bass">М\'який бас</string>
+    <string name="dirac_preset_soft_treble">М\'які високі частоти</string>
 
     <!-- Dirac Sound Enhancer tile -->
     <string name="dirac_qs_tile_title">Покращення звуку \"Мі Sound\"</string>
