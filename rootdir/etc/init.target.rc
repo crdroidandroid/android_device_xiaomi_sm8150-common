@@ -49,6 +49,9 @@ on init
     #change owner of green led
     chown system system /sys/class/leds/green/brightness
     chown system system /sys/class/leds/green/breath
+    # add for cit-test of led
+    chmod 0666 /sys/class/leds/led:torch_0/brightness
+    chmod 0666 /sys/class/leds/led:switch_0/brightness
 
 # Add a cpuset for the camera daemon
 # We want all cores for camera
@@ -79,6 +82,10 @@ on fs
     chmod 660 /dev/tiload_node
 
     mkdir /mnt/vendor/persist/subsys 0770 root system
+
+on fs && property:ro.build.ab_update=true
+    mount ext4 /dev/block/bootdevice/by-name/rescue /mnt/rescue noatime
+    restorecon_recursive /mnt/rescue
 
 on post-fs
     # set RLIMIT_MEMLOCK to 64MB
@@ -121,6 +128,9 @@ on post-fs-data
     chmod 0660 /dev/tfa_rpc
     chmod 0660 /dev/tfa_control
 
+    chmod 0666 /sys/module/migt/parameters/mi_viptask
+    restorecon /sys/module/migt/parameters/mi_viptask
+
 on property:ro.boot.dp=0x0
     write /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8150@0:qcom,power-on@800/pshold_reboot 7
 
@@ -147,13 +157,13 @@ on boot
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
 
-#Load WLAN driver
-    insmod /vendor/lib/modules/wlan.ko
-
     chown system system /sys/class/thermal/thermal_message/sconfig
 
+    chown system system /sys/class/drm/card0-DSI-1/disp_param
+    chmod 0664 /sys/class/drm/card0-DSI-1/disp_param
 
     chown system system /proc/tp_selftest
+    chmod 0664 /proc/tp_selftest
     chown system system /sys/class/touch/touch_dev/palm_sensor
 
 # Add a cpuset for the camera daemon
@@ -180,17 +190,23 @@ on boot
     setprop vendor.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
 
+    write /sys/block/sda/queue/wbt_lat_usec 75000
+
 on property:vendor.display.lcd_density=560
    setprop dalvik.vm.heapgrowthlimit 256m
 
-on property:vendor.display.lcd_density=640
-   setprop dalvik.vm.heapgrowthlimit 512m
+#MIUI DEL:
+#on property:vendor.display.lcd_density=640
+#   setprop dalvik.vm.heapgrowthlimit 512m
 
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
 on property:vendor.usb.controller=*
     setprop sys.usb.controller ${vendor.usb.controller}
+
+#Load WLAN driver
+    insmod /vendor/lib/modules/qca_cld3_wlan.ko
 
 #pd-mapper
 service vendor.pd_mapper /vendor/bin/pd-mapper
@@ -226,17 +242,6 @@ on charger
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
     start leds-sh
-
-service vendor.spdaemon /vendor/bin/spdaemon
-    class core
-    user system
-    group system
-    shutdown critical
-
-service vendor.sec_nvm /vendor/bin/sec_nvm
-    class core
-    user system
-    group system
 
 service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
@@ -298,6 +303,13 @@ service dcvs-sh /vendor/bin/init.qti.dcvs.sh
 on property:vendor.dcvs.prop=1
    start dcvs-sh
 
+service audioshell_service /vendor/bin/audioshell_service
+    oneshot
+    disabled
+
+on property:ro.vendor.miui.region=*
+    start audioshell_service
+
 on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2557_cal.bin /mnt/vendor/persist/audio/tas2557_cal.bin
     copy /data/vendor/cit/tas2557_cal.txt /mnt/vendor/persist/audio/tas2557_cal.txt
@@ -315,6 +327,34 @@ on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2559_cal.txt /mnt/vendor/persist/audio/tas2559_cal.txt
     chmod 666 /mnt/vendor/persist/audio/tas25xx_calib.bin
     chmod 666 /mnt/vendor/persist/audio/tas2559_cal.txt
+
+    chmod 666 /data/vendor/cit/cs35l41_cal_tr.bin
+    chmod 666 /data/vendor/cit/cs35l41_cal_tr.txt
+    chmod 666 /data/vendor/cit/cs35l41_cal_br.bin
+    chmod 666 /data/vendor/cit/cs35l41_cal_br.txt
+    chmod 666 /data/vendor/cit/cs35l41_cal_tl.bin
+    chmod 666 /data/vendor/cit/cs35l41_cal_tl.txt
+    chmod 666 /data/vendor/cit/cs35l41_cal_bl.bin
+    chmod 666 /data/vendor/cit/cs35l41_cal_bl.txt
+
+    copy /data/vendor/cit/cs35l41_cal_tr.bin /mnt/vendor/persist/audio/cs35l41_cal_tr.bin
+    copy /data/vendor/cit/cs35l41_cal_tr.txt /mnt/vendor/persist/audio/cs35l41_cal_tr.txt
+    copy /data/vendor/cit/cs35l41_cal_br.bin /mnt/vendor/persist/audio/cs35l41_cal_br.bin
+    copy /data/vendor/cit/cs35l41_cal_br.txt /mnt/vendor/persist/audio/cs35l41_cal_br.txt
+    copy /data/vendor/cit/cs35l41_cal_tl.bin /mnt/vendor/persist/audio/cs35l41_cal_tl.bin
+    copy /data/vendor/cit/cs35l41_cal_tl.txt /mnt/vendor/persist/audio/cs35l41_cal_tl.txt
+    copy /data/vendor/cit/cs35l41_cal_bl.bin /mnt/vendor/persist/audio/cs35l41_cal_bl.bin
+    copy /data/vendor/cit/cs35l41_cal_bl.txt /mnt/vendor/persist/audio/cs35l41_cal_bl.txt
+
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_tr.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_tr.txt
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_br.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_br.txt
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_tl.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_tl.txt
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_bl.bin
+    chmod 666 /mnt/vendor/persist/audio/cs35l41_cal_bl.txt
+
 service remosaic_daemon /system/vendor/bin/remosaic_daemon
    class late_start
    user camera
@@ -343,3 +383,20 @@ on post-fs-data
     chmod 0777 /sys/module/migt/parameters/fas_power_mod
     restorecon /sys/module/migt/parameters/fas_power_mod
 
+# for gts test
+on property:persist.sys.miui_optimization=false
+    write /dev/stune/top-app/schedtune.prefer_idle 1
+    write /dev/stune/top-app/schedtune.boost 100
+
+on property:persist.sys.miui_optimization=true
+    write /dev/stune/top-app/schedtune.prefer_idle 0
+    write /dev/stune/top-app/schedtune.boost 0
+
+service mi-serial-sh /vendor/bin/init.mi.serial.sh
+    class late_start
+    user root
+    group root system radio
+    disabled
+    oneshot
+on post-fs && property:ro.product.device=nabu
+    start mi-serial-sh
