@@ -196,10 +196,7 @@ endif
 
 # Fingerprint
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.3-service.xiaomi_msmnile
-
-PRODUCT_PACKAGES += \
-    vendor.xiaomi.hardware.fingerprintextension@1.0.vendor
+    android.hardware.biometrics.fingerprint@2.3-service.xiaomi
 
 # FM
 PRODUCT_PACKAGES += \
@@ -364,6 +361,7 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     fstab.qcom \
+    init.fingerprint.rc \
     init.nfc.rc \
     init.qcom.power.rc \
     init.qcom.rc \
