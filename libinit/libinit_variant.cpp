@@ -40,6 +40,7 @@ void set_variant_props(const variant_info_t variant) {
 
     property_override("ro.com.google.clientidbase", "android-xiaomi");
     property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rev1");
+    property_override("vendor.usb.product_string", variant.marketname);
 
     if (variant.nfc)
         property_override(SKU_PROP, "nfc");
