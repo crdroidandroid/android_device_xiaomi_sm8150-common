@@ -21,7 +21,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
-
+import org.lineageos.settings.haptic.HapticUtils;
 import org.lineageos.settings.popupcamera.PopupCameraUtils;
 
 public class BootCompletedReceiver extends BroadcastReceiver {
@@ -32,6 +32,7 @@ public class BootCompletedReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(final Context context, Intent intent) {
         if (DEBUG) Log.d(TAG, "Received boot completed intent");
+        HapticUtils.restoreLevel(context);
         PopupCameraUtils.checkPopupCameraService(context);
     }
 }
