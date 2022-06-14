@@ -611,7 +611,6 @@ vendor/lib64/unnhal-acc-hta.so
 vendor/lib64/unnhal-acc-hvx.so
 
 # NFC
-vendor/etc/libnfc-nxp.conf
 vendor/lib/libpn553_fw.so
 
 # OMX
