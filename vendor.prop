@@ -4,14 +4,7 @@ aaudio.mmap_exclusive_policy=2
 aaudio.mmap_policy=2
 af.fast_track_multiplier=1
 audio.deep_buffer.media=true
-audio.offload.buffer.size.kb=32
-audio.offload.gapless.enabled=true
 audio.offload.min.duration.secs=40
-persist.audio.button_jack.profile=volume
-persist.audio.button_jack.switch=0
-persist.audio.fluence.speaker=true
-persist.audio.fluence.voicecall=true
-persist.audio.fluence.voicerec=false
 persist.vendor.audio.avs.afe_api_version=2
 persist.vendor.audio.fluence.speaker=true
 persist.vendor.audio.fluence.tmic.enabled=false
@@ -24,11 +17,8 @@ persist.vendor.audio.spv3.enable=true
 persist.vendor.audio.voicecall.speaker.stereo=true
 ro.af.client_heap_size_kbyte=7168
 ro.audio.monitorRotation=true
-ro.audio.recording.hd=true
 ro.config.media_vol_steps=25
 ro.config.vc_call_vol_steps=11
-ro.qc.sdk.audio.fluencetype=none
-ro.qc.sdk.audio.ssr=false
 ro.vendor.audio.afe.record=true
 ro.vendor.audio.game.effect=true
 ro.vendor.audio.ring.filter=true
@@ -75,8 +65,6 @@ ro.vendor.audio.vocal.support=true
 ro.vendor.audio.voice.change.support=true
 ro.vendor.audio.voice.volume.boost=manual
 ro.vendor.audio.xiaoaitongxue.aec=true
-tunnel.audio.encode = true
-use.voice.path.for.pcm.voip=true
 vendor.audio.adm.buffering.ms=6
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
@@ -228,9 +216,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
-# GPS
-persist.backup.ntpServer=0.pool.ntp.org
-
 # Graphics
 debug.egl.hw=0
 debug.mdpcomp.logs=0
@@ -246,7 +231,6 @@ debug.sf.latch_unsignaled=0
 debug.sf.late.sf.duration=10500000
 debug.sf.late.app.duration=20500000
 debug.sf.use_phase_offsets_as_durations=1
-persist.demo.hdmirotationlock=false
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
@@ -260,10 +244,6 @@ ro.surface_flinger.max_virtual_display_dimension=4096
 ro.surface_flinger.use_color_management=true
 ro.surface_flinger.wcg_composition_dataspace=143261696
 vendor.gralloc.disable_ubwc=0
-
-# IMS
-persist.vendor.ims.disableADBLogs=1
-persist.vendor.ims.disableIMSLogs=1
 
 # Media
 debug.stagefright.ccodec=1
@@ -280,12 +260,7 @@ vendor.power.pasr.enabled=false
 ro.vendor.extension_library=libqti-perfd-client.so
 
 # Radio
-persist.data.df.iwlan_mux=9
-persist.radio.dynamic_sar=false
 persist.radio.multisim.config=dsds
-persist.radio.NO_STAPA=1
-persist.radio.VT_HYBRID_ENABLE=1
-persist.rcs.otp_sms_port=0
 persist.rcs.supported=1
 persist.vendor.data.iwlan.enable=true
 persist.vendor.radio.apm_sim_not_pwdn=1
@@ -303,7 +278,6 @@ persist.vendor.radio.redir_party_num=1
 persist.vendor.radio.sar_sar_sensor=true
 persist.vendor.radio.sib16_support=1
 persist.vendor.radio.usblockant=true
-rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.com.android.dataroaming=false
 
 # Sensors
