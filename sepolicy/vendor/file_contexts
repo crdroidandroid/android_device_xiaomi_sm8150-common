@@ -40,10 +40,10 @@
 /dev/goodix_fp                                                          u:object_r:fingerprint_device:s0
 
 # Fingerprint - data
-/data/gf_data(/.*)?                                                     u:object_r:goodix_fingerprint_data_file:s0
-/data/vendor/goodix(/.*)?                                               u:object_r:fingerprint_data_file:s0
-/data/vendor/fpc(/.*)?                                                  u:object_r:fingerprint_data_file:s0
-/data/vendor/fpdump(/.*)?                                               u:object_r:fingerprint_data_file:s0
+/data/gf_data(/.*)?                                                     u:object_r:fingerprint_data_file:s0
+/data/vendor/goodix(/.*)?                                               u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/fpc(/.*)?                                                  u:object_r:fingerprint_vendor_data_file:s0
+/data/vendor/fpdump(/.*)?                                               u:object_r:fingerprint_vendor_data_file:s0
 
 # HALs
 /vendor/bin/hw/android\.hardware\.power\.stats@1\.0-service\.mock                                       u:object_r:hal_power_stats_default_exec:s0
