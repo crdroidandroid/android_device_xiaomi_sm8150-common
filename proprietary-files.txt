@@ -332,18 +332,6 @@ vendor/lib64/libllvm-glnext.so
 vendor/lib64/libllvm-qcom.so
 vendor/lib64/libpvr.so
 
-# Graphics (Adreno firmware)
-vendor/firmware/a612_rgmu.bin
-vendor/firmware/a618_gmu.bin
-vendor/firmware/a630_gmu.bin
-vendor/firmware/a630_sqe.fw
-vendor/firmware/a640_gmu.bin
-vendor/firmware/a640_zap.b00
-vendor/firmware/a640_zap.b01
-vendor/firmware/a640_zap.b02
-vendor/firmware/a640_zap.elf
-vendor/firmware/a640_zap.mdt
-
 # Graphics (Vulkan)
 vendor/lib/hw/vulkan.adreno.so
 vendor/lib64/hw/vulkan.adreno.so
