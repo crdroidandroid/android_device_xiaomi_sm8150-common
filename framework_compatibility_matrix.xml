@@ -394,4 +394,12 @@
             <instance>default</instance>
         </interface>
     </hal>
+    <hal format="hidl" optional="true">
+        <name>vendor.xiaomi.hardware.motor</name>
+        <version>1.0</version>
+        <interface>
+            <name>IMotor</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
 </compatibility-matrix>
