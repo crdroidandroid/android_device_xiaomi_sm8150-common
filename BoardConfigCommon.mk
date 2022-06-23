@@ -58,6 +58,9 @@ TARGET_USES_GRALLOC1 := true
 TARGET_USES_GRALLOC4 := true
 TARGET_USES_HWC2 := true
 TARGET_USES_ION := true
+ifeq ($(TARGET_HAS_FOD),true)
+TARGET_USES_FOD_ZPOS := true
+endif
 
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(COMMON_PATH)/config.fs
