@@ -23,6 +23,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/developer_gsi_keys.mk)
 # Setup dalvik vm configs
 $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 
+# Blur
+TARGET_ENABLE_BLUR := true
+
 # Camera
 $(call inherit-product-if-exists, vendor/miuicamera/config.mk)
 
