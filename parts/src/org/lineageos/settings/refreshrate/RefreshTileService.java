@@ -66,13 +66,13 @@ public class RefreshTileService extends TileService {
     }
 
     private void cycleRefreshRate() {
-        if(activeRateMax == 0){
-    	    if(activeRateMin == 0){
-                activeRateMin= availableRates.size();
-	    }
-	    activeRateMax = activeRateMin;
-	    float rate = availableRates.get(activeRateMin - 1);
-  	    Settings.System.putFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, rate);
+        if (activeRateMax == 0) {
+    	    if(activeRateMin == 0) {
+                activeRateMin = availableRates.size();
+    	    }
+	        activeRateMax = activeRateMin;
+	        float rate = availableRates.get(activeRateMin - 1);
+      	    Settings.System.putFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, rate);
         }
         float rate = availableRates.get(activeRateMax - 1);
         Settings.System.putFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, rate);
