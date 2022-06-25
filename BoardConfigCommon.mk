@@ -79,8 +79,11 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     vendor/lineage/config/device_framework_matrix.xml
 DEVICE_MATRIX_FILE += $(COMMON_PATH)/compatibility_matrix.xml
 DEVICE_MANIFEST_FILE += $(COMMON_PATH)/manifest.xml
-ODM_MANIFEST_SKUS += nfc
+ODM_MANIFEST_SKUS += nfc nfc_ese
 ODM_MANIFEST_NFC_FILES := $(COMMON_PATH)/manifest_nfc.xml
+ODM_MANIFEST_NFC_ESE_FILES := \
+    $(COMMON_PATH)/manifest_nfc.xml \
+    $(COMMON_PATH)/manifest_ese.xml
 
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_msmnile
