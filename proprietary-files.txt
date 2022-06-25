@@ -524,7 +524,6 @@ vendor/lib64/unnhal-acc-hvx.so
 # NFC
 vendor/etc/libnfc-nci.conf
 vendor/etc/libnfc-nxp.conf
-vendor/lib/libpn553_fw.so
 
 # OMX
 vendor/lib/libAlacSwDec.so
