@@ -30,3 +30,6 @@ set_prop(hal_fingerprint_default, vendor_fp_prop)
 
 allow hal_fingerprint_default vendor_sysfs_spss:dir { search };
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
+
+allow hal_fingerprint_default sysfs_touchpanel:dir search;
+allow hal_fingerprint_default sysfs_touchpanel:file rw_file_perms;

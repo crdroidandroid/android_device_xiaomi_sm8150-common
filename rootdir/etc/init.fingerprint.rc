@@ -36,6 +36,13 @@ on boot
 
     chown system system /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
     chmod 0444 /sys/devices/platform/soc/soc:qcom,dsi-display-primary/fod_ui
+    chown system system /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
+    chmod 0444 /sys/devices/platform/soc/soc:qcom,dsi-display/fod_ui
+
+    chown system system /sys/touchpanel/fod_status
+    chmod 0644 /sys/touchpanel/fod_status
+    chown system system /sys/devices/virtual/touch/tp_dev/fod_status
+    chmod 0644 /sys/devices/virtual/touch/tp_dev/fod_status
 
 on post-fs-data
     mkdir /data/vendor/fpc 0770 system system
