@@ -33,3 +33,7 @@ allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
 
 allow hal_fingerprint_default sysfs_touchpanel:dir search;
 allow hal_fingerprint_default sysfs_touchpanel:file rw_file_perms;
+
+# ADSP access
+allow hal_fingerprint_default vendor_xdsp_device:chr_file rw_file_perms;
+get_prop(hal_fingerprint_default, vendor_adsprpc_prop)
