@@ -336,9 +336,6 @@ PRODUCT_PACKAGES += \
     SecureElement \
     Tag
 
-PRODUCT_COPY_FILES += \
-     $(LOCAL_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf
-
 # OMX
 PRODUCT_PACKAGES += \
     init.qti.media.sh \
