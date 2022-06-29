@@ -406,6 +406,9 @@ PRODUCT_PACKAGES += \
 ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab_dynamic.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
+else
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/etc/fstab_legacy.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 endif
 
 # Sensors
