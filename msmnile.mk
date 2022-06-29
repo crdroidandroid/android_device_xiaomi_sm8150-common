@@ -182,10 +182,8 @@ PRODUCT_PACKAGES += \
     android.hardware.drm@1.4.vendor
 
 # fastbootd
-ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
 PRODUCT_PACKAGES += \
     fastbootd
-endif
 
 # Fingerprint
 PRODUCT_PACKAGES += \
@@ -338,9 +336,10 @@ DEVICE_PACKAGE_OVERLAYS += \
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
 # Partitions
-ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
+ifeq ($(TARGET_IS_LEGACY),true)
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 endif
 
 # Perf
@@ -403,7 +402,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     ueventd.qcom.rc
 
-ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
+ifneq ($(TARGET_IS_LEGACY),true)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab_dynamic.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
 else
