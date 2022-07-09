@@ -25,7 +25,7 @@ source "${HELPER}"
 setup_vendor "${DEVICE_COMMON}" "${VENDOR}" "${ANDROID_ROOT}" true
 
 # Warning headers and guards
-write_headers "cepheus raphael vayu"
+write_headers "andromeda cepheus crux nabu raphael vayu"
 
 # The standard common blobs
 write_makefiles "${MY_DIR}/proprietary-files.txt" true
