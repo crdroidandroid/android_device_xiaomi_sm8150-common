@@ -701,9 +701,9 @@ else
             elif [ $MemTotal -lt 4194304 ]; then
                 echo "18432,23040,27648,38708,120640,144768" > /sys/module/lowmemorykiller/parameters/minfree
             elif [ $MemTotal -lt 6291456 ]; then
-                echo "18432,23040,27648,64512,165888,225792" > /sys/module/lowmemorykiller/parameters/minfree
+                echo "18432,23040,27648,64512,190888,240792" > /sys/module/lowmemorykiller/parameters/minfree
             else
-                echo "18432,23040,27648,96768,276480,362880" > /sys/module/lowmemorykiller/parameters/minfree
+                echo "18432,23040,27648,85000,191250,241920" > /sys/module/lowmemorykiller/parameters/minfree
             fi
         else
             # Set LMK series, vmpressure_file_min for 32 bit non-go targets.
