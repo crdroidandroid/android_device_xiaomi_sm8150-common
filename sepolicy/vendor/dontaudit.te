@@ -12,6 +12,7 @@ dontaudit {
 
 dontaudit priv_app mnt_vendor_file:dir search;
 
+dontaudit hal_wifi_default persist_vendor_debug_wifi_prop:file rw_file_perms;
 dontaudit hal_wifi_default self:capability sys_module;
 
 dontaudit {
@@ -29,3 +30,16 @@ dontaudit {
   vendor_qti
   vendor_sensors_qti
 } vendor_diag_device:chr_file rw_file_perms;
+
+dontaudit kernel self:qipcrtr_socket create;
+
+dontaudit {
+  rild
+  vendor_hal_gnss_qti
+} vendor_pd_locater_dbg_prop:file rw_file_perms;
+
+dontaudit vendor_thermal-engine self:capability dac_override;
+
+dontaudit vendor_hal_capabilityconfigstore_qti_default vendor_cap_configstore_dbg_prop:file rw_file_perms;
+
+dontaudit vendor_hvdcp kmsg_device:chr_file rw_file_perms;
