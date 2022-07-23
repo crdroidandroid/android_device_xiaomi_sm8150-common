@@ -212,7 +212,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := $(COMMON_PATH)
 ENABLE_VENDOR_RIL_SERVICE := true
 
 # Security patch level
-VENDOR_SECURITY_PATCH := 2022-04-01
+VENDOR_SECURITY_PATCH := 2022-07-01
 
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
