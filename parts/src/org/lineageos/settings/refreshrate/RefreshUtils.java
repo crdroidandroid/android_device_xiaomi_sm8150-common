@@ -28,6 +28,7 @@ import androidx.preference.PreferenceManager;
 public final class RefreshUtils {
 
     private static final String REFRESH_CONTROL = "refresh_control";
+    private static final String REFRESH_SERVICE = "refresh_service";
 
     private static final String KEY_PEAK_REFRESH_RATE = "peak_refresh_rate";
     private static final String KEY_MIN_REFRESH_RATE = "min_refresh_rate";
@@ -64,12 +65,29 @@ public final class RefreshUtils {
         mContext = context;
     }
 
-    public static void startService(Context context) {
+    public static void initialize(Context context) {
         defaultMaxRate = Settings.System.getFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, REFRESH_STATE_DEFAULT);
         defaultMinRate = Settings.System.getFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
 
+        if (isServiceEnabled(context))
+            startService(context);
+        else
+            setDefaultRefreshRate(context);
+    }
+
+    public static void startService(Context context) {
         context.startServiceAsUser(new Intent(context, RefreshService.class),
                 UserHandle.CURRENT);
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putString(REFRESH_SERVICE, "true").apply();
+    }
+
+    protected static void stopService(Context context) {
+        context.stopService(new Intent(context, RefreshService.class));
+        PreferenceManager.getDefaultSharedPreferences(context).edit().putString(REFRESH_SERVICE, "false").apply();
+    }
+
+    protected static boolean isServiceEnabled(Context context) {
+        return Boolean.valueOf(PreferenceManager.getDefaultSharedPreferences(context).getString(REFRESH_SERVICE, "false"));
     }
 
     private void writeValue(String profiles) {

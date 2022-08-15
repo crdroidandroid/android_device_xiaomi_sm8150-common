@@ -16,6 +16,7 @@
 package org.lineageos.settings.refreshrate;
 
 import android.annotation.Nullable;
+import android.app.ActionBar;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
@@ -29,11 +30,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.CompoundButton;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SectionIndexer;
 import android.widget.Spinner;
+import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -52,7 +55,8 @@ import java.util.List;
 import java.util.Map;
 
 public class RefreshSettingsFragment extends PreferenceFragment
-        implements ApplicationsState.Callbacks {
+        implements ApplicationsState.Callbacks,
+        CompoundButton.OnCheckedChangeListener {
 
     private AllPackagesAdapter mAllPackagesAdapter;
     private ApplicationsState mApplicationsState;
@@ -63,6 +67,8 @@ public class RefreshSettingsFragment extends PreferenceFragment
 
     private RefreshUtils mRefreshUtils;
     private RecyclerView mAppsRecyclerView;
+    private TextView mTextView;
+    private View mSwitchBar;
 
     @Override
     public void onCreatePreferences(Bundle savedInstanceState, String rootKey) {
@@ -80,21 +86,43 @@ public class RefreshSettingsFragment extends PreferenceFragment
         mAllPackagesAdapter = new AllPackagesAdapter(getActivity());
 
         mRefreshUtils = new RefreshUtils(getActivity());
+
+        final ActionBar actionBar = getActivity().getActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.refresh_layout, container, false);
+        return inflater.inflate(R.layout.refresh, container, false);
     }
 
     @Override
     public void onViewCreated(final View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        boolean serviceEnabled = mRefreshUtils.isServiceEnabled(getActivity());
+
         mAppsRecyclerView = view.findViewById(R.id.refresh_rv_view);
-        mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
+
+        if (serviceEnabled) {
+            mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
+        }
+
+        mTextView = view.findViewById(R.id.switch_text);
+        mTextView.setText(getString(serviceEnabled ?
+                R.string.switch_bar_on : R.string.switch_bar_off));
+
+        mSwitchBar = view.findViewById(R.id.switch_bar);
+        Switch switchWidget = mSwitchBar.findViewById(android.R.id.switch_widget);
+        switchWidget.setChecked(serviceEnabled);
+        switchWidget.setOnCheckedChangeListener(this);
+        mSwitchBar.setActivated(serviceEnabled);
+        mSwitchBar.setOnClickListener(v -> {
+            switchWidget.setChecked(!switchWidget.isChecked());
+            mSwitchBar.setActivated(switchWidget.isChecked());
+        });
     }
 
 
@@ -422,5 +450,30 @@ public class RefreshSettingsFragment extends PreferenceFragment
             }
             return show;
         }
+    }
+
+    @Override
+    public void onCheckedChanged(CompoundButton compoundButton, boolean isChecked) {
+        mTextView.setText(getString(isChecked ? R.string.switch_bar_on : R.string.switch_bar_off));
+        mSwitchBar.setActivated(isChecked);
+
+        if (isChecked) {
+            mRefreshUtils.startService(getActivity());
+            mAppsRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+            mAppsRecyclerView.setAdapter(mAllPackagesAdapter);
+        } else {
+            mRefreshUtils.stopService(getActivity());
+            mAppsRecyclerView.setAdapter(null);
+            mAppsRecyclerView.setLayoutManager(null);
+        }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getActivity().onBackPressed();
+            return true;
+        }
+        return false;
     }
 }

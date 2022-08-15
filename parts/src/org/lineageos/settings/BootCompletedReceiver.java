@@ -42,6 +42,6 @@ public class BootCompletedReceiver extends BroadcastReceiver {
         }
         HapticUtils.restoreLevel(context);
         ThermalUtils.initialize(context);
-        RefreshUtils.startService(context);
+        RefreshUtils.initialize(context);
     }
 }
