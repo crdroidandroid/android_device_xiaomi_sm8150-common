@@ -29,12 +29,9 @@ public final class RefreshUtils {
 
     private static final String REFRESH_CONTROL = "refresh_control";
 
-    private static float defaultMaxRate;
-    private static float defaultMinRate;
     private static final String KEY_PEAK_REFRESH_RATE = "peak_refresh_rate";
     private static final String KEY_MIN_REFRESH_RATE = "min_refresh_rate";
     private Context mContext;
-    protected static boolean isAppInList = false;
 
     protected static final int STATE_DEFAULT = 0;
     protected static final int STATE_LOW = 1;
@@ -43,7 +40,7 @@ public final class RefreshUtils {
     protected static final int STATE_HIGH = 4;
     protected static final int STATE_EXTREME = 5;
 
-    private static final float REFRESH_STATE_DEFAULT = 60f;
+    private static final float REFRESH_STATE_DEFAULT = 120f;
     private static final float REFRESH_STATE_LOW = 30f;
     private static final float REFRESH_STATE_MODERATE = 50f;
     private static final float REFRESH_STATE_STANDARD = 60f;
@@ -56,6 +53,10 @@ public final class RefreshUtils {
     private static final String REFRESH_HIGH = "refresh.high=";
     private static final String REFRESH_EXTREME = "refresh.extreme=";
 
+    private static boolean isAppInList = false;
+    private static float defaultMaxRate;
+    private static float defaultMinRate;
+
     private SharedPreferences mSharedPrefs;
 
     protected RefreshUtils(Context context) {
@@ -64,6 +65,9 @@ public final class RefreshUtils {
     }
 
     public static void startService(Context context) {
+        defaultMaxRate = Settings.System.getFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, REFRESH_STATE_DEFAULT);
+        defaultMinRate = Settings.System.getFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
+
         context.startServiceAsUser(new Intent(context, RefreshService.class),
                 UserHandle.CURRENT);
     }
@@ -71,12 +75,6 @@ public final class RefreshUtils {
     private void writeValue(String profiles) {
         mSharedPrefs.edit().putString(REFRESH_CONTROL, profiles).apply();
     }
-
-   protected void getOldRate(){
-        defaultMaxRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, 120);
-        defaultMinRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, 120);
-    }
-
 
     private String getValue() {
         String value = mSharedPrefs.getString(REFRESH_CONTROL, null);
@@ -137,49 +135,60 @@ public final class RefreshUtils {
         return state;
     }
 
+    protected static void setDefaultRefreshRate(Context context) {
+        Settings.System.putFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, defaultMaxRate);
+        Settings.System.putFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, defaultMinRate);
+    }
+
     protected void setRefreshRate(String packageName) {
         String value = getValue();
         String modes[];
-        float maxrate = defaultMaxRate;
+
+        if (!isAppInList) {
+            defaultMaxRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, REFRESH_STATE_DEFAULT);
+            defaultMinRate = Settings.System.getFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, REFRESH_STATE_DEFAULT);
+        }
+
         float minrate = defaultMinRate;
-        isAppInList = false;
+        float maxrate = defaultMaxRate;
 
-            if (value != null) {
+        if (value != null) {
             modes = value.split(":");
-
             if (modes[0].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_LOW;
-                if ( minrate > maxrate){
-                minrate = maxrate;
+                if (minrate > maxrate) {
+                    minrate = maxrate;
                 }
-	        isAppInList = true;
+                isAppInList = true;
             } else if (modes[1].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_MODERATE;
-		if ( minrate > maxrate){
-                minrate = maxrate;
+                if (minrate > maxrate) {
+                    minrate = maxrate;
                 }
                 isAppInList = true;
             } else if (modes[2].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_STANDARD;
-                if ( minrate > maxrate){
-                minrate = maxrate;
+                if (minrate > maxrate) {
+                    minrate = maxrate;
                 }
-		isAppInList = true;
+                isAppInList = true;
             } else if (modes[3].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_HIGH;
-                if ( minrate > maxrate){
-                minrate = maxrate;
+                if (minrate > maxrate) {
+                    minrate = maxrate;
                 }
-		isAppInList = true;
-           } else if (modes[4].contains(packageName + ",")) {
+                isAppInList = true;
+            } else if (modes[4].contains(packageName + ",")) {
                 maxrate = REFRESH_STATE_EXTREME;
-                if ( minrate > maxrate){
-                minrate = maxrate;
+                if (minrate > maxrate) {
+                    minrate = maxrate;
                 }
-		isAppInList = true;
-           }
-          }
-	Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
+                isAppInList = true;
+            } else {
+                isAppInList = false;
+            }
+        }
+        Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
         Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxrate);
     }
 }
