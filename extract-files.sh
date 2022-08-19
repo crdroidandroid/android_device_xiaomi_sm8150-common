@@ -73,6 +73,9 @@ function blob_fixup() {
     vendor/etc/init/vendor.sensors.qti.rc | vendor/etc/init/imsrcsd.rc )
         echo "    disabled" >> "${2}"
     ;;
+    vendor/lib64/camera/components/com.qti.node.watermark.so)
+        "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
+    ;;
     esac
 }
 

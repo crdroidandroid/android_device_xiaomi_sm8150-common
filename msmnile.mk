@@ -162,6 +162,7 @@ PRODUCT_PACKAGES += \
     libdng_sdk.vendor \
     libgui_vendor \
     libstdc++.vendor \
+    libpiex_shim \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
 # Consumer IR
