@@ -6,6 +6,8 @@
 
 TARGET_SUPPORTS_QUICK_TAP := true
 
+$(call inherit-product, $(SRC_TARGET_DIR)/product/non_ab_device.mk)
+
 ifeq ($(TARGET_USE_DYNAMIC_PARTITIONS),true)
 PRODUCT_BUILD_SUPER_PARTITION := false
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
