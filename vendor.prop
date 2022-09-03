@@ -148,6 +148,7 @@ persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 persist.vendor.qcom.bluetooth.scram.enabled=true
 ro.bluetooth.a2dp_offload.supported=true
+ro.bluetooth.emb_wp_mode=false
 ro.vendor.bluetooth.wipower=false
 vendor.qcom.bluetooth.soc=cherokee
 
