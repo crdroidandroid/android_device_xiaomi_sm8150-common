@@ -1,3 +1,5 @@
-recovery_only(`
-permissive recovery;
+userdebug_or_eng(`
+    recovery_only(`
+        permissive recovery;
+    ')
 ')
