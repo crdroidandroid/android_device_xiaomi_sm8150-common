@@ -154,8 +154,8 @@ public final class RefreshUtils {
     }
 
     protected static void setDefaultRefreshRate(Context context) {
-        Settings.System.putFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, defaultMaxRate);
-        Settings.System.putFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, defaultMinRate);
+        Settings.System.putFloat(context.getContentResolver(), KEY_PEAK_REFRESH_RATE, defaultMaxRate);
+        Settings.System.putFloat(context.getContentResolver(), KEY_MIN_REFRESH_RATE, defaultMinRate);
     }
 
     protected void setRefreshRate(String packageName) {
@@ -206,7 +206,7 @@ public final class RefreshUtils {
                 isAppInList = false;
             }
         }
-        Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
         Settings.System.putFloat(mContext.getContentResolver(), KEY_PEAK_REFRESH_RATE, maxrate);
+        Settings.System.putFloat(mContext.getContentResolver(), KEY_MIN_REFRESH_RATE, minrate);
     }
 }
