@@ -394,13 +394,12 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh
 
 PRODUCT_PACKAGES += \
-    init.fingerprint.rc \
-    init.nfc.rc \
     init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.usb.rc \
     init.recovery.qcom.rc \
     init.target.rc \
+    init.xiaomi.rc \
     ueventd.qcom.rc
 
 # Sensors

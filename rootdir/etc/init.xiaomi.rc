@@ -1,3 +1,10 @@
+#
+# Copyright (C) 2022 The LineageOS Project
+#
+# SPDX-License-Identifier: Apache-2.0
+#
+
+# Fingerprint
 on init
     # Goodix fingerprint
     chmod 0666 /dev/goodix_fp
@@ -51,3 +58,33 @@ on post-fs-data
     mkdir /data/vendor/fortsense 0770 system system
     mkdir /mnt/vendor/persist/goodix 0770 system system
     mkdir /mnt/vendor/persist/fpc 0770 system system
+
+# NFC
+service vendor.nfc_hal_service /vendor/bin/hw/android.hardware.nfc@1.2-service
+    override
+    class hal
+    user nfc
+    group nfc
+    disabled
+
+service secureelement-hal_1_2 /vendor/bin/hw/vendor.qti.secure_element@1.2-service
+    override
+    class hal
+    user system
+    group system
+    disabled
+
+service qti_esepowermanager_service_1_1 /vendor/bin/hw/vendor.qti.esepowermanager@1.1-service
+    override
+    class hal
+    user system
+    group nfc system
+    disabled
+
+on boot && property:ro.boot.product.hardware.sku=nfc
+    enable vendor.nfc_hal_service
+
+on boot && property:ro.boot.product.hardware.sku=nfc_ese
+    enable vendor.nfc_hal_service
+    enable secureelement-hal_1_2
+    enable qti_esepowermanager_service_1_1
