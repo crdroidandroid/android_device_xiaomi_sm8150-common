@@ -27,7 +27,7 @@ $(call inherit-product, frameworks/native/build/phone-xhdpi-6144-dalvik-heap.mk)
 TARGET_ENABLE_BLUR := true
 
 # Camera
-$(call inherit-product-if-exists, vendor/miuicamera/config.mk)
+#$(call inherit-product-if-exists, vendor/miuicamera/config.mk)
 
 # Permissions
 PRODUCT_COPY_FILES += \
@@ -85,25 +85,17 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
-    liba2dpoffload \
     libaudio-resampler \
     libaudiopreprocessing \
-    libbatterylistener \
     libbundlewrapper \
-    libcomprcapture \
     libdownmix \
     libdynproc \
     libeffectproxy \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
     libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libreverbwrapper \
-    libsndmonitor \
-    libspkrprot \
     libvisualizer \
     libvolumelistener \
     sound_trigger.primary.msmnile
@@ -176,7 +168,6 @@ PRODUCT_PACKAGES += \
 
 # Display
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.composer@2.4-impl \
     android.hardware.graphics.composer@2.4-service \
     android.hardware.graphics.mapper@3.0-impl-qti-display \
     android.hardware.graphics.mapper@4.0-impl-qti-display \
@@ -185,7 +176,6 @@ PRODUCT_PACKAGES += \
     gralloc.msmnile \
     hwcomposer.msmnile \
     libdisplayconfig.qti \
-    libdisplayconfig.qti.vendor \
     libqdMetaData \
     libsdmcore \
     libsdmutils \
@@ -342,7 +332,6 @@ PRODUCT_COPY_FILES += \
 
 # OMX
 PRODUCT_PACKAGES += \
-    init.qti.media.sh \
     libOmxAacEnc \
     libOmxAmrEnc \
     libOmxCore \
