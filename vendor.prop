@@ -145,9 +145,6 @@ ro.vendor.bluetooth.wipower=false
 vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
 
-# Camera
-vendor.camera.aux.packagelist=org.codeaurora.snapcam,com.android.camera
-
 # Chipset
 ro.soc.manufacturer=Qualcomm
 ro.soc.model=SM8150

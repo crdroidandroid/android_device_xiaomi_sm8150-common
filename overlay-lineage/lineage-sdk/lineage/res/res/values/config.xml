@@ -88,4 +88,11 @@
           For example, a device with notification and battery lights that supports
           pulsating and RGB control would set this config to 75. -->
      <integer name="config_deviceLightCapabilities">224</integer>
+
+    <!-- The list of package IDs that are allowed to use aux cameras.
+         NOTE: If this list is empty then all apps will be able to use aux cameras. -->
+    <string-array name="config_cameraAuxPackageAllowList" translatable="false">
+        <item>org.codeaurora.snapcam</item>
+        <item>com.android.camera</item>
+    </string-array>
 </resources>
