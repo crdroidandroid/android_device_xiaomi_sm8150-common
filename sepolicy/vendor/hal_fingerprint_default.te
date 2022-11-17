@@ -33,6 +33,9 @@ set_prop(hal_fingerprint_default, vendor_fp_prop)
 allow hal_fingerprint_default vendor_sysfs_spss:dir { search };
 allow hal_fingerprint_default vendor_sysfs_spss:file { open read };
 
+# Allow fp HAL to sent hint
+hal_client_domain(hal_fingerprint_default, hal_power)
+
 # ADSP access
 allow hal_fingerprint_default vendor_xdsp_device:chr_file rw_file_perms;
 get_prop(hal_fingerprint_default, vendor_adsprpc_prop)
