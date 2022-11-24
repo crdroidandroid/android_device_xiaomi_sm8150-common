@@ -163,6 +163,9 @@ dalvik.vm.heapstartsize=8m
 dalvik.vm.heaptargetutilization=0.75
 
 # Display
+persist.sys.sf.color_mode=0
+persist.sys.sf.color_saturation=1.0
+persist.sys.sf.native_mode=2
 ro.surface_flinger.has_HDR_display=true
 ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.use_color_management=true
@@ -214,9 +217,6 @@ debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
 persist.demo.hdmirotationlock=false
-persist.sys.sf.color_mode=0
-persist.sys.sf.color_saturation=1.0
-persist.sys.sf.native_mode=2
 ro.gfx.driver.1=com.qualcomm.qti.gpudrivers.msmnile.api30
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
