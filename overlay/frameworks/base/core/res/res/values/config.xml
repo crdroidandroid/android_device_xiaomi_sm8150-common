@@ -300,6 +300,9 @@
         <item>0</item> <!-- COLOR_MODE_DEFAULT -->
     </integer-array>
 
+    <!-- Whether or not wcg mode should be enabled on this device -->
+    <bool name="config_enableWcgMode">true</bool>
+
     <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
