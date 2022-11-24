@@ -163,7 +163,10 @@ dalvik.vm.heapstartsize=8m
 dalvik.vm.heaptargetutilization=0.75
 
 # Display
+ro.surface_flinger.has_HDR_display=true
+ro.surface_flinger.has_wide_color_display=true
 ro.surface_flinger.use_color_management=true
+ro.surface_flinger.wcg_composition_dataspace=143261696
 ro.vendor.display.ad=1
 ro.vendor.display.ad.sdr_calib_data=/vendor/etc/sdr_config.cfg
 ro.vendor.display.ad.hdr_calib_data=/vendor/etc/hdr_config.cfg
