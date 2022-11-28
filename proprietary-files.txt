@@ -190,6 +190,46 @@ vendor/lib64/vendor.display.color@1.4.so
 vendor/lib64/vendor.display.color@1.5.so
 vendor/lib64/vendor.display.postproc@1.0.so
 
+# Dolby
+lib/vendor.dolby.hardware.dms@2.0.so|f0dd3ac1082f308c1ba501f7eb227fa6a10a8257
+lib64/vendor.dolby.hardware.dms@2.0.so|8b8808b9c8b4eeb8c5b50a701ddbdd6acbd93145
+vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service|ff827406bbcd1c82e790730bb017b7af38850004
+vendor/etc/init/vendor.dolby.hardware.dms@2.0-service.rc|29296ebfe89b2697fec573be73cc3757fd97bed6
+-vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml|c8095f649de19b80271fb429b4b6b439297a0678
+vendor/lib/libdapparamstorage.so|d1952f09354f414238e5bd0f57dd0d3f85b8f769
+vendor/lib/libdeccfg.so|c9ea6a462e3a0d00e31223bf2a9c5dd84beff122
+vendor/lib/libstagefrightdolby.so|cc78b1ecc291a2ff69ba05d00652b500229c0c11
+vendor/lib/vendor.dolby.hardware.dms@2.0.so|2bf537bbf5c413527e5c648b8e63b95f904f7532
+vendor/lib64/libdapparamstorage.so|a8e3bb20ee8579a13d5beef17a0ad251055e9d7b
+vendor/lib64/libdeccfg.so|8d9f0e66a16afe605490a30dd2943bb30cf3e4f6
+vendor/lib64/libdlbdsservice.so|4cb3fd194ef2ac578f2772b0679eff5a1f2318f6
+vendor/lib64/libstagefrightdolby.so|aae740a3a084ce784da22bbb940885969b234a55
+vendor/lib64/vendor.dolby.hardware.dms@2.0-impl.so|e90be71a671e64662742b6ee36d7060ed9974726
+vendor/lib64/vendor.dolby.hardware.dms@2.0.so|2020b5fd9abac65520224069bbe75d5e76d3f158
+
+# Dolby OnePlus Imports
+system_ext/etc/sysconfig/config-com.dolby.daxappui.xml|43c610f41061f49959ce07b26c60427b8767e535
+system_ext/etc/sysconfig/config-com.dolby.daxservice.xml|7690774632fe32269657fc1a2a0c941c7cd83f3d
+system_ext/etc/sysconfig/hiddenapi-com.dolby.daxservice.xml|f647356bd3a4bb4174e873e4544c2921d51fd4d2
+-system_ext/priv-app/DaxUI/DaxUI.apk|89e8ceabb19458b872eed0560a627eb2ff4c4dc4
+-system_ext/priv-app/daxService/daxService.apk|ed1de719afc7181a7e896e0eeaf14edc00761c21
+
+# Dolby MediaCodecs
+vendor/lib/libstagefright_soft_ac4dec.so|9a384987dcb28bae8620b047e0d1e2c2888ef433
+vendor/lib/libstagefright_soft_ddpdec.so|f7c10aa69dc46e881021d198bdbca26157f1cc80
+vendor/lib/libstagefright_soft_qtiflacdec.so|6af6c2ce6c308ca2de18538e667d617fbfe64e3b
+vendor/lib64/libstagefright_soft_ac4dec.so|8268e8e41efa22957c24b24f43ae4b01b02ed614
+vendor/lib64/libstagefright_soft_ddpdec.so|b860975169b94d790f4148ae081db03f63fe6f44
+vendor/lib64/libstagefright_soft_qtiflacdec.so|db05297299ae2c429f276b2a0b26905dbc4e1ffc
+
+# Dolby Soundfx
+vendor/lib/soundfx/libhwdap.so|659d51e9629379cd2f6eed8080b4cdde51ecda03
+vendor/lib/soundfx/libswdap.so|63ab2d9c32105573f1cf05fb5edc0945ee096412
+vendor/lib/soundfx/libswgamedap.so|38c9eb42c238efa9cfc05a65bd6c97aae4a5efaf
+vendor/lib64/soundfx/libhwdap.so|63e1cca16e97e6a9ce5333c538a1fd6a67e136fa
+vendor/lib64/soundfx/libswdap.so|2e8249aeac497e773877b35cf610445217eba858
+vendor/lib64/soundfx/libswgamedap.so|de0f5074e27f40497fe3e2da7ef257db77d73d3d
+
 # DPM
 framework/tcmclient.jar
 system_ext/bin/dpmd

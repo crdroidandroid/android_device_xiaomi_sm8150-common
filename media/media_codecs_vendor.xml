@@ -482,4 +482,7 @@ Only the three quirks included above are recognized at this point:
         </MediaCodec>
     </Decoders>
     <Include href="media_codecs_google_video.xml" />
+
+    <!-- Include Dolby Audio MediaCodecs (AC3, EAC3, EAC3-JOC, AC4) -->
+    <Include href="media_codecs_dolby_audio.xml" />
 </MediaCodecs>

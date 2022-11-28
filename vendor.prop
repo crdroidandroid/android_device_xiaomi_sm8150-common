@@ -187,6 +187,12 @@ vendor.display.enable_optimize_refresh=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
 
+# Dolby
+ro.vendor.dolby.dax.version=DAX3_3.6.1.6_r1
+ro.vendor.audio.dolby.dax.support=true
+persist.vendor.audio.delta.refresh=true
+ro.vendor.audio.dolby.surround.enable=true
+
 # DPM
 persist.vendor.dpm.loglevel=0
 persist.vendor.dpm.nsrm.bkg.evt=3955
