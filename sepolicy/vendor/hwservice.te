@@ -1,3 +1,6 @@
+# Dolby
+type hal_dms_hwservice, hwservice_manager_type;
+
 type hal_mlipay_hwservice, hwservice_manager_type;
 
 type hal_motor_hwservice, hwservice_manager_type;

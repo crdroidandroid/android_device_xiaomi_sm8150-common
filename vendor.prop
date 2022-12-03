@@ -65,8 +65,6 @@ ro.vendor.audio.voice.change.support=true
 ro.vendor.audio.voice.volume.boost=manual
 ro.vendor.audio.xiaoaitongxue.aec=true
 vendor.audio.adm.buffering.ms=6
-vendor.audio.dolby.ds2.enabled=false
-vendor.audio.dolby.ds2.hardbypass=false
 vendor.audio.enable.mirrorlink=false
 vendor.audio.flac.sw.decoder.24bit=true
 vendor.audio.hal.boot.timeout.ms=20000
@@ -180,6 +178,13 @@ vendor.display.enable_null_display=0
 vendor.display.enable_optimize_refresh=1
 vendor.display.qdcm.disable_factory_mode=1
 vendor.display.qdcm.mode_combine=1
+
+# Dolby
+persist.vendor.audio_fx.current=dolby
+vendor.audio.dolby.ds2.enabled=true
+vendor.audio.dolby.ds2.hardbypass=true
+ro.vendor.audio.dolby.dax.support=true
+ro.vendor.dolby.dax.version=DAX3_3.6.0.12_r1
 
 # DRM
 drm.service.enabled=true
