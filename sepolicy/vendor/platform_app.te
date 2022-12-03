@@ -6,3 +6,7 @@ r_dir_file(platform_app, sysfs_msm_subsys)
 get_prop(platform_app, vendor_audio_prop)
 
 allow platform_app hal_camerapostproc_xiaomi_hwservice:hwservice_manager { find };
+
+allow platform_app hal_dms_hwservice:hwservice_manager find;
+binder_call(platform_app, hal_dms_default)
+get_prop(platform_app, audio_config_prop)

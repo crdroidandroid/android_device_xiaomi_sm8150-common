@@ -114,6 +114,11 @@
         <fqname>@1.0::IDisplayPostproc/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.dolby.hardware.dms</name>
+        <transport>hwbinder</transport>
+        <fqname>@2.0::IDms/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.lineage.livedisplay</name>
         <transport>hwbinder</transport>
         <fqname>@2.0::IDisplayModes/default</fqname>
