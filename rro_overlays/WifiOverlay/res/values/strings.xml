@@ -4,6 +4,10 @@
          channels this should be empty. Values is a comma separated channel string and/or channel
          range string like '1-6,11'. -->
     <string name="config_wifiSoftap2gChannelList" />
+
+    <!-- Channel list for softap 5G band. Empty means all channels -->
     <string name="config_wifiSoftap5gChannelList" />
+
+    <!-- Channel list for softap 6G band. Empty means all channels -->
     <string name="config_wifiSoftap6gChannelList" />
 </resources>
