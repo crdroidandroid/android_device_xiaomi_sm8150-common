@@ -4,6 +4,9 @@ genfscon sysfs /kernel/boot_cdsp/boot                                           
 # Display
 genfscon sysfs /devices/platform/soc/ae00000.qcom,mdss_mdp/idle_state                               u:object_r:vendor_sysfs_graphics:s0
 
+# Extcon
+genfscon sysfs /devices/platform/vendor/vendor:extcon_usb1/extcon                                   u:object_r:sysfs_extcon:s0
+
 # Fingerprint
 genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc                                            u:object_r:vendor_sysfs_fingerprint:s0
 genfscon sysfs /devices/platform/soc/soc:fingerprint_fpc/wakeup_enable                              u:object_r:vendor_sysfs_fingerprint:s0
