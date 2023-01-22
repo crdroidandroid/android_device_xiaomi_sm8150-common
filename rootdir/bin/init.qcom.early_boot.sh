@@ -68,27 +68,6 @@ else
     log -t DRM_BOOT -p w "file: '$vbfile' or perms doesn't exist"
 fi
 
-function set_density_by_fb() {
-    #put default density based on width
-    if [ -z $fb_width ]; then
-        setprop vendor.display.lcd_density 320
-    else
-        if [ $fb_width -ge 1600 ]; then
-           setprop vendor.display.lcd_density 640
-        elif [ $fb_width -ge 1440 ]; then
-           setprop vendor.display.lcd_density 560
-        elif [ $fb_width -ge 1080 ]; then
-           setprop vendor.display.lcd_density 480
-        elif [ $fb_width -ge 720 ]; then
-           setprop vendor.display.lcd_density 320 #for 720X1280 resolution
-        elif [ $fb_width -ge 480 ]; then
-            setprop vendor.display.lcd_density 240 #for 480X854 QRD resolution
-        else
-            setprop vendor.display.lcd_density 160
-        fi
-    fi
-}
-
 target=`getprop ro.board.platform`
 case "$target" in
     "msm7630_surf" | "msm7630_1x" | "msm7630_fusion")
@@ -419,13 +398,6 @@ case "$baseband" in
     *)
         setprop persist.vendor.radio.atfwd.start true;;
 esac
-
-#set default lcd density
-#Since lcd density has read only
-#property, it will not overwrite previous set
-#property if any target is setting forcefully.
-set_density_by_fb
-
 
 # set Lilliput LCD density for ADP
 product=`getprop ro.build.product`
