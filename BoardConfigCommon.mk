@@ -83,11 +83,6 @@ ifeq ($(TARGET_HAS_UDFPS),true)
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 endif
 
-# FM
-ifeq ($(TARGET_HAS_FM),true)
-BOARD_HAVE_QCOM_FM := true
-endif
-
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_msmnile
 TARGET_RECOVERY_DEVICE_MODULES ?= init_xiaomi_msmnile
