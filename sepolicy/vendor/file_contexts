@@ -55,6 +55,7 @@
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@1\.0-service                                             u:object_r:hal_misys_default_exec:s0
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@2\.0-service                                             u:object_r:hal_misys_default_exec:s0
 /vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@3\.0-service                                             u:object_r:hal_misys_default_exec:s0
+/vendor/bin/hw/vendor\.xiaomi\.hardware\.misys@4\.0-service                                             u:object_r:hal_misys_default_exec:s0
 
 /vendor/lib(64)?/libalCFR\.so                                                                           u:object_r:same_process_hal_file:s0
 /vendor/lib(64)?/libhta\.so                                                                             u:object_r:same_process_hal_file:s0
