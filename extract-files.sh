@@ -76,6 +76,9 @@ function blob_fixup() {
     vendor/lib64/camera/components/com.qti.node.watermark.so)
         "${PATCHELF}" --add-needed "libpiex_shim.so" "${2}"
     ;;
+    vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy)
+        echo 'madvise: 1' >> ${2}
+    ;;
     esac
 }
 
