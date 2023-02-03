@@ -52,9 +52,10 @@ system_ext/etc/permissions/audiosphere.xml
 system_ext/framework/audiosphere.jar
 vendor/lib/soundfx/libasphere.so
 vendor/lib/soundfx/libmisoundfx.so
+vendor/lib/soundfx/libqcbassboost.so
+vendor/lib/soundfx/libqcreverb.so
+vendor/lib/soundfx/libqcvirt.so
 vendor/lib/soundfx/libshoebox.so
-vendor/lib64/soundfx/libasphere.so
-vendor/lib64/soundfx/libshoebox.so
 
 # Bluetooth
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
@@ -228,7 +229,7 @@ vendor/lib/vendor.dolby.hardware.dms@2.0.so|aaf98796bfa8b384e2b5e162214ca46f6eca
 vendor/lib64/soundfx/libswdap.so|e996ee1d421b3b2cf74f3f3ed93bff067d83dddb
 vendor/lib64/soundfx/libswgamedap.so|c898fd5b51312c5fafa693ca037423c5bae23101
 vendor/lib64/soundfx/libswvqe.so|08394e1ac285479213604c35cb144147fdac68c0
-vendor/lib64/libdapparamstorage.so|7549aeba2b7041b472ffc1f5fd39a56e4be64a2b 
+vendor/lib64/libdapparamstorage.so|7549aeba2b7041b472ffc1f5fd39a56e4be64a2b
 vendor/lib64/libdeccfg.so|3a63582be7dea50ae10c0543f68e3bce592a3877
 vendor/lib64/libdlbdsservice.so|ccae69075705a71358e363eee973f32d76288696
 vendor/lib64/libstagefright_soft_ac4dec.so|45b4a08175e6b5226b34e7275ce60d4b76033041
