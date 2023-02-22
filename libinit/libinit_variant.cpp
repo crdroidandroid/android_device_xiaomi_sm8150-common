@@ -40,6 +40,7 @@ void set_variant_props(const variant_info_t variant) {
 
     property_override("ro.com.google.clientidbase", "android-xiaomi");
     property_override("ro.com.google.clientidbase.ms", "android-xiaomi-rev1");
+    property_override("ro.product.mod_device", variant.mod_device);
     property_override("bluetooth.device.default_name", variant.marketname);
     property_override("vendor.usb.product_string", variant.marketname);
 
