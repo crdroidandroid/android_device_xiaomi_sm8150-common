@@ -1,5 +1,6 @@
 # All unpinned blobs below are extracted from vayu_global-user 13 RKQ1.200826.002 V14.0.1.0.TJUMIXM release-keys
 # raphael: raphael-user 11 RKQ1.200826.002 V12.5.2.0.RFKMIXM release-keys
+# renoir: 22.5.11
 
 # ADSP
 vendor/bin/adsprpcd
@@ -393,7 +394,6 @@ system_ext/lib64/libimscamera_jni.so
 system_ext/lib64/libimsmedia_jni.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so
--system_ext/priv-app/ims/ims.apk
 vendor/bin/ims_rtp_daemon
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
@@ -440,6 +440,9 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.0.so
 vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so
+
+# IMS - from renoir
+-system_ext/priv-app/ims/ims.apk|f0d834acbc77e7830459e0246f5073e1b9ba8657
 
 # IRQ balance
 vendor/bin/msm_irqbalance
