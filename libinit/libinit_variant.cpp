@@ -17,14 +17,21 @@ using android::base::GetProperty;
 void search_variant(const std::vector<variant_info_t> variants) {
     std::string hwc_value = GetProperty(HWC_PROP, "");
     std::string sku_value = GetProperty(SKU_PROP, "");
+    bool devicefound = false;
+    variant_info_t globalvariant;
 
     for (const auto& variant : variants) {
         if ((variant.hwc_value == "" || variant.hwc_value == hwc_value) &&
             (variant.sku_value == "" || variant.sku_value == sku_value)) {
+            devicefound = true;
             set_variant_props(variant);
             break;
         }
+        if (variant.hwc_value == "GLOBAL")
+            globalvariant = variant;
     }
+    if (!devicefound && globalvariant.hwc_value == "GLOBAL")
+        set_variant_props(globalvariant);
 }
 
 void set_variant_props(const variant_info_t variant) {
