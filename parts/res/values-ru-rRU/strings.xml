@@ -28,8 +28,8 @@
     <string name="thermal_streaming">Стриминговый сервис</string>
 
     <!-- Dirac settings -->
-    <string name="dirac_enable">Включить dirac</string>
-    <string name="dirac_title">Улучшение звука Mi</string>
+    <string name="dirac_enable">Включить Mi Sound Enhancer</string>
+    <string name="dirac_title">Mi Sound Enhancer</string>
     <string name="dirac_summary">Улучшить качество звука</string>
     <string name="dirac_hifi_enable_title">Включить Hi-fi</string>
     <string name="dirac_hifi_title">Hi-Fi</string>
@@ -81,7 +81,7 @@
     <string name="dirac_preset_soft_treble">Мягкие высокие частоты</string>
 
     <!-- Dirac Sound Enhancer tile -->
-    <string name="dirac_qs_tile_title">Улучшение звука Mi</string>
+    <string name="dirac_qs_tile_title">Mi Sound Enhancer</string>
 
     <!-- Refresh Rate Settings -->
     <string name="refresh_rate_tile_title">Частота обновления</string>
