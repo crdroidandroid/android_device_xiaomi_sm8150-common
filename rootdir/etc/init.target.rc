@@ -61,6 +61,7 @@ on init
     chown cameraserver cameraserver /dev/cpuset/camera-daemon
     chown cameraserver cameraserver /dev/cpuset/camera-daemon/tasks
     chmod 0660 /dev/cpuset/camera-daemon/tasks
+    chmod 0666 /dev/uhid
 
 on early-fs
     start vold
