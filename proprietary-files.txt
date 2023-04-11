@@ -719,21 +719,6 @@ vendor/radio/qcril_database/upgrade/6_version_update_ecc_table.sql
 vendor/radio/qcril_database/upgrade/7_version_update_ecc_table.sql
 vendor/radio/qcril_database/qcril.db
 
-# Secure element - from raphael
-vendor/bin/hw/vendor.qti.secure_element@1.2-service|c13524788682d3dd742872c00168e6186ef5485d
-vendor/etc/init/vendor.qti.secure_element@1.2-service.rc|cb8e44a67709a5d9c2f0544058d79eb9f6faad7b
-vendor/lib64/android.hardware.secure_element@1.0-impl.so|84dad412e13343c4b4635d0bc5e8449993a0f3b6
-vendor/lib64/jcos_nq_client.so|5da6107919c29e7b1d24fbeda759810bb5c0e33d
-vendor/lib64/ls_nq_client.so|5d48cde6a77f3944254d0974075a2091f8031cad
-vendor/lib64/se_nq_extn_client.so|7fc157026cdeaf0f54e0c5c357b552bb6f02cfec
-
-# Secure element power manager - from raphael
-vendor/bin/hw/vendor.qti.esepowermanager@1.1-service|56d4f632717e883b125da2b36df8ab0a811d2cc1
-vendor/etc/init/vendor.qti.esepowermanager@1.1-service.rc|3c024c7135ec3dd8658624509ee61396a74f1ede
-vendor/lib64/hw/vendor.qti.esepowermanager@1.1-impl.so|c6b853c5a008123490afeb103a979daf1eb42ee3
-vendor/lib64/vendor.qti.esepowermanager@1.0.so|1d9663e2ad911aa75da4b07a2b17dd023d4c796e
-vendor/lib64/vendor.qti.esepowermanager@1.1.so|3e71c2927fe56732b081b6476df2efbd58d27178
-
 # Snapdragon Computer Vision Engine
 vendor/lib/libfastcvdsp_stub.so
 -vendor/lib/libfastcvopt.so
