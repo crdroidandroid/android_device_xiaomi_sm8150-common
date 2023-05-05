@@ -100,6 +100,14 @@ case "$target" in
 	echo "0:1382400" > /sys/module/cpu_boost/parameters/input_boost_freq
 	echo 120 > /sys/module/cpu_boost/parameters/input_boost_ms
 
+    # setup runtime schedTune
+    echo 1 > /dev/stune/foreground/schedtune.prefer_idle
+    echo 0 > /dev/stune/foreground/schedtune.boost
+    echo 0 > /dev/stune/schedtune.prefer_idle
+    echo 0 > /dev/stune/schedtune.boost
+    echo 1 > /dev/stune/top-app/schedtune.prefer_idle
+    echo 10 > /dev/stune/top-app/schedtune.boost 10
+
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
     echo 1 > /proc/sys/vm/watermark_scale_factor
