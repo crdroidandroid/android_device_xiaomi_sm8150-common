@@ -455,6 +455,16 @@ on property:sys.boot_completed=1
     #Reinit lmkd to reconfigure lmkd properties
     setprop lmkd.reinit 1
 
+    # Set swappiness to 100 for all targets
+    write /proc/sys/vm/swappiness 100
+
+    # Disable wsf for all targets beacause we are using efk.
+    # wsf Range : 1..1000 So set to bare minimum value 1.
+    write /proc/sys/vm/watermark_scale_factor 1
+
+    # Set allocstall_threshold to 0 for all targets.
+    write /sys/module/vmpressure/parameters/allocstall_threshold 0
+
     # ZRAM may use more memory than it saves if SLAB_STORE_USER
     # debug option is enabled.
     write /sys/kernel/slab/zs_handle/store_user 0
@@ -465,9 +475,6 @@ on property:sys.boot_completed=1
 
     # Set zRAM compression algorithm to LZ4
     write /sys/block/zram0/comp_algorithm lz4
-
-    # Enable zRAM data deduplication feature
-    write /sys/block/zram0/use_dedup 1
 
     # Enable ZRAM on boot_complete
     rm /data/unencrypted/zram_swap
