@@ -162,7 +162,7 @@ ro.crypto.volume.metadata.method=dm-default-key
 dalvik.vm.dex2oat64.enabled=true
 
 # Display
-persist.sys.sf.color_mode=9
+persist.sys.sf.color_mode=0
 persist.sys.sf.color_saturation=1.0
 persist.sys.sf.native_mode=2
 ro.vendor.display.ad=1
