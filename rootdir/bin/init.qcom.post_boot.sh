@@ -106,7 +106,7 @@ case "$target" in
     echo 0 > /dev/stune/schedtune.prefer_idle
     echo 0 > /dev/stune/schedtune.boost
     echo 1 > /dev/stune/top-app/schedtune.prefer_idle
-    echo 10 > /dev/stune/top-app/schedtune.boost 10
+    echo 10 > /dev/stune/top-app/schedtune.boost
 
 	# Disable wsf, beacause we are using efk.
 	# wsf Range : 1..1000 So set to bare minimum value 1.
