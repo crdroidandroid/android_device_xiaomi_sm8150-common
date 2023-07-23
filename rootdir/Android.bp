@@ -64,7 +64,7 @@ soong_config_module_type {
 
 soong_config_string_variable {
     name: "PARTITION_SCHEME",
-    values: ["dynamic", "legacy"],
+    values: ["dynamic", "legacy", "vab"],
 }
 
 xiaomi_msmnile_rootdir_prebuilt_etc {
@@ -76,6 +76,9 @@ xiaomi_msmnile_rootdir_prebuilt_etc {
             },
             legacy: {
                 src: "etc/fstab_legacy.qcom",
+            },
+            vab: {
+                src: "etc/fstab_AB.qcom",
             },
             conditions_default: {
                 src: "etc/fstab_dynamic.qcom",
