@@ -122,6 +122,8 @@ on boot
     exec u:r:vendor_qti_init_shell:s0 -- /vendor/bin/init.qcom.usb.sh
     write /config/usb_gadget/g1/strings/0x409/product ${vendor.usb.product_string}
     write /config/usb_gadget/g2/strings/0x409/product ${vendor.usb.product_string}
+    setprop sys.usb.config ${persist.vendor.usb.config}
+    setprop sys.usb.configfs 1
 
 on property:dev.bootcomplete=1 && property:ro.product.device=nabu
     setprop vendor.usb.rndis.func.name "rndis"
