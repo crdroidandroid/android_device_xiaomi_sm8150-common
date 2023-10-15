@@ -35,6 +35,11 @@ printf "\n%s\n" "ifeq (\$(TARGET_HAS_FM),true)" >> "${PRODUCTMK}"
 write_makefiles "${MY_DIR}/proprietary-files-fm.txt" true
 printf "%s\n" "endif" >> "${PRODUCTMK}"
 
+# Exclude phone blobs from tablet builds
+printf "\n%s\n" "ifneq (\$(TARGET_IS_TABLET),true)" >> "${PRODUCTMK}"
+write_makefiles "${MY_DIR}/proprietary-files-phone.txt" true
+printf "%s\n" "endif" >> "${PRODUCTMK}"
+
 # Finish
 write_footers
 
