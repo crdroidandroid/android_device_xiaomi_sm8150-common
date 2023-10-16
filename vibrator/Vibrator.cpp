@@ -193,7 +193,7 @@ int InputFFDevice::play(int effectId, uint32_t timeoutMs, long *playLengthMs) {
     if (mVibraFd == INVALID_VALUE) {
         if (playLengthMs != NULL)
             *playLengthMs = 0;
-            return 0;
+        return 0;
     }
 
     if (timeoutMs != 0) {
