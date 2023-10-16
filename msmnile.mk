@@ -161,7 +161,7 @@ PRODUCT_PACKAGES += \
     libcamera2ndk_vendor \
     libdng_sdk.vendor \
     libgui_vendor \
-    libstdc++.vendor \
+    libstdc++_vendor \
     libpiex_shim \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
