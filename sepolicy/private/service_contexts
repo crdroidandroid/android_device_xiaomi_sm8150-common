@@ -8,3 +8,6 @@ vendor.qti.hardware.radio.qcrilhook.IQtiOemHook/oemhook1            u:object_r:v
 vendor.qti.hardware.radio.qtiradio.IQtiRadioStable/slot1            u:object_r:vendor_hal_telephony_service:s0
 vendor.qti.hardware.radio.qtiradio.IQtiRadioStable/slot2            u:object_r:vendor_hal_telephony_service:s0
 vendor.qti.hardware.radio.qtiradioconfig.IQtiRadioConfig/default    u:object_r:vendor_hal_telephony_service:s0
+
+# NFC
+vendor.nxp.nxpnfc_aidl.INxpNfc/default                              u:object_r:hal_nfc_service:s0
