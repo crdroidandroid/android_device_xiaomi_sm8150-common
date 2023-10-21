@@ -83,10 +83,6 @@ rild.libpath=/vendor/lib64/libril-qc-hal-qmi.so
 ro.telephony.default_network=33,33
 telephony.lteOnCdmaDevice=1
 
-# Netmgr
-persist.vendor.data.iwlan.enable=true
-persist.vendor.data.mode=concurrent
-
 # Wireless display
 persist.debug.wfd.enable=1
 persist.sys.wfd.virtual=0
