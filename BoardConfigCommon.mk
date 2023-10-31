@@ -74,6 +74,9 @@ ifeq ($(TARGET_HAS_UDFPS),true)
 TARGET_SURFACEFLINGER_UDFPS_LIB := //hardware/xiaomi:libudfps_extension.xiaomi
 endif
 
+# HWUI
+TARGET_USES_VULKAN := true
+
 # Kernel
 ifeq ($(TARGET_IS_VAB),true)
 BOARD_BOOT_HEADER_VERSION := 3
