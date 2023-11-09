@@ -115,6 +115,7 @@ TARGET_KERNEL_CONFIG := \
     vendor/sm8150-perf_defconfig \
     vendor/xiaomi/sm8150-common.config \
     vendor/debugfs.config
+TARGET_KERNEL_CLANG_VERSION := latest
 
 # Partitions
 BOARD_FLASH_BLOCK_SIZE := 262144 # (BOARD_KERNEL_PAGESIZE * 64)
