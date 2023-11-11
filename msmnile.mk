@@ -88,7 +88,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    audio.primary.msmnile \
     audio.r_submix.default \
     audio.usb.default
 
@@ -104,9 +103,9 @@ PRODUCT_PACKAGES += \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libreverbwrapper \
+    libtinycompress \
     libvisualizer \
-    libvolumelistener \
-    sound_trigger.primary.msmnile
+    libvolumelistener
 
 # Audio configs
 PRODUCT_COPY_FILES += \
