@@ -1,10 +1,5 @@
 # Unpinned blobs from vayu_global-user 12 RKQ1.200826.002 V13.0.5.0.SJUMIXM release-keys
 
-# ACDB loader
-vendor/lib/libacdb-fts.so
-vendor/lib/libacdbloader.so
-vendor/lib/libacdbrtac.so
-
 # ADSP
 vendor/bin/adsprpcd
 vendor/bin/dspservice
@@ -25,27 +20,6 @@ vendor/lib64/vendor.qti.hardware.dsp@1.0.so
 system_ext/lib/com.qualcomm.qti.ant@1.0.so
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so
 vendor/lib64/hw/com.dsi.ant@1.0-impl.so|87dc1a131534659173e71e108e7a3ffe6325845f
-
-# Audio
-vendor/lib/libadiertac.so
-vendor/lib/libadm.so
-vendor/lib/libaudcal.so
-vendor/lib/libaudio_log_utils.so
-vendor/lib/libaudioconfigstore.so
-vendor/lib/libaudioparsers.so
-vendor/lib/libaudioroute_ext.so
-vendor/lib/libbatterylistener.so
-vendor/lib/libcomprcapture.so
-vendor/lib/libdrc.so
-vendor/lib/libexthwplugin.so
-vendor/lib/libhdmiedid.so
-vendor/lib/libhdmipassthru.so
-vendor/lib/libhfp.so
-vendor/lib/libqtigef.so
-vendor/lib/libsndmonitor.so
-vendor/lib/libspkrprot.so
-vendor/lib/libssrec.so
-vendor/lib/libsurround_3mic_proc.so
 
 # Audio FX modules
 system_ext/etc/permissions/audiosphere.xml
@@ -68,7 +42,6 @@ vendor/lib64/libsoc_helper_jni.so
 
 # Bluetooth (A2DP)
 vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so
-vendor/lib/btaudio_offload_if.so
 vendor/lib/libbluetooth_audio_session_qti.so
 
 # Bluetooth (aptX)
