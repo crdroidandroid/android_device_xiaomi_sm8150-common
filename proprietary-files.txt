@@ -84,6 +84,11 @@ vendor/lib64/hw/vendor.qti.hardware.bluetooth_sar@1.1-impl.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
+# Camera
+lib64/libcamera_algoup_jni.xiaomi.so
+lib64/libcamera_mianode_jni.xiaomi.so
+lib64/vendor.xiaomi.hardware.campostproc@1.0.so
+
 # CDSP
 vendor/bin/cdsprpcd
 vendor/etc/init/vendor.qti.cdsprpc-service.rc
