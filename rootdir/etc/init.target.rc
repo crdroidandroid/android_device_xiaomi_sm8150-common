@@ -28,7 +28,6 @@
 #
 
 on early-init
-    exec u:r:vendor_modprobe:s0 -- /vendor/bin/modprobe -a -d /vendor/lib/modules audio_wglink audio_q6_pdr audio_q6_notifier audio_apr audio_adsp_loader audio_q6 audio_native audio_usf audio_pinctrl_wcd audio_swr audio_platform audio_hdmi audio_wcd_spi audio_stub audio_wcd_core audio_wsa881x audio_wcd9360 audio_hdmi audio_cs35l41 audio_tas2557 audio_tas256x audio_tfa98xx audio_machine_msmnile
     write /proc/sys/kernel/sched_boost 1
     symlink /data/tombstones /tombstones
 
@@ -129,9 +128,6 @@ on post-fs-data
     mkdir /data/vendor/dolby 0770 media media
     mkdir /data/vendor/multimedia 0775 system system
 
-on property:ro.boot.dp=0x0
-    write /sys/bus/platform/devices/c440000.qcom,spmi:qcom,pm8150@0:qcom,power-on@800/pshold_reboot 7
-
 on early-boot
     start vendor.sensors
 
@@ -154,9 +150,6 @@ on boot
     write /dev/cpuset/foreground/boost/cpus 0-7
     write /dev/cpuset/background/cpus 0-7
     write /dev/cpuset/system-background/cpus 0-7
-
-#Load WLAN driver
-    insmod /vendor/lib/modules/wlan.ko
 
     chown system system /sys/class/thermal/thermal_message/sconfig
 
@@ -229,17 +222,6 @@ on charger
     setprop sys.usb.configfs 1
     start leds-sh
 
-service vendor.spdaemon /vendor/bin/spdaemon
-    class core
-    user system
-    group system
-    shutdown critical
-
-service vendor.sec_nvm /vendor/bin/sec_nvm
-    class core
-    user system
-    group system
-
 service vendor.thermal-engine /vendor/bin/thermal-engine
    class main
    user root
@@ -249,38 +231,7 @@ service vendor.thermal-engine /vendor/bin/thermal-engine
    socket thermal-send-rule stream 0660 system system
    group root
 
-service vendor.mdm_helper /vendor/bin/mdm_helper
-    class core
-    group system wakelock
-    disabled
-
-service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
-    class main
-    oneshot
-
-service vendor.energy-awareness /vendor/bin/energy-awareness
-    class main
-    user system
-    group system
-    oneshot
-
-service panel-info-sh /system/vendor/bin/sh /vendor/etc/init.panel_info.sh
-    class core
-    user root
-    oneshot
-
-service leds-sh /system/vendor/bin/sh /vendor/etc/init.leds.sh
-    class core
-    user root
-    oneshot
-
-service nv_mac /vendor/bin/nv_mac
-    class late_start
-    user system
-    group system inet net_admin wifi net_raw
-    oneshot
-
-service dcvs-sh /vendor/bin/init.qti.dcvs.sh
+service vendor.dcvs-sh /vendor/bin/init.qti.dcvs.sh
     class late_start
     user root
     group root system
@@ -295,7 +246,7 @@ on property:vendor.post_boot.parsed=1
     write /proc/irq/518/smp_affinity_list 1
 
 on property:vendor.dcvs.prop=1
-   start dcvs-sh
+   start vendor.dcvs-sh
 
 on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2557_cal.bin /mnt/vendor/persist/audio/tas2557_cal.bin
@@ -314,31 +265,3 @@ on property:vendor.audio.cit.spkcal.copy=true
     copy /data/vendor/cit/tas2559_cal.txt /mnt/vendor/persist/audio/tas2559_cal.txt
     chmod 666 /mnt/vendor/persist/audio/tas25xx_calib.bin
     chmod 666 /mnt/vendor/persist/audio/tas2559_cal.txt
-service remosaic_daemon /system/vendor/bin/remosaic_daemon
-   class late_start
-   user camera
-   group camera
-
-
-on post-fs-data
-    chmod 0666 /dev/migt
-    restorecon /dev/migt
-    chmod 0777 /sys/module/migt/parameters/migt_freq
-    restorecon /sys/module/migt/parameters/migt_freq
-    chmod 0777 /sys/module/migt/parameters/migt_ms
-    restorecon /sys/module/migt/parameters/migt_ms
-    chmod 0777 /sys/module/migt/parameters/migt_thresh
-    restorecon /sys/module/migt/parameters/migt_thresh
-    chmod 0777 /sys/module/migt/parameters/boost_policy
-    restorecon /sys/module/migt/parameters/boost_policy
-    chmod 0777 /sys/module/migt/parameters/fps_variance_ratio
-    restorecon /sys/module/migt/parameters/fps_variance_ratio
-    chmod 0777 /sys/module/migt/parameters/super_task_max_num
-    restorecon /sys/module/migt/parameters/super_task_max_num
-    chmod 0777 /sys/module/migt/parameters/migt_ceiling_freq
-    restorecon /sys/module/migt/parameters/migt_ceiling_freq
-    chmod 0777 /sys/module/migt/parameters/stask_candidate_num
-    restorecon /sys/module/migt/parameters/stask_candidate_num
-    chmod 0777 /sys/module/migt/parameters/fas_power_mod
-    restorecon /sys/module/migt/parameters/fas_power_mod
-
