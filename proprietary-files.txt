@@ -353,6 +353,7 @@ vendor/lib64/vendor.qti.gnss@2.1.so
 vendor/lib64/vendor.qti.gnss@3.0.so
 vendor/lib64/vendor.qti.gnss@4.0-service.so
 vendor/lib64/vendor.qti.gnss@4.0.so
+vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
 
 # GNSS configs
 vendor/etc/apdr.conf
@@ -575,14 +576,6 @@ vendor/bin/power_off_alarm
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so
-
-# QCC
-vendor/bin/hw/vendor.qti.hardware.qccvndhal@1.0-service
-vendor/etc/init/vendor.qti.hardware.qccvndhal@1.0-service.rc
-vendor/lib64/hw/vendor.qti.hardware.qccvndhal@1.0-impl.so
-vendor/lib64/vendor.qti.hardware.qccsyshal@1.0.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0-halimpl.so
-vendor/lib64/vendor.qti.hardware.qccvndhal@1.0.so
 
 # QMI
 etc/permissions/privapp-permissions-qti.xml
