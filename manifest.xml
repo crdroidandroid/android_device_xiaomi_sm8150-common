@@ -177,17 +177,6 @@
         <fqname>@1.0::IFmHci/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.qti.hardware.qseecom</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IQSEECom/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.qteeconnector</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::IAppConnector/default</fqname>
-        <fqname>@1.0::IGPAppConnector/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.qti.hardware.radio.am</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::IQcRilAudio/slot1</fqname>
@@ -245,11 +234,6 @@
         <name>vendor.qti.hardware.soter</name>
         <transport>hwbinder</transport>
         <fqname>@1.0::ISoter/default</fqname>
-    </hal>
-    <hal format="hidl">
-        <name>vendor.qti.hardware.tui_comm</name>
-        <transport>hwbinder</transport>
-        <fqname>@1.0::ITuiComm/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.qti.hardware.vpp</name>
