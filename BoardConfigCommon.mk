@@ -129,17 +129,7 @@ BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := $(ALL_PARTITIONS)
 
 # Partitions - reserved size
-ifneq ($(WITH_GMS),true)
-$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_EXTFS_INODE_COUNT := -1))
-SSI_PARTITIONS_RESERVED_SIZE := 1205862400
-else
-SSI_PARTITIONS_RESERVED_SIZE := 30720000
-endif
-$(foreach p, $(call to-upper, $(SSI_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := $(SSI_PARTITIONS_RESERVED_SIZE)))
-$(foreach p, $(call to-upper, $(TREBLE_PARTITIONS)), \
-    $(eval BOARD_$(p)IMAGE_PARTITION_RESERVED_SIZE := 30720000))
+-include vendor/lineage/config/BoardConfigReservedSize.mk
 
 # Platform
 BOARD_VENDOR := xiaomi
