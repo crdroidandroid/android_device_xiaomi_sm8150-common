@@ -2,3 +2,4 @@ service vendor.qti.vibrator.xiaomi_sm8150 /vendor/bin/hw/vendor.qti.hardware.vib
     class hal
     user system
     group system input
+    task_profiles ServiceCapacityLow
