@@ -230,6 +230,8 @@
         <item>"/apex/com.android.art/javalib/core-libart.jar"</item>
         <item>"/apex/com.android.art/javalib/core-oj.jar"</item>
         <item>"/system_ext/priv-app/SystemUIGoogle/SystemUIGoogle.apk"</item>
+        <item>"/system_ext/priv-app/MotoDolbyDax3/MotoDolbyDax3.apk"</item>
+        <item>"/system_ext/priv-app/daxService/daxService.apk"</item>
         <item>"/system/bin/surfaceflinger"</item>
         <item>"/system/framework/arm64/boot-telephony-common.art"</item>
         <item>"/system/framework/boot-framework.vdex"</item>
@@ -256,7 +258,6 @@
         <item>"/system/lib64/libhwui.so"</item>
         <item>"/system/lib64/libui.so"</item>
         <item>"/system/lib64/libvulkan.so"</item>
-        <item>"/system_ext/priv-app/SystemUI/SystemUI.apk"</item>
         <item>"/vendor/lib/egl/eglSubDriverAndroid.so"</item>
         <item>"/vendor/lib/egl/libEGL_adreno.so"</item>
         <item>"/vendor/lib/egl/libGLESv1_CM_adreno.so"</item>
