@@ -70,6 +70,7 @@ on init
     # Boot time fs tuning
     write /sys/block/sda/queue/iostats 0
     write /sys/block/sda/queue/scheduler cfq
+    write /sys/block/sda/queue/iosched/group_idle 0
     write /sys/block/sda/queue/iosched/slice_idle 0
     write /sys/block/sda/queue/nr_requests 256
 
