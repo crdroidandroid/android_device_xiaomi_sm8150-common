@@ -88,7 +88,7 @@ vendor.audio.usb.disable.sidetone=true
 vendor.audio.use.sw.alac.decoder=true
 vendor.audio.use.sw.ape.decoder=true
 vendor.audio.volume.headset.gain.depcal=true
-vendor.voice.path.for.pcm.voip=false
+vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
 bluetooth.device.class_of_device=90,2,12
