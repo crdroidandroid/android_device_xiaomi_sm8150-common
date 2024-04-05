@@ -62,6 +62,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Camera
 TARGET_CAMERA_OVERRIDE_FORMAT_FROM_RESERVED := true
+TARGET_CAMERA_PACKAGE_NAME := com.xiaomi.sessionparams.clientName
 
 # Display
 TARGET_DISABLED_UBWC := true
