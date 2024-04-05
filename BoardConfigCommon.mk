@@ -38,6 +38,7 @@ TARGET_NO_BOOTLOADER := true
 BUILD_BROKEN_INCORRECT_PARTITION_IMAGES := true
 
 # Camera
+TARGET_CAMERA_PACKAGE_NAME := com.xiaomi.sessionparams.clientName
 MALLOC_SVELTE := true
 MALLOC_SVELTE_FOR_LIBC32 := true
 
