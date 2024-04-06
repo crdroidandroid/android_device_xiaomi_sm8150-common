@@ -17,6 +17,4 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="pickup_sensor" translatable="false">xiaomi.sensor.pickup</string>
 
-    <!-- For Enabling Battery Heath -->
-    <bool name="config_supportBatteryHealth">true</bool>
 </resources>
