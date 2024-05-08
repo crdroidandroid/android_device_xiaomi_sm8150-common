@@ -65,6 +65,12 @@ vendor/lib64/libbluetooth_audio_session_qti.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.0.so
 vendor/lib64/vendor.qti.hardware.bluetooth_sar@1.1.so
 
+# Camera
+lib64/libcamera_algoup_jni.xiaomi.so
+lib64/libcamera_mianode_jni.xiaomi.so
+lib64/libmicampostproc_client.so
+lib64/vendor.xiaomi.hardware.campostproc@1.0.so
+
 # Camera motor (sound) - from raphael
 system/media/audio/ui/popup_cangmen_down.ogg:system_ext/media/audio/ui/popup_cangmen_down.ogg|573b107889ccf639db5455af21129ce1fee93bc5
 system/media/audio/ui/popup_cangmen_up.ogg:system_ext/media/audio/ui/popup_cangmen_up.ogg|f152dea254b4eaae403b791c49c60c05ccf12ea7
