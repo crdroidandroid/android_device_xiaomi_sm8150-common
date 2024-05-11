@@ -38,9 +38,7 @@ persist.radio.meid                                                              
 ro.ril.miui.imei                                                                                    u:object_r:vendor_deviceid_prop:s0
 ro.ril.oem.imei                                                                                     u:object_r:vendor_deviceid_prop:s0
 ro.ril.oem.meid                                                                                     u:object_r:vendor_deviceid_prop:s0
-ro.vendor.oem.imei                                                                                  u:object_r:vendor_deviceid_prop:s0
-ro.vendor.oem.psno                                                                                  u:object_r:vendor_deviceid_prop:s0
-ro.vendor.oem.sno                                                                                   u:object_r:vendor_deviceid_prop:s0
+ro.vendor.oem.                                                                                      u:object_r:vendor_deviceid_prop:s0
 
 # Mlipay
 persist.vendor.sys.pay                                                                              u:object_r:vendor_tee_listener_prop:s0
