@@ -9,3 +9,11 @@ ro.product.mod_device                                                           
 
 # Vendor init
 ro.product.marketname                                                                               u:object_r:exported_default_prop:s0
+
+# MIUI
+persist.sensor.sardisable                                                                           u:object_r:exported_system_prop:s0
+ro.camera.req.                                                                                      u:object_r:exported_system_prop:s0
+ro.camera.res.                                                                                      u:object_r:exported_system_prop:s0
+tas.smartpa.                                                                                        u:object_r:exported_system_prop:s0
+vendor.panel.display                                                                                u:object_r:exported_system_prop:s0
+vendor.sys.camerainfo                                                                               u:object_r:exported_system_prop:s0
