@@ -7,3 +7,6 @@ allow vendor_qti_init_shell sysfs_wakeup:file setattr;
 allow vendor_qti_init_shell vendor_bluetooth_prop:property_service set;
 allow vendor_qti_init_shell vendor_wifi_vendor_data_file:dir search;
 allow vendor_qti_init_shell vendor_wifi_vendor_data_file:file r_file_perms;
+
+# Allow getting USB control props
+get_prop(vendor_qti_init_shell, usb_control_prop)

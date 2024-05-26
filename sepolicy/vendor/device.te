@@ -8,4 +8,7 @@ type motor_device, dev_type;
 
 type sound_device, dev_type;
 
+type ultrasound_device, dev_type;
+
+# Treat non-super block devices as super block devices for retrofit
 typeattribute system_block_device super_block_device_type;

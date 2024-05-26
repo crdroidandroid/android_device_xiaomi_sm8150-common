@@ -1,8 +1,3 @@
 allow init same_process_hal_file:file execute;
 
-allow init proc_last_kmsg:file {
-  r_file_perms
-  setattr
-};
-
 allow init adsprpcd_file:file mounton;
