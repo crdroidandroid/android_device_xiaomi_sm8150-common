@@ -18,9 +18,6 @@ persist.vendor.audio.ras.enabled=false
 persist.vendor.audio.ring.filter.mask=0
 persist.vendor.audio.voicecall.speaker.stereo=true
 ro.audio.monitorRotation=true
-ro.audio.recording.hd=true
-ro.qc.sdk.audio.fluencetype=none
-ro.qc.sdk.audio.ssr=false
 ro.vendor.audio.afe.record=true
 ro.vendor.audio.game.effect=true
 ro.vendor.audio.ring.filter=true
@@ -67,8 +64,6 @@ ro.vendor.audio.vocal.support=true
 ro.vendor.audio.voice.change.support=true
 ro.vendor.audio.voice.volume.boost=manual
 ro.vendor.audio.xiaoaitongxue.aec=true
-tunnel.audio.encode = true
-use.voice.path.for.pcm.voip=true
 vendor.audio.adm.buffering.ms=6
 vendor.audio.dolby.ds2.enabled=false
 vendor.audio.dolby.ds2.hardbypass=false
@@ -120,7 +115,6 @@ bluetooth.profile.pbap.server.enabled?=true
 bluetooth.profile.sap.server.enabled?=true
 bluetooth.profile.ccp.server.enabled?=true
 bluetooth.profile.vcp.controller.enabled?=true
-persist.vendor.bt.a2dp.mac_whitelist=false
 persist.vendor.bt.aac_frm_ctl.enabled=false
 persist.vendor.btsatck.absvolfeature=true
 persist.vendor.btstack.connect.peer_earbud=false
@@ -135,10 +129,7 @@ persist.vendor.qcom.bluetooth.scram.enabled=true
 persist.vendor.qcom.bluetooth.soc=cherokee
 persist.vendor.qcom.bluetooth.twsp_state.enabled=false
 ro.bluetooth.a2dp_offload.supported=true
-ro.bluetooth.emb_wp_mode=false
-ro.bluetooth.wipower=false
 ro.vendor.bluetooth.wipower=false
-vendor.bluetooth.soc=cherokee
 vendor.qcom.bluetooth.soc=cherokee
 
 # Chipset
@@ -198,9 +189,6 @@ ro.frp.pst=/dev/block/bootdevice/by-name/frp
 # Gatekeeper
 vendor.gatekeeper.disable_spu=true
 
-# GPS
-persist.backup.ntpServer=0.pool.ntp.org
-
 # Graphics
 debug.egl.hw=0
 debug.mdpcomp.logs=0
@@ -212,7 +200,6 @@ debug.sf.high_fps_late_app_phase_offset_ns=1000000
 debug.sf.high_fps_late_sf_phase_offset_ns=-4000000
 debug.sf.hw=0
 debug.sf.latch_unsignaled=1
-persist.demo.hdmirotationlock=false
 ro.hardware.egl=adreno
 ro.hardware.vulkan=adreno
 ro.opengles.version=196610
