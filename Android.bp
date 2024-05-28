@@ -5,7 +5,10 @@
 //
 
 soong_namespace {
-    imports: ["hardware/qcom-caf/bootctrl"],
+    imports: [
+        "bootable/deprecated-ota",
+        "hardware/qcom-caf/bootctrl",
+    ],
 }
 
 soong_config_module_type {
