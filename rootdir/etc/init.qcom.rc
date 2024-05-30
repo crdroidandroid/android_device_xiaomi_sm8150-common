@@ -975,7 +975,7 @@ service esepmdaemon /system/vendor/bin/esepmdaemon
     user system
     group nfc
 
-on property:init.svc.vendor.charger=running
+on charger
     setprop persist.sys.usb.config mass_storage
     start qcom-post-boot
 
