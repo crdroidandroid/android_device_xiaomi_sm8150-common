@@ -353,14 +353,6 @@ on post-fs-data
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
-    # qti-logkit data
-    mkdir /data/vendor/qti-logkit/ 0771 system system
-    mkdir /data/vendor/qti-logkit/shared-privileged/ 2770 system system
-    mkdir /data/vendor/qti-logkit/shared-public/ 2770 system diag
-    mkdir /data/vendor/qti-logkit/socket-privileged/ 2770 system system
-    mkdir /data/vendor/qti-logkit/socket-public/ 2750 system diag
-    mkdir /data/vendor/qti-logkit/logdata/ 2750 system shell
-
     #Create SWAP related dirs
     mkdir /data/vendor/swap 0770 root system
     chmod 2770 /data/vendor/swap
@@ -640,85 +632,6 @@ service wifi_ftmd /system/vendor/bin/wifi_ftmd
 on property:vendor.wifi.ftmd.load=true
     insmod /system/lib/modules/pronto/pronto_wlan.ko con_mode=5
 
-service tcpdump /vendor/bin/tcpdump -i any -W 2 -C 2 -s 134 -w /data/vendor/wlan_logs/tcpdump.pcap
-    class main
-    user root
-    group root wifi
-    disabled
-    oneshot
-
-service tcpdump_full /vendor/bin/tcpdump -i any -W 3 -C 40 -w /data/vendor/wlan_logs/tcpdump_full.pcap
-    class main
-    user root
-    group root wifi
-    disabled
-    oneshot
-
-service sniffer /vendor/bin/tcpdump -i wlan0 -w /data/vendor/wlan_logs/sniffer.pcap
-    class main
-    user root
-    group root wifi
-    disabled
-    oneshot
-
-service startbtclog_info /vendor/bin/iwpriv wlan0 setUnitTestCmd 4 2 11 1
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-service startbtclog_msg /vendor/bin/iwpriv wlan0 setUnitTestCmd 4 2 12 1
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-service stopbtclog_info /vendor/bin/iwpriv wlan0 setUnitTestCmd 4 2 11 0
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-service stopbtclog_msg /vendor/bin/iwpriv wlan0 setUnitTestCmd 4 2 12 0
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-on property:vendor.hardware.wlan.runtcpdump=stop
-     stop tcpdump
-
-on property:vendor.hardware.wlan.runtcpdump=start
-     start tcpdump
-
-on property:vendor.hardware.wlan.runsniffer=stop
-     stop sniffer
-
-on property:vendor.hardware.wlan.runsniffer=start
-     start sniffer
-
-on property:sys.user.0.ce_available=true
-    start cnss_diag
-    start tcpdump
-
-service startpktlog /system/bin/iwpriv wlan0 pktlog 2
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
-service stoppktlog /system/bin/iwpriv wlan0 pktlog 0
-    class main
-    user root
-    group root
-    disabled
-    oneshot
-
 service cnss-daemon /system/vendor/bin/cnss-daemon -n -l
     class late_start
     user system
@@ -738,12 +651,6 @@ service iprenew_bt-pan /system/bin/dhcpcd -n
     class late_start
     disabled
     oneshot
-
-service ssgqmigd /vendor/bin/ssgqmigd
-    class late_start
-    user radio
-    group radio gps system
-    socket ssgqmig seqpacket 0660 radio inet
 
 service mlid /vendor/bin/mlid
     class late_start
@@ -773,11 +680,6 @@ service qcom-sh /vendor/bin/init.qcom.sh
     user root
     group root system radio
     oneshot
-# Remove since is deprecated but throws AVC denial.
-# service crashdata-sh /vendor/bin/init.qcom.crashdata.sh
-#    class late_start
-#    user root
-#    oneshot
 
 service qcom-post-boot /vendor/bin/init.qcom.post_boot.sh
     class late_start
@@ -804,31 +706,10 @@ on property:sys.boot_completed=1
 on property:ro.vendor.ril.mbn_copy_completed=1
     write /data/vendor/radio/copy_complete 1
 
-service qvop-daemon /vendor/bin/qvop-daemon
-    class late_start
-    user system
-    group system drmrpc
-
 service vendor.atfwd /vendor/bin/ATFWD-daemon
     class late_start
     user system
     group system radio
-
-service hostapd_fst /vendor/bin/hw/hostapd -dd -g /data/vendor/wifi/hostapd/global
-    class main
-    capabilities NET_ADMIN NET_RAW
-    user wifi
-    group wifi
-    disabled
-    oneshot
-
-service ims_regmanager /system/vendor/bin/exe-ims-regmanagerprocessnative
-    class late_start
-    group net_bt_admin inet radio wifi
-    disabled
-
-on property:persist.ims.regmanager.mode=1
-    start ims_regmanager
 
 on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
@@ -853,18 +734,6 @@ service vendor.ril-daemon3 /vendor/bin/hw/rild -c 3
     group radio cache inet misc audio sdcard_r sdcard_rw diag oem_2901 log
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service profiler_daemon /system/bin/profiler_daemon
-    class late_start
-    user root
-    group root
-    disabled
-
-service vendor.ssr_diag /system/vendor/bin/ssr_diag
-    class late_start
-    user system
-    group system
-    disabled
-
 service hvdcp /system/bin/hvdcp
     class core
     user root
@@ -880,39 +749,6 @@ service charger_monitor /system/bin/charger_monitor
     user root
     group root
     disabled
-
-service qbcharger /charger -m 1
-    disabled
-    oneshot
-
-on property:sys.qbcharger.enable=true
-    start qbcharger
-
-on property:sys.qbcharger.enable=false
-    stop qbcharger
-
-service diag_mdlog_start /vendor/bin/diag_mdlog -c -n 20
-    class late_start
-    user shell
-    group system oem_2901 sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service diag_mdlog_stop /vendor/bin/diag_mdlog -k
-    class late_start
-    user shell
-    group system oem_2901 sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service qlogd /system/xbin/qlogd
-    socket qlogd stream 0662 system system
-    class main
-    disabled
-on property:persist.sys.qlogd=1
-    start qlogd
-on property:persist.sys.qlogd=0
-    stop qlogd
 
 service vm_bms /vendor/bin/vm_bms
     user root
@@ -936,22 +772,6 @@ service vendor.msm_irqbl_sdm630 /vendor/bin/msm_irqbalance -f /system/vendor/etc
     user root
     group root
     disabled
-
-# service for USERDEBUG
-service vendor.LKCore-dbg /vendor/bin/LKCore
-    class late_start
-    oneshot
-    disabled
-    user root
-    group root system log diag net_raw
-
-# service for USER
-service vendor.LKCore-rel /vendor/bin/LKCore
-    class late_start
-    oneshot
-    disabled
-    user system
-    group system log diag
 
 service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
     class late_start
@@ -1000,22 +820,6 @@ service vendor.hbtp /vendor/bin/hbtp_daemon
      group system
      capabilities SYS_NICE
      disabled
-
-#service chre /vendor/bin/chre
-#    class late_start
-#    user system
-#    group system
-#    socket chre seqpacket 0660 root system
-#    shutdown critical
-
-#on property:vendor.chre.enabled=0
-#   stop chre
-
-service bugreport /system/bin/dumpstate -d -p -B -z -o /data/user_de/0/com.android.shell/files/bugreports/bugreport
-    class main
-    disabled
-    oneshot
-    keycodes 114 115 116
 
 #Set GPU Opengles version
 on property:vendor.opengles.version=*
