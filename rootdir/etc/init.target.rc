@@ -244,16 +244,6 @@ service vendor.mdm_launcher /vendor/bin/sh /vendor/bin/init.mdm.sh
     class main
     oneshot
 
-
-on property:vold.decrypt=trigger_restart_framework
-    start cnss_diag
-
-service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
-    class main
-    user system
-    group system wifi inet sdcard_rw media_rw diag
-    oneshot
-
 service vendor.energy-awareness /vendor/bin/energy-awareness
     class main
     user system
