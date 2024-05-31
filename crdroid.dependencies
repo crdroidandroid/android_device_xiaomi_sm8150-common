@@ -1,0 +1,21 @@
+[
+  {
+    "repository": "LineageOS/android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi",
+    "branch": "lineage-21"
+  },
+  {
+    "repository": "crdroidandroid/android_kernel_xiaomi_sm8150",
+    "target_path": "kernel/xiaomi/sm8150"
+  },
+  {
+    "repository": "crdroidandroid/proprietary_vendor_xiaomi_sm8150-common",
+    "target_path": "vendor/xiaomi/sm8150-common",
+    "remote": "crdroid-gitlab"
+  },
+  {
+    "repository": "crdroidandroid/proprietary_vendor_xiaomi_miuicamera",
+    "target_path": "vendor/xiaomi/miuicamera",
+    "remote": "crdroid-gitlab"
+  }
+]
