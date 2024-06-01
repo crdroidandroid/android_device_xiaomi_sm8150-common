@@ -12,6 +12,9 @@ genfscon sysfs /devices/platform/soc/soc:fingerprint_goodix                     
 # FOD
 genfscon sysfs /devices/virtual/touch/tp_dev/fod_status                                             u:object_r:vendor_sysfs_graphics:s0
 
+# Haptic
+genfscon sysfs /devices/platform/soc/a8c000.i2c/i2c-2/2-005a/ulevel                                 u:object_r:sysfs_vibrator:s0
+
 # Health
 genfscon sysfs /class/power_supply/battery/capacity                                                 u:object_r:sysfs_battery_supply:s0
 genfscon sysfs /devices/platform/soc/884000.i2c/i2c-3/3-0051/power_supply/bq2597x-master            u:object_r:sysfs_battery_supply:s0
