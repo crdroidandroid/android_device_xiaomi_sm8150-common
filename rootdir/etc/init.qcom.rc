@@ -58,6 +58,10 @@ on init
     # Allow both charger and hal_light to access panel0 backlight
     chown system system /sys/class/backlight/panel0-backlight/brightness
 
+    # Allow system to adjust haptic level directly
+    chown system system /sys/module/qti_haptics/parameters/vmax_mv_override
+    chmod 0664 /sys/module/qti_haptics/parameters/vmax_mv_override
+
 on early-boot
     # set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
