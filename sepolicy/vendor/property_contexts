@@ -13,6 +13,7 @@ persist.camera.                                                                 
 persist.vendor.aiie_capture_dump.                                                                   u:object_r:vendor_camera_prop:s0
 persist.vendor.aiie_capture_log.                                                                    u:object_r:vendor_camera_prop:s0
 persist.vendor.camera                                                                               u:object_r:vendor_camera_prop:s0
+persist.vendor.low.cutoff                                                                           u:object_r:vendor_camera_prop:s0
 ro.camera.res.fmq.size                                                                              u:object_r:vendor_camera_prop:s0
 ro.camera.req.fmq.size                                                                              u:object_r:vendor_camera_prop:s0
 ro.vendor.camera.                                                                                   u:object_r:vendor_camera_prop:s0
