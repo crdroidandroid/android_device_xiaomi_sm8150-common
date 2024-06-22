@@ -167,6 +167,7 @@ vendor/lib64/libhdr_tm.so
 
 # Display (SDM)
 vendor/lib64/libdisplayqos.so
+vendor/lib64/libdpps.so
 vendor/lib64/libqseed3.so
 vendor/lib64/libsdm-color.so
 vendor/lib64/libsdm-colormgr-algo.so
