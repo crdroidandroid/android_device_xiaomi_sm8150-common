@@ -414,8 +414,8 @@ system_ext/lib64/lib-imsvt.so|1ea25552e520f110e92f6750d0f371d7f2ed69c9
 system_ext/lib64/lib-imsvtextutils.so|1dfb5640cd23a92e7ca55a84118b2966653aebc7
 system_ext/lib64/lib-imsvtutils.so|3ed0180cee3849f63fb7bbbd68a3767693aba2dc
 system_ext/lib64/libdiag_system.so|e8587e587fd052ba03b0e9efad16f4622be37da0
-system_ext/lib64/libimscamera_jni.so|a21333fa8f338acaa4996f74a0e29145f77d5299
-system_ext/lib64/libimsmedia_jni.so|d1b4c03352a9b34f4d26a4fe3a8595f295c7cef8
+system_ext/lib64/libimscamera_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimscamera_jni.so|a21333fa8f338acaa4996f74a0e29145f77d5299
+system_ext/lib64/libimsmedia_jni.so;SYMLINK=system_ext/priv-app/ims/lib/arm64/libimsmedia_jni.so|d1b4c03352a9b34f4d26a4fe3a8595f295c7cef8
 system_ext/lib64/vendor.qti.imsrtpservice@3.0.so|ace5e02b6cd79b43a07d84e2d18d6818821a3c48
 system_ext/lib64/vendor.qti.imsrtpservice@3.1.so|e64aa8a21a8db69d2e2ea14929bb20ced99c119d
 system_ext/priv-app/ims/ims.apk|4ebf655d48f9924d7a00e993254044c81c497124
