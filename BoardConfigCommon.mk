@@ -216,6 +216,14 @@ SYSTEM_EXT_PUBLIC_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/public
 BOARD_VENDOR_SEPOLICY_DIRS += $(COMMON_PATH)/sepolicy/vendor
 BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 
+# Soong
+SOONG_CONFIG_NAMESPACES += xiaomiSm8150Vars
+SOONG_CONFIG_xiaomiSm8150Vars += \
+    livedisplay_support_anti_flicker \
+    livedisplay_support_sunlight_enhancement
+SOONG_CONFIG_xiaomiSm8150Vars_livedisplay_support_anti_flicker ?= false
+SOONG_CONFIG_xiaomiSm8150Vars_livedisplay_support_sunlight_enhancement ?= true
+
 # Treble
 BOARD_VNDK_VERSION := current
 
