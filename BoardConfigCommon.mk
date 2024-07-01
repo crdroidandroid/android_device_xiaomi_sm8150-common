@@ -217,9 +217,13 @@ BUILD_BROKEN_VENDOR_PROPERTY_NAMESPACE := true
 # Soong
 SOONG_CONFIG_NAMESPACES += XIAOMI_MSMNILE
 SOONG_CONFIG_XIAOMI_MSMNILE := \
-    PARTITION_SCHEME
+    PARTITION_SCHEME \
+    livedisplay_support_anti_flicker \
+    livedisplay_support_sunlight_enhancement
 
 SOONG_CONFIG_XIAOMI_MSMNILE_PARTITION_SCHEME ?= dynamic
+SOONG_CONFIG_XIAOMI_MSMNILE_livedisplay_support_anti_flicker ?= false
+SOONG_CONFIG_XIAOMI_MSMNILE_livedisplay_support_sunlight_enhancement ?= true
 
 # Treble
 BOARD_VNDK_VERSION := current

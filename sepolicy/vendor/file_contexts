@@ -40,6 +40,9 @@
 /mnt/vendor/persist/fpc(/.*)?                                                                       u:object_r:vendor_persist_fingerprint_file:s0
 /mnt/vendor/persist/goodix(/.*)?                                                                    u:object_r:vendor_persist_fingerprint_file:s0
 
+# HALs
+/vendor/bin/hw/vendor\.lineage\.livedisplay@2\.1-service\.xiaomi_sm8150                             u:object_r:hal_lineage_livedisplay_qti_exec:s0
+
 # Haptic
 /sys/module/qti_haptics/parameters/vmax_mv_override                                                 u:object_r:sysfs_vibrator:s0
 
