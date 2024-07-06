@@ -37,15 +37,6 @@ limitations under the License.
         <MediaCodec name="OMX.qcom.video.encoder.hevc.cq" type="video/hevc" update="true">
             <Limit name="measured-frame-rate-320x240" range="340-400" />
         </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.encoder.h263sw" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="303-303" />
-            <Limit name="measured-frame-rate-352x288" range="32-630" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qcom.video.encoder.mpeg4sw" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="299-299" />
-            <Limit name="measured-frame-rate-352x288" range="30-581" />
-            <Limit name="measured-frame-rate-640x480" range="148-148" />
-        </MediaCodec>
         <MediaCodec name="OMX.qcom.video.encoder.vp8" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="363-484" />
             <Limit name="measured-frame-rate-640x360" range="250-280" />
@@ -116,15 +107,6 @@ limitations under the License.
             <Limit name="measured-frame-rate-1280x720" range="290-641" />
             <Limit name="measured-frame-rate-1920x1080" range="316-318" />
             <Limit name="measured-frame-rate-3840x2160" range="148-149" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qti.video.decoder.h263sw" type="video/3gpp" update="true">
-            <Limit name="measured-frame-rate-176x144" range="268-418" />
-            <Limit name="measured-frame-rate-352x288" range="273-561" />
-        </MediaCodec>
-        <MediaCodec name="OMX.qti.video.decoder.mpeg4sw" type="video/mp4v-es" update="true">
-            <Limit name="measured-frame-rate-176x144" range="409-410" />
-            <Limit name="measured-frame-rate-480x360" range="436-524" />
-            <Limit name="measured-frame-rate-1280x720" range="240-292" />
         </MediaCodec>
         <MediaCodec name="OMX.qcom.video.decoder.vp8" type="video/x-vnd.on2.vp8" update="true">
             <Limit name="measured-frame-rate-320x180" range="326-719" />
