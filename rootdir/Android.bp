@@ -6,24 +6,6 @@
 
 // Init scripts
 sh_binary {
-    name: "init.class_main.sh",
-    src: "bin/init.class_main.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.class_core.sh",
-    src: "bin/init.qcom.class_core.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.early_boot.sh",
-    src: "bin/init.qcom.early_boot.sh",
-    vendor: true,
-}
-
-sh_binary {
     name: "init.qcom.post_boot.sh",
     src: "bin/init.qcom.post_boot.sh",
     vendor: true,
@@ -32,18 +14,6 @@ sh_binary {
 sh_binary {
     name: "init.qcom.sh",
     src: "bin/init.qcom.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qcom.usb.sh",
-    src: "bin/init.qcom.usb.sh",
-    vendor: true,
-}
-
-sh_binary {
-    name: "init.qti.chg_policy.sh",
-    src: "bin/init.qti.chg_policy.sh",
     vendor: true,
 }
 
