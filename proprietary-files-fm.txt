@@ -1,14 +1,7 @@
 # All unpinned blobs below are extracted from vayu_global-user 13 RKQ1.200826.002 V14.0.3.0.TJUMIXM release-keys
 
 # FM
-system_ext/lib/fm_helium.so
-system_ext/lib/libfm-hci.so
-system_ext/lib/vendor.qti.hardware.fm@1.0.so
 system_ext/lib64/fm_helium.so
 system_ext/lib64/libfm-hci.so
 system_ext/lib64/vendor.qti.hardware.fm@1.0.so
-vendor/bin/fm_qsoc_patches
-vendor/etc/init/init.qti.fm.rc
-vendor/etc/init.qti.fm.sh
-vendor/lib/hw/vendor.qti.hardware.fm@1.0-impl.so
 vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
