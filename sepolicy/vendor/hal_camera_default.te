@@ -31,3 +31,5 @@ allow hal_camera_default proc_stat:file r_file_perms;
 
 # Camera HAL wants to search on /mnt/vendor
 allow hal_camera_default mnt_vendor_file:dir search;
+
+binder_call(hal_camera_default, system_server)
