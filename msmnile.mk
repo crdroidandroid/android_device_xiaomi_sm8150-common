@@ -274,6 +274,12 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Input
+PRODUCT_PACKAGES += \
+    sm8150-tavil-snd-card_Button_Jack.kl \
+    uinput-fpc.kl \
+    uinput-goodix.kl
+
 # IPACM
 PRODUCT_PACKAGES += \
     ipacm \
@@ -281,12 +287,6 @@ PRODUCT_PACKAGES += \
 
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
-
-# Keylayout
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/sm8150-tavil-snd-card_Button_Jack.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/sm8150-tavil-snd-card_Button_Jack.kl \
-    $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
 # Keymaster
 PRODUCT_PACKAGES += \

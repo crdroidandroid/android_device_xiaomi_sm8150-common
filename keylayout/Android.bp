@@ -1,0 +1,23 @@
+//
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_usr_keylayout {
+    name: "sm8150-tavil-snd-card_Button_Jack.kl",
+    src: "sm8150-tavil-snd-card_Button_Jack.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
+    name: "uinput-fpc.kl",
+    src: "uinput-fpc.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
+    name: "uinput-goodix.kl",
+    src: "uinput-goodix.kl",
+    vendor: true,
+}
