@@ -1,0 +1,23 @@
+//
+// Copyright (C) 2024 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+prebuilt_usr_idc {
+    name: "uinput-fortsense.idc",
+    src: "uinput-fortsense.idc",
+    vendor: true,
+}
+
+prebuilt_usr_idc {
+    name: "uinput-fpc.idc",
+    src: "uinput-fpc.idc",
+    vendor: true,
+}
+
+prebuilt_usr_idc {
+    name: "uinput-goodix.idc",
+    src: "uinput-goodix.idc",
+    vendor: true,
+}

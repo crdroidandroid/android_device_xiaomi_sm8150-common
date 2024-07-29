@@ -11,6 +11,12 @@ prebuilt_usr_keylayout {
 }
 
 prebuilt_usr_keylayout {
+    name: "uinput-fortsense.kl",
+    src: "uinput-fortsense.kl",
+    vendor: true,
+}
+
+prebuilt_usr_keylayout {
     name: "uinput-fpc.kl",
     src: "uinput-fpc.kl",
     vendor: true,

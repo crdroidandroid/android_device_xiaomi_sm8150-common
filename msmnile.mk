@@ -277,8 +277,14 @@ PRODUCT_PACKAGES += \
 # Input
 PRODUCT_PACKAGES += \
     sm8150-tavil-snd-card_Button_Jack.kl \
+    uinput-fortsense.kl \
     uinput-fpc.kl \
     uinput-goodix.kl
+
+PRODUCT_PACKAGES += \
+    uinput-fortsense.idc \
+    uinput-fpc.idc \
+    uinput-goodix.idc
 
 # IPACM
 PRODUCT_PACKAGES += \
