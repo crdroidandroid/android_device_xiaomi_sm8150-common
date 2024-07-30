@@ -9,7 +9,7 @@ soong_namespace {
 }
 
 soong_config_module_type {
-    name: "xiaomi_msmnile_install_symlink",
+    name: "xiaomi_msmnile_wifi_install_symlink",
     module_type: "install_symlink",
     config_namespace: "XIAOMI_MSMNILE",
     variables: ["PARTITION_SCHEME"],
@@ -28,7 +28,7 @@ install_symlink {
     symlink_target: "/vendor/etc/wifi/WCNSS_qcom_cfg.ini",
 }
 
-xiaomi_msmnile_install_symlink {
+xiaomi_msmnile_wifi_install_symlink {
     name: "firmware_wlan_mac.bin_symlink",
     vendor: true,
     installed_location: "firmware/wlan/qca_cld/wlan_mac.bin",
