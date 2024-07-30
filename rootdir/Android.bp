@@ -57,7 +57,7 @@ sh_binary {
 soong_config_module_type {
     name: "xiaomi_msmnile_rootdir_prebuilt_etc",
     module_type: "prebuilt_etc",
-    config_namespace: "XIAOMI_MSMNILE_ROOTDIR",
+    config_namespace: "XIAOMI_MSMNILE",
     variables: ["PARTITION_SCHEME"],
     properties: ["src"],
 }

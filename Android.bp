@@ -11,7 +11,7 @@ soong_namespace {
 soong_config_module_type {
     name: "xiaomi_msmnile_install_symlink",
     module_type: "install_symlink",
-    config_namespace: "XIAOMI_MSMNILE_ROOTDIR",
+    config_namespace: "XIAOMI_MSMNILE",
     variables: ["PARTITION_SCHEME"],
     properties: ["symlink_target"],
 }
