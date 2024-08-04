@@ -1,8 +1,7 @@
 [
   {
-    "repository": "LineageOS/android_hardware_xiaomi",
-    "target_path": "hardware/xiaomi",
-    "branch": "lineage-21"
+    "repository": "crdroidandroid/android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi"
   },
   {
     "repository": "crdroidandroid/android_kernel_xiaomi_sm8150",
