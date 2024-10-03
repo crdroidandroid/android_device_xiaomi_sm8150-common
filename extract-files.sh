@@ -73,6 +73,12 @@ function blob_fixup() {
         vendor/lib64/libdlbdsservice.so | vendor/lib/libstagefright_soft_ac4dec.so | vendor/lib/libstagefright_soft_ddpdec.so)
             "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/etc/seccomp_policy/atfwd@2.0.policy|vendor/etc/seccomp_policy/wfdhdcphalservice.policy)
+            grep -q "gettid: 1" "${2}" || echo -e "\ngettid: 1" >> "${2}"
+            ;;
+        vendor/etc/seccomp_policy/vendor.qti.hardware.dsp.policy)
+            grep -q "madvise: 1" "${2}" || echo -e "\nmadvise: 1" >> "${2}"
+            ;;
     esac
 }
 
