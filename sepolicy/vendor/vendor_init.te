@@ -2,6 +2,7 @@ set_prop(vendor_init, audio_prop)
 set_prop(vendor_init, vendor_alarm_boot_prop)
 set_prop(vendor_init, vendor_bluetooth_prop)
 set_prop(vendor_init, vendor_camera_prop)
+set_prop(vendor_init, vendor_fingerprint_prop)
 set_prop(vendor_init, vendor_video_prop)
 
 allow vendor_init {
