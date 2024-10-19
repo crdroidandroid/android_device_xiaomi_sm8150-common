@@ -98,9 +98,11 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_PACKAGES += \
     audio.bluetooth.default \
-    audio.primary.msmnile \
     audio.r_submix.default \
-    audio.usb.default
+    audio.usb.default \
+    libaudioroute.vendor \
+    libprocessgroup.vendor \
+    libtinycompress
 
 PRODUCT_PACKAGES += \
     libaudiopreprocessing \
@@ -259,7 +261,8 @@ PRODUCT_PACKAGES += \
 ifneq ($(TARGET_IS_TABLET),true)
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.1.vendor \
-    android.hardware.gnss@2.1.vendor
+    android.hardware.gnss@2.1.vendor \
+    android.hardware.power@1.2.vendor
 endif
 
 # Health
