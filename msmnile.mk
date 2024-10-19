@@ -103,26 +103,30 @@ PRODUCT_PACKAGES += \
     audio.usb.default
 
 PRODUCT_PACKAGES += \
-    liba2dpoffload \
     libaudiopreprocessing \
-    libbatterylistener \
     libbundlewrapper \
-    libcomprcapture \
     libdownmix \
     libdynproc \
     libeffectproxy \
-    libexthwplugin \
-    libhdmiedid \
-    libhfp \
     libldnhncr \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libreverbwrapper \
-    libsndmonitor \
-    libspkrprot \
     libvisualizer \
     libvolumelistener
+
+ifneq ($(TARGET_PROVIDES_AUDIO_EXTNS),true)
+PRODUCT_PACKAGES += \
+    liba2dpoffload \
+    libbatterylistener \
+    libcomprcapture \
+    libexthwplugin \
+    libhdmiedid \
+    libhfp \
+    libsndmonitor \
+    libspkrprot
+endif
 
 # Audio configs
 PRODUCT_COPY_FILES += \
