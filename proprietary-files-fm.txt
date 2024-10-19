@@ -1,7 +1,7 @@
-# All unpinned blobs below are extracted from vayu_global-user 13 RKQ1.200826.002 V14.0.3.0.TJUMIXM release-keys
+# All pinned blobs below are extracted from vayu_global-user 13 RKQ1.200826.002 V14.0.3.0.TJUMIXM release-keys
 
-# FM
-system_ext/lib64/fm_helium.so
-system_ext/lib64/libfm-hci.so
-system_ext/lib64/vendor.qti.hardware.fm@1.0.so
-vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so
+# FM - from vayu
+system_ext/lib64/fm_helium.so|623a78dfe8f73808158bc88116cd3204588aa126
+system_ext/lib64/libfm-hci.so|605591d98f2a98773209ae67f374e726f39eeda4
+system_ext/lib64/vendor.qti.hardware.fm@1.0.so|474a9399822c89409cd001095ad12eacfd079fba
+vendor/lib64/hw/vendor.qti.hardware.fm@1.0-impl.so|e1745a71edc80fa9e9eab854ac42700b6e22af01

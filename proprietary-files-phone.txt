@@ -1,18 +1,18 @@
-# All unpinned blobs below are extracted from vayu_global-user 13 RKQ1.200826.002 V14.0.3.0.TJUMIXM release-keys
+# All pinned blobs below are extracted from vayu_global-user 13 RKQ1.200826.002 V14.0.3.0.TJUMIXM release-keys
 
-# GNSS
-vendor/bin/hw/android.hardware.gnss@2.1-service-qti
-vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc
-vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml
-vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml
-vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so
-vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so
-vendor/lib64/libbatching.so
-vendor/lib64/libgeofencing.so
-vendor/lib64/libgnss.so
-vendor/lib64/libgnsspps.so
-vendor/lib64/vendor.qti.gnss@4.0-service.so
+# GNSS - from vayu
+vendor/bin/hw/android.hardware.gnss@2.1-service-qti|17dae0cc696877aa0d3e85c60f035a8e9f208739
+vendor/etc/init/android.hardware.gnss@2.1-service-qti.rc|d3844699c845ce5de4c8b50548a2095f92dd0235
+vendor/etc/vintf/manifest/android.hardware.gnss@2.1-service-qti.xml|1c344aacaa6d17a1585ba58b2e6d438dcfe31fad
+vendor/etc/vintf/manifest/vendor.qti.gnss@4.0-service.xml|6514b13f55abc0acc28e004c35ff93fb972d61a9
+vendor/lib64/hw/android.hardware.gnss@2.1-impl-qti.so|08651a454e375f7a9982662cfe1ffd6b0226d0bf
+vendor/lib64/hw/vendor.qti.gnss@4.0-impl.so|3871c4be6f1d57cd11a0da7c44099111771f428d
+vendor/lib64/libbatching.so|b5b112c1ee9d87f3028a1a6c02d04056537a4b6d
+vendor/lib64/libgeofencing.so|1845c7396b57af49760b561539d36101dd91dc0d
+vendor/lib64/libgnss.so|f7cb6060f14b5bf14a094a3d5f59c2a34d6e337f
+vendor/lib64/libgnsspps.so|77c9625bf121b1c35cfc679446336b38900fb8ac
+vendor/lib64/vendor.qti.gnss@4.0-service.so|f97eea8b119fcaa62bb601c324977ef82806503d
 
-# GNSS configs
-vendor/etc/flp.conf
-vendor/etc/gps.conf
+# GNSS configs - from vayu
+vendor/etc/flp.conf|8c8642685c225fa0b715c284481018a527dae451
+vendor/etc/gps.conf|6aa19154e9724dfe340b9ce4dd1969129eaac6e5
