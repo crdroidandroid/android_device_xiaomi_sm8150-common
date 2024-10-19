@@ -72,6 +72,10 @@ function blob_fixup() {
             [ "$2" = "" ] && return 0
             "${PATCHELF}" --replace-needed "libstagefright_foundation.so" "libstagefright_foundation-v33.so" "${2}"
             ;;
+        vendor/etc/data/dsi_config.xml | vendor/etc/data/netmgr_config.xml | vendor/etc/vintf/manifest/manifest_vendor.dolby.hardware.dms.xml)
+            [ "$2" = "" ] && return 0
+            fix_xml "${2}"
+            ;;
         *)
             return 1
             ;;
