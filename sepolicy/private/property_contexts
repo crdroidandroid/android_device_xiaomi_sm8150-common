@@ -1,11 +1,17 @@
-# RIL
+# Xiaomi specific build properties
 ro.boot.hwc                                                                                         u:object_r:exported_default_prop:s0
 ro.build.flavor                                                                                     u:object_r:exported_default_prop:s0
+ro.build.software.version                                                                           u:object_r:exported_default_prop:s0
 ro.carrier.name                                                                                     u:object_r:exported_default_prop:s0
 ro.cust.test                                                                                        u:object_r:exported_system_prop:s0
+ro.fota.oem                                                                                         u:object_r:exported_default_prop:s0
 ro.miui.                                                                                            u:object_r:exported_system_prop:s0
 ro.miui.cust_variant                                                                                u:object_r:exported_default_prop:s0
 ro.product.mod_device                                                                               u:object_r:exported_default_prop:s0
+
+# RIL
+ro.vendor.ril.svdo                                                                                  u:object_r:vendor_radio_prop:s0
+ro.vendor.ril.svlte1x                                                                               u:object_r:vendor_radio_prop:s0
 
 # Vendor init
 ro.product.marketname                                                                               u:object_r:exported_default_prop:s0
