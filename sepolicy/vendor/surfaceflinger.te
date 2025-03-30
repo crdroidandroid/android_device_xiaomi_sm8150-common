@@ -1,0 +1,2 @@
+dontaudit surfaceflinger vendor_firmware_file:dir search;
+dontaudit surfaceflinger vendor_firmware_file:file read;
