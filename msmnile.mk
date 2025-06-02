@@ -269,6 +269,29 @@ PRODUCT_PACKAGES += \
     android.hardware.power@1.2.vendor
 endif
 
+# GNSS
+PRODUCT_PACKAGES += \
+     android.hardware.gnss@2.1-impl-qti \
+     android.hardware.gnss@2.1-service-qti
+
+PRODUCT_PACKAGES += \
+     liblocation_api \
+     libgps.utils \
+     libbatching \
+     libgeofencing \
+     libloc_core \
+     libgnss
+
+
+ifneq ($(TARGET_IS_TABLET),true)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf
+endif
+
+
+PRODUCT_COPY_FILES += \
+    frameworks/native/data/etc/android.hardware.location.gps.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.location.gps.xml
+
 # Health
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti \
@@ -391,7 +414,8 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/google/interfaces \
     hardware/google/pixel \
     hardware/lineage/interfaces/power-libperfmgr \
-    hardware/qcom-caf/common/libqti-perfd-client
+    hardware/qcom-caf/common/libqti-perfd-client \
+    hardware/qcom/sm8150/gps
 
 # Public libraries
 PRODUCT_COPY_FILES += \

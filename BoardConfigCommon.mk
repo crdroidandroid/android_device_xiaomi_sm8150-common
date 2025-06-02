@@ -81,6 +81,10 @@ endif
 # Init
 TARGET_INIT_VENDOR_LIB ?= //$(COMMON_PATH):init_xiaomi_msmnile
 
+# GPS
+BOARD_VENDOR_QCOM_GPS_LOC_API_HARDWARE := default
+LOC_HIDL_VERSION := 4.0
+
 # Kernel
 ifeq ($(TARGET_IS_VAB),true)
 BOARD_BOOT_HEADER_VERSION := 3
