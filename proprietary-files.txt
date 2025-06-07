@@ -515,8 +515,6 @@ vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
 vendor/lib64/libdsutils.so
 vendor/lib64/libidl.so
-vendor/lib64/libmdmdetect.so
-vendor/lib64/libminkdescriptor.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqcmaputils.so
 vendor/lib64/libqdi.so
