@@ -184,7 +184,7 @@ PRODUCT_PACKAGES += \
     disable_configstore
 
 # Consumer IR
-ifneq ($(TARGET_IS_TABLET),true)
+ifeq ($(TARGET_HAS_IR),true)
 PRODUCT_PACKAGES += \
     android.hardware.ir-service.lineage
 
