@@ -1,31 +1,15 @@
 /*
- * Copyright (C) 2021 The LineageOS Project
+ * Copyright (C) 2021-2025 The LineageOS Project
  *
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#ifndef LIBINIT_VARIANT_H
-#define LIBINIT_VARIANT_H
+#pragma once
 
-#include <string>
+#include <libvariant.h>
+
 #include <vector>
 
-typedef struct variant_info {
-    std::string hwc_value;
-    std::string sku_value;
+void search_variant(const std::vector<variant_info>& variants);
 
-    std::string brand;
-    std::string device;
-    std::string mod_device;
-    std::string marketname;
-    std::string model;
-    std::string build_fingerprint;
-
-    bool nfc;
-} variant_info_t;
-
-void search_variant(const std::vector<variant_info_t> variants);
-
-void set_variant_props(const variant_info_t variant);
-
-#endif // LIBINIT_VARIANT_H
+void set_variant_props(const variant_info& variant);

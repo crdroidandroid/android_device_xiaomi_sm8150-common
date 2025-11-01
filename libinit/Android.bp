@@ -1,25 +1,24 @@
 //
-// Copyright (C) 2021 The LineageOS Project
+// Copyright (C) 2021-2025 The LineageOS Project
 //
 // SPDX-License-Identifier: Apache-2.0
 //
 
 cc_library_static {
-    name: "libinit_xiaomi_msmnile",
+    name: "init_xiaomi_msmnile",
     srcs: [
+        "init_xiaomi_msmnile.cpp",
         "libinit_dalvik_heap.cpp",
         "libinit_variant.cpp",
         "libinit_utils.cpp",
     ],
-    whole_static_libs: ["libbase"],
-    export_include_dirs: ["include"],
-    recovery_available: true,
-}
-
-cc_library_static {
-    name: "init_xiaomi_msmnile",
-    srcs: ["init_xiaomi_msmnile.cpp"],
-    whole_static_libs: ["libinit_xiaomi_msmnile"],
+    header_libs: ["libvariant_headers"],
+    whole_static_libs: [
+        "libbase",
+    ] + select(soong_config_variable("xiaomi_msmnile", "variant_lib"), {
+        any @ lib: [lib],
+        default: ["libvariant_default"],
+    }),
     include_dirs: ["system/core/init"],
     recovery_available: true,
 }

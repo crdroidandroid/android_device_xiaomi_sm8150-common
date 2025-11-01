@@ -1,0 +1,11 @@
+//
+// Copyright (C) 2025 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
+
+cc_library_headers {
+    name: "libvariant_headers",
+    export_include_dirs: ["include"],
+    recovery_available: true,
+}
