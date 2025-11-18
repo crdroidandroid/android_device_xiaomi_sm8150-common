@@ -153,9 +153,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.btconfigstore@1.0.vendor \
     vendor.qti.hardware.btconfigstore@2.0.vendor
 
-# Blur
-TARGET_ENABLE_BLUR := true
-
 # Camera
 TARGET_BUILD_DEVICE_AS_WEBCAM := true
 
