@@ -178,13 +178,6 @@ on boot
 
     write /sys/block/sda/queue/wbt_lat_usec 75000
 
-on property:vendor.display.lcd_density=560
-   setprop dalvik.vm.heapgrowthlimit 256m
-
-#MIUI DEL:
-#on property:vendor.display.lcd_density=640
-#   setprop dalvik.vm.heapgrowthlimit 512m
-
 on boot && property:persist.vendor.usb.controller.default=*
     setprop vendor.usb.controller ${persist.vendor.usb.controller.default}
 
