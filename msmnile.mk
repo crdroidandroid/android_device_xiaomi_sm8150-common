@@ -298,6 +298,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     IFAAService
 
+# Init
+$(call soong_config_set,libinit,vendor_init_lib,//$(LOCAL_PATH):init_xiaomi_msmnile)
+
 # Input
 PRODUCT_PACKAGES += \
     sm8150-tavil-snd-card_Button_Jack.kl \
