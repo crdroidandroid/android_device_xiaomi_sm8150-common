@@ -65,7 +65,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES_DEBUG += \
     bootctl
 
-$(call soong_config_set,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
+$(call soong_config_set_bool,QTI_GPT_UTILS,USE_BSG_FRAMEWORK,false)
 
 AB_OTA_POSTINSTALL_CONFIG += \
     RUN_POSTINSTALL_system=true \
@@ -133,7 +133,7 @@ PRODUCT_PACKAGES += \
     libspkrprot
 endif
 
-$(call soong_config_set,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
+$(call soong_config_set_bool,android_hardware_audio,skip_speaker_layout_channel_mask_field,true)
 
 # Audio configs
 PRODUCT_COPY_FILES += \
@@ -161,7 +161,7 @@ TARGET_BUILD_DEVICE_AS_WEBCAM := true
 
 $(call inherit-product-if-exists, vendor/xiaomi/miuicamera/config.mk)
 
-$(call soong_config_set,camera,override_format_from_reserved,true)
+$(call soong_config_set_bool,camera,override_format_from_reserved,true)
 $(call soong_config_set,camera,package_name,com.xiaomi.sessionparams.clientName)
 
 PRODUCT_PACKAGES += \
