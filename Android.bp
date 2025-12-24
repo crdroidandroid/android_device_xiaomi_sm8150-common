@@ -6,7 +6,6 @@
 
 soong_namespace {
     imports: [
-        "bootable/deprecated-ota",
         "vendor/qcom/opensource/usb/etc",
     ],
 }
