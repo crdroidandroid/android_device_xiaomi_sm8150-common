@@ -193,7 +193,7 @@ persist.sys.fuse.passthrough.enable=true
 vendor.gatekeeper.disable_spu=true
 
 # Graphics
-debug.sf.auto_latch_unsignaled=0
+debug.sf.auto_latch_unsignaled=1
 debug.sf.disable_backpressure=1
 debug.sf.enable_advanced_sf_phase_offset=1
 debug.sf.enable_gl_backpressure=0
