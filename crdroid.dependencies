@@ -4,6 +4,10 @@
     "target_path": "hardware/xiaomi"
   },
   {
+    "repository": "crdroidandroid/android_packages_apps_LunarisDolby",
+    "target_path": "packages/apps/LunarisDolby"
+  },
+  {
     "repository": "crdroidandroid/android_kernel_xiaomi_sm8150",
     "target_path": "kernel/xiaomi/sm8150"
   },

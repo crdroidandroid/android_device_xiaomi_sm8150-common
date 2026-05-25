@@ -187,7 +187,7 @@ endif
 # Device-specific settings
 PRODUCT_PACKAGES += \
     DSPVolumeSynchronizer \
-    DolbyAtmos \
+    LunarisDolby \
     XiaomiParts
 
 # Display
