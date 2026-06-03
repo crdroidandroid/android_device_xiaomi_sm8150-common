@@ -15,5 +15,10 @@
     "repository": "crdroidandroid/proprietary_vendor_xiaomi_sm8150-common",
     "target_path": "vendor/xiaomi/sm8150-common",
     "remote": "crdroid-gitlab"
+  },
+  {
+    "repository": "crdroidandroid/proprietary_vendor_xiaomi_miuicamera",
+    "target_path": "vendor/xiaomi/miuicamera",
+    "remote": "crdroid-gitlab"
   }
 ]
