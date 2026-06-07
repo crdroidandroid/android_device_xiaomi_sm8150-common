@@ -12,6 +12,11 @@
     "target_path": "kernel/xiaomi/sm8150"
   },
   {
+    "repository": "crdroidandroid/android_prebuilts_clang_host_linux-x86_clang-r596125",
+    "target_path": "prebuilts/clang/host/linux-x86/clang-r596125",
+    "remote": "crdroid-gitlab"
+  },
+  {
     "repository": "crdroidandroid/proprietary_vendor_xiaomi_sm8150-common",
     "target_path": "vendor/xiaomi/sm8150-common",
     "remote": "crdroid-gitlab"
