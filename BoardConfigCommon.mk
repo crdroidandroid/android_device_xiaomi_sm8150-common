@@ -100,7 +100,6 @@ TARGET_KERNEL_CONFIG := \
     vendor/sm8150-perf_defconfig \
     vendor/debugfs.config \
     vendor/xiaomi/sm8150-common.config
-TARGET_KERNEL_CLANG_VERSION := r596125
 
 # Media
 TARGET_DISABLED_UBWC := true
