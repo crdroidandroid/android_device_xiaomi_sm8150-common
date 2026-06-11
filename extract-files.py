@@ -71,7 +71,7 @@ module = ExtractUtilsModule(
 )
 
 module.add_proprietary_file('proprietary-files-fm.txt').add_copy_files_guard(
-    'TARGET_HAS_FM', 'true', invert=True
+    'TARGET_HAS_FM', 'true'
 )
 
 module.add_proprietary_file('proprietary-files-phone.txt').add_copy_files_guard(
