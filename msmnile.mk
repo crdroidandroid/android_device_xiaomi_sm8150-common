@@ -173,10 +173,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.camera.device@1.0.vendor \
     vendor.qti.hardware.camera.postproc@1.0.vendor
 
-# Configstore
-PRODUCT_PACKAGES += \
-    disable_configstore
-
 # Consumer IR
 ifeq ($(TARGET_HAS_IR),true)
 PRODUCT_PACKAGES += \
