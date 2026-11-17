@@ -47,10 +47,6 @@ ro.netflix.bsp_rev=Q855-16947-1
 ro.vendor.qti.core_ctl_max_cpu=4
 ro.vendor.qti.core_ctl_min_cpu=2
 
-# Netmgr
-persist.vendor.data.iwlan.enable=true
-persist.vendor.data.mode=concurrent
-
 # SSR
 persist.vendor.ssr.restart_level=ALL_ENABLE
 
